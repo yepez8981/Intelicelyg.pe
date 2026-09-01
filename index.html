@@ -5,6 +5,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Intelicelyg.pe | Acceso</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0ea5e9">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Intelicelyg">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="mobile-web-app-capable" content="yes">
 
 <style>
 :root{
@@ -13,8 +20,8 @@
     --secondary:#38bdf8;
     --dark:#0f172a;
     --dark-2:#1e293b;
-    --text:#172033;
-    --muted:#64748b;
+--text:#172033;
+    --muted:#475569;
     --light:#f4f7fb;
     --white:#ffffff;
     --border:#e2e8f0;
@@ -22,6 +29,12 @@
     --danger:#dc2626;
     --warning:#f59e0b;
     --shadow:0 20px 60px rgba(15,23,42,.12);
+
+    --bg:#f4f7fb;
+    --bg2:#ffffff;
+    --card:#ffffff;
+    --primary-gradient:linear-gradient(135deg,#0ea5e9,#0369a1);
+    --card-gradient:linear-gradient(135deg,#ffffff,#f4f7fb);
 }
 
 *{
@@ -301,7 +314,7 @@ button{
     left:15px;
     top:50%;
     transform:translateY(-50%);
-    color:#94a3b8;
+    color:#64748b;
     pointer-events:none;
 }
 
@@ -499,13 +512,17 @@ button{
 .header-right{
     display:flex;
     align-items:center;
-    gap:15px;
+    gap:16px;
 }
 
 .user-mini{
     display:flex;
     align-items:center;
     gap:10px;
+    padding:6px 12px 6px 6px;
+    background:#f8fafc;
+    border:1px solid var(--border);
+    border-radius:999px;
 }
 
 .user-avatar{
@@ -652,7 +669,136 @@ button{
     left:15px;
     top:50%;
     transform:translateY(-50%);
-    color:#94a3b8;
+    color:#64748b;
+}
+
+/* FILTROS AVANZADOS */
+
+.filters-bar{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.filters-bar .filter-select{
+    height:42px;
+    padding:0 12px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    background:white;
+    color:var(--text);
+    font-size:12.5px;
+    outline:none;
+    cursor:pointer;
+    min-width:150px;
+}
+
+.filter-select:focus{
+    border-color:var(--primary);
+}
+
+.filters-clear{
+    height:42px;
+    padding:0 14px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    background:white;
+    color:var(--danger);
+    font-size:12px;
+    font-weight:800;
+    cursor:pointer;
+    transition:background .2s;
+}
+
+.filters-clear:hover{
+    background:#fef2f2;
+}
+
+/* COMPARADOR */
+
+.compare-bar{
+    position:fixed;
+    left:50%;
+    bottom:18px;
+    transform:translateX(-50%);
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px 16px;
+    border-radius:14px;
+    background:white;
+    border:1px solid var(--border);
+    box-shadow:0 10px 30px rgba(2,6,23,.15);
+    z-index:2000;
+    max-width:90%;
+    width:auto;
+}
+
+.compare-bar-title{
+    font-size:13px;
+    font-weight:800;
+    color:var(--text);
+    white-space:nowrap;
+}
+
+.compare-bar-ids{
+    font-size:11px;
+    color:var(--muted);
+    font-family:monospace;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    max-width:180px;
+}
+
+.compare-bar-actions{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.compare-clear{
+    width:34px;
+    height:34px;
+    border-radius:9px;
+    border:1px solid var(--border);
+    background:white;
+    color:var(--danger);
+    font-size:14px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.compare-clear:hover{
+    background:#fef2f2;
+}
+
+.compare-check{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    font-size:11px;
+    color:var(--muted);
+    cursor:pointer;
+}
+
+.compare-check input{
+    accent-color:var(--primary);
+    width:16px;
+    height:16px;
+    cursor:pointer;
+}
+
+.compare-table th{
+    white-space:nowrap;
+}
+
+.compare-table td{
+    min-width:160px;
 }
 
 /* IMPORTADORAS */
@@ -917,7 +1063,7 @@ button{
 }
 
 .modal-info-label{
-    color:#94a3b8;
+    color:#64748b;
     font-size:10px;
     font-weight:800;
     text-transform:uppercase;
@@ -980,6 +1126,40 @@ button{
 .modal-action-btn:hover{
     background:#f0f9ff;
     border-color:#bae6fd;
+}
+
+.maps-address{
+    font-size:13px;
+    line-height:1.6;
+    color:var(--text);
+    margin-bottom:12px;
+    padding:12px 14px;
+    background:#f8fafc;
+    border:1px solid var(--border);
+    border-radius:10px;
+}
+
+.maps-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    height:44px;
+    padding:0 18px;
+    border-radius:11px;
+    border:0;
+    background:linear-gradient(135deg,#34d399,#059669);
+    color:white;
+    font-size:13px;
+    font-weight:800;
+    text-decoration:none;
+    cursor:pointer;
+    transition:.2s ease;
+}
+
+.maps-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 16px rgba(5,150,105,.35);
 }
 
 .details-btn{
@@ -1117,59 +1297,1791 @@ button{
 @media(max-width:650px){
 
     .auth-wrapper{
-        padding:15px;
+        padding:12px;
     }
 
     .auth-form-area{
-        padding:35px 22px;
+        padding:30px 18px;
     }
 
     .auth-form-header h2{
-        font-size:25px;
+        font-size:23px;
     }
 
-    .dashboard-header{
-        padding:0 16px;
-        height:68px;
-    }
-
-    .dashboard-content{
-        padding:25px 16px;
+    .auth-form-header p{
+        font-size:13px;
     }
 
     .user-data{
         display:none;
     }
 
-    .dashboard-logo{
-        font-size:19px;
-    }
-
     .stats{
         grid-template-columns:1fr;
-        gap:12px;
+        gap:10px;
     }
 
     .importadoras-grid{
         grid-template-columns:1fr;
+        gap:14px;
     }
 
-    .welcome h1{
-        font-size:25px;
+    .empty-state .empty-icon{
+        font-size:44px;
+    }
+
+    .empty-state strong{
+        font-size:15px;
     }
 
     .toast-container{
-        left:15px;
-        right:15px;
-        bottom:15px;
+        left:12px;
+        right:12px;
+        bottom:12px;
     }
 
     .toast{
         min-width:0;
         width:100%;
+        font-size:13px;
+        padding:12px 16px;
     }
 }
-\n\n@media(max-width:700px){\n    .modal-info-grid{\n        grid-template-columns:1fr;\n    }\n\n    .importadora-modal{\n        padding:10px;\n        align-items:flex-end;\n    }\n\n    .importadora-modal-card{\n        max-height:94vh;\n        border-radius:20px 20px 0 0;\n    }\n\n    .importadora-modal-body{\n        padding:18px;\n    }\n\n    .importadora-modal-header{\n        padding:16px 18px;\n    }\n}\n
+
+@media(max-width:700px){
+    .modal-info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .importadora-modal{
+        padding:10px;
+        align-items:flex-end;
+    }
+
+    .importadora-modal-card{
+        max-height:94vh;
+        border-radius:20px 20px 0 0;
+    }
+
+    .importadora-modal-body{
+        padding:18px;
+    }
+
+    .importadora-modal-header{
+        padding:16px 18px;
+    }
+
+    /* NAVEGACIÓN DEL PANEL - barras de pestañas */
+    .dashboard-nav{
+        flex-wrap:nowrap;
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch;
+        padding:6px;
+        gap:6px;
+    }
+
+    .dashboard-nav button{
+        flex:0 0 auto;
+        min-width:0;
+        padding:0 14px;
+        height:38px;
+        font-size:12px;
+        white-space:nowrap;
+    }
+
+    /* HEADER */
+    .dashboard-header{
+        flex-wrap:wrap;
+        gap:8px;
+        height:auto !important;
+        padding:12px 14px !important;
+    }
+
+    .header-right{
+        gap:8px;
+    }
+
+    .user-avatar{
+        width:34px;
+        height:34px;
+        font-size:13px;
+    }
+
+    .dashboard-logo{
+        font-size:18px;
+    }
+
+    .logout-btn{
+        height:34px;
+        padding:0 12px;
+        font-size:12px;
+    }
+
+    /* CONTENIDO */
+    .dashboard-content{
+        padding:18px 14px !important;
+    }
+
+    .welcome h1{
+        font-size:22px;
+    }
+
+    .welcome p{
+        font-size:13px;
+    }
+
+    .stats{
+        gap:10px;
+    }
+
+    .stat-value{
+        font-size:26px;
+    }
+
+    /* SEARCH */
+    .search-box{
+        padding:10px 12px;
+        gap:8px;
+    }
+
+    /* CARDS */
+    .importadora-card{
+        padding:16px;
+        border-radius:14px;
+    }
+
+    .importadora-name{
+        font-size:15px;
+    }
+
+    .importadora-description{
+        font-size:12.5px;
+        line-height:1.45;
+    }
+
+    .details-btn{
+        height:38px;
+        font-size:12px;
+        padding:0 14px;
+    }
+
+    /* FAVORITES */
+    .favorite-btn{
+        width:32px;
+        height:32px;
+        font-size:16px;
+    }
+
+    /* PANEL CARDS */
+    .panel-card{
+        padding:18px;
+        border-radius:14px;
+    }
+
+    .panel-card h3{
+        font-size:15px;
+    }
+
+    /* SECTION HEADER */
+    .section-header{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    .section-header h2{
+        font-size:18px;
+    }
+
+    /* ADMIN TABS */
+    .admin-tabs{
+        flex-wrap:nowrap;
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch;
+        max-width:none;
+    }
+
+    .admin-tab{
+        flex:0 0 auto;
+        padding:0 16px;
+        font-size:12px;
+        white-space:nowrap;
+    }
+
+    .small-btn{
+        width:100% !important;
+        height:44px;
+        justify-content:center;
+    }
+
+    /* MODAL GENÉRICO */
+    .modal-overlay{
+        padding:10px;
+        align-items:flex-end;
+    }
+
+    .modal-box{
+        max-height:92vh;
+        border-radius:20px 20px 0 0;
+    }
+
+    .modal-box-head{
+        padding:14px 16px;
+    }
+
+    .modal-box-body{
+        padding:16px;
+        max-height:calc(92vh - 60px);
+    }
+
+    /* TÉRMINOS */
+    .terms-modal-box{
+        max-width:100% !important;
+    }
+
+    .terms-modal-body p{
+        font-size:13px;
+    }
+
+    .terms-actions .primary-btn{
+        width:100%;
+        justify-content:center;
+    }
+
+    /* TABLE WRAP SCROLL */
+    .table-wrap{
+        margin-left:-14px;
+        margin-right:-14px;
+        border-radius:0;
+        border-left:0;
+        border-right:0;
+    }
+
+    /* FORMS */
+    .field input,
+    .field textarea,
+    .field select{
+        font-size:16px; /* previene zoom en iOS */
+    }
+
+    .primary-btn{
+        height:50px;
+    }
+
+    .danger-btn{
+        height:50px;
+    }
+}
+
+/* =====================================================
+   MEJORAS UX / RENDIMIENTO
+===================================================== */
+
+/* Entrada escalonada de tarjetas */
+.importadora-card{
+    animation:cardIn .35s ease both;
+}
+
+.importadora-card:nth-child(1){animation-delay:0s}
+.importadora-card:nth-child(2){animation-delay:.04s}
+.importadora-card:nth-child(3){animation-delay:.08s}
+.importadora-card:nth-child(4){animation-delay:.12s}
+.importadora-card:nth-child(5){animation-delay:.16s}
+.importadora-card:nth-child(6){animation-delay:.20s}
+
+@keyframes cardIn{
+    from{
+        opacity:0;
+        transform:translateY(10px) scale(.99);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* Skeleton loader para el grid */
+.skeleton-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:22px;
+    min-height:220px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.skeleton-media{
+    width:58px;
+    height:58px;
+    border-radius:14px;
+}
+
+.skeleton-line{
+    height:13px;
+    border-radius:6px;
+    background:#e6edf3;
+}
+
+.skeleton-line.short{width:45%}
+.skeleton-line.medium{width:75%}
+.skeleton-line.long{width:100%}
+
+.skeleton-line.title{
+    height:18px;
+    margin-top:6px;
+    width:60%;
+}
+
+.skeleton-btn{
+    height:40px;
+    border-radius:10px;
+    margin-top:auto;
+}
+
+.skeleton-pulse{
+    background:linear-gradient(90deg,#eef2f6 25%,#f6f9fc 50%,#eef2f6 75%);
+    background-size:200% 100%;
+    animation:skeletonPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes skeletonPulse{
+    0%{background-position:200% 0}
+    100%{background-position:-200% 0}
+}
+
+/* Resaltado de resultados de búsqueda */
+mark{
+    background:rgba(56,189,248,.3);
+    color:inherit;
+    border-radius:3px;
+    padding:0 2px;
+}
+
+/* Accesibilidad: respeta preferencias de movimiento */
+@media (prefers-reduced-motion:reduce){
+    *{
+        animation-duration:.001ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.001ms !important;
+    }
+}
+
+/* =====================================================
+   PANELES POR ROL
+===================================================== */
+
+.dashboard-nav{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:15px;
+    padding:8px;
+    box-shadow:0 5px 20px rgba(15,23,42,.04);
+}
+
+.dashboard-nav button{
+    flex:1;
+    min-width:120px;
+    height:42px;
+    border:0;
+    border-radius:10px;
+    background:transparent;
+    color:#475569;
+    font-size:13px;
+    font-weight:800;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    transition:.2s ease;
+}
+
+.dashboard-nav button:hover{
+    background:#f0f9ff;
+    color:#0284c7;
+}
+
+.dashboard-nav button.active{
+    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+    color:white;
+    box-shadow:0 6px 16px rgba(14,165,233,.25);
+}
+
+.panel-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:17px;
+    padding:24px;
+    margin-bottom:22px;
+    max-width:720px;
+    box-shadow:0 5px 20px rgba(15,23,42,.04);
+}
+
+.panel-card h3{
+    font-size:17px;
+    color:var(--dark);
+    margin-bottom:6px;
+}
+
+.field{
+    margin-bottom:16px;
+}
+
+.field label{
+    display:block;
+    font-size:12px;
+    font-weight:800;
+    color:var(--muted);
+    margin-bottom:7px;
+}
+
+.field input,
+.field textarea,
+.field select{
+    width:100%;
+    padding:12px 14px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    outline:none;
+    font-size:14px;
+    font-family:inherit;
+    background:#fff;
+    color:var(--text);
+    transition:.2s ease;
+}
+
+.field textarea{
+    resize:vertical;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus{
+    border-color:var(--secondary);
+    box-shadow:0 0 0 4px rgba(56,189,248,.12);
+}
+
+.small-btn{
+    width:auto !important;
+    height:44px;
+    padding:0 18px !important;
+    font-size:13px;
+    border-radius:12px;
+}
+
+.danger-zone{
+    border-color:#fecaca;
+    background:#fffafa;
+}
+
+.danger-zone h3{
+    color:#b91c1c;
+}
+
+.danger-btn{
+    width:100%;
+    height:50px;
+    border:1px solid #fecaca;
+    border-radius:12px;
+    background:#fef2f2;
+    color:#b91c1c;
+    font-size:14px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.2s ease;
+}
+
+.danger-btn:hover{
+    background:#b91c1c;
+    color:white;
+    border-color:#b91c1c;
+}
+
+.admin-tabs{
+    display:flex;
+    gap:8px;
+    margin-bottom:22px;
+    background:#eef2f6;
+    border-radius:13px;
+    padding:6px;
+    max-width:420px;
+}
+
+.admin-tab{
+    flex:1;
+    height:40px;
+    border:0;
+    border-radius:9px;
+    background:transparent;
+    color:#475569;
+    font-size:13px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.2s ease;
+}
+
+.admin-tab:hover{
+    background:white;
+}
+
+.admin-tab.active{
+    background:white;
+    color:var(--primary-dark);
+    box-shadow:0 4px 12px rgba(15,23,42,.1);
+}
+
+.admin-tab-panel.hidden{
+    display:none !important;
+}
+
+.table-wrap{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:15px;
+    overflow:auto;
+    box-shadow:0 5px 20px rgba(15,23,42,.04);
+}
+
+.admin-table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:760px;
+    font-size:13px;
+}
+
+.admin-table th{
+    background:#f8fafc;
+    color:var(--muted);
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    text-align:left;
+    padding:13px 14px;
+    white-space:nowrap;
+    border-bottom:1px solid var(--border);
+}
+
+.admin-table td{
+    padding:12px 14px;
+    border-bottom:1px solid var(--border);
+    color:var(--text);
+    vertical-align:middle;
+}
+
+.admin-table tr:last-child td{
+    border-bottom:0;
+}
+
+.admin-table tr:hover td{
+    background:#f6fafe;
+}
+
+.rol-pill,
+.status-pill-a{
+    display:inline-flex;
+    align-items:center;
+    padding:4px 10px;
+    border-radius:999px;
+    font-size:11px;
+    font-weight:800;
+}
+
+.rol-pill.admin{background:#e0f2fe;color:#0369a1}
+.rol-pill.importadora{background:#fff7ed;color:#c2410c}
+.rol-pill.cliente{background:#f0fdf4;color:#15803d}
+
+.status-pill-a.activo{background:#f0fdf4;color:#15803d}
+.status-pill-a.inactivo{background:#fef2f2;color:#b91c1c}
+.status-pill-a.eliminado{background:#f1f5f9;color:#64748b}
+
+.hist-pill{
+    display:inline-block;
+    padding:4px 10px;
+    border-radius:999px;
+    font-size:11px;
+    font-weight:800;
+    white-space:nowrap;
+}
+.hist-pill.hist-create_importadora{background:#e0f2fe;color:#0369a1}
+.hist-pill.hist-update_importadora{background:#fef3c7;color:#b45309}
+.hist-pill.hist-delete_importadora{background:#fee2e2;color:#b91c1c}
+.hist-pill.hist-create_usuario{background:#d1fae5;color:#047857}
+.hist-pill.hist-update_usuario{background:#ede9fe;color:#6d28d9}
+.hist-pill.hist-reset_user{background:#ffedd5;color:#c2410c}
+
+.admin-action-btn{
+    height:34px;
+    padding:0 12px;
+    border-radius:9px;
+    border:1px solid var(--border);
+    background:white;
+    color:#475569;
+    font-size:12px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.2s ease;
+    margin-right:5px;
+}
+
+.admin-action-btn:hover{background:#f0f9ff;color:#0284c7;border-color:#bae6fd}
+.admin-action-btn.danger:hover{background:#fef2f2;color:#b91c1c;border-color:#fecaca}
+
+/* Cards de importadora dentro del panel admin */
+.admin-imp-card{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    padding:18px;
+}
+
+.admin-imp-name{
+    font-size:15px;
+    font-weight:800;
+    color:var(--dark);
+}
+
+.admin-imp-rol{
+    font-size:12px;
+    color:var(--muted);
+    margin-bottom:8px;
+}
+
+.admin-imp-actions{
+    display:flex;
+    gap:8px;
+    margin-top:auto;
+}
+
+.admin-imp-actions button{
+    flex:1;
+    height:38px;
+    border:0;
+    border-radius:9px;
+    font-size:12px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+.btn-edit-imp{
+    background:#f0f9ff;
+    color:#0369a1;
+}
+.btn-edit-imp:hover{background:#e0f2fe}
+
+.btn-del-imp{
+    background:#fef2f2;
+    color:#b91c1c;
+}
+.btn-del-imp:hover{background:#fee2e2}
+
+/* Skeleton admin table */
+.admin-skeleton{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:15px;
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    box-shadow:0 5px 20px rgba(15,23,42,.04);
+}
+
+.admin-skeleton .skeleton-line{
+    height:18px;
+    border-radius:8px;
+    background:var(--border);
+}
+
+.admin-skeleton .skeleton-line.long{width:100%}
+
+.admin-skeleton .skeleton-line.medium{width:65%}
+
+@keyframes skeletonPulse{
+    0%,100%{opacity:1}
+    50%{opacity:.5}
+}
+
+.skeleton-pulse{
+    animation:skeletonPulse 1.4s ease-in-out infinite;
+}
+
+/* Botón CSV */
+.csv-btn{
+    height:34px;
+    padding:0 12px;
+    border:1px solid var(--border);
+    border-radius:9px;
+    background:white;
+    color:#475569;
+    font-size:12px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.2s ease;
+    margin-left:8px;
+}
+
+.csv-btn:hover{
+    background:#f0f9ff;
+    color:#0369a1;
+    border-color:#bae6fd;
+}
+
+.header-actions{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+/* Modal genérico para los paneles de administración */
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(15,23,42,.55);
+    backdrop-filter:blur(3px);
+    z-index:200;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    overflow-y:auto;
+}
+
+.modal-box{
+    background:white;
+    border-radius:18px;
+    width:100%;
+    max-width:540px;
+    box-shadow:0 25px 60px rgba(15,23,42,.35);
+    animation:modalIn .25s ease;
+}
+
+@keyframes modalIn{
+    from{opacity:0;transform:translateY(14px) scale(.98)}
+    to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+.modal-box-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 22px;
+    border-bottom:1px solid var(--border);
+}
+
+.modal-box-head strong{
+    font-size:16px;
+    color:var(--dark);
+}
+
+.modal-close{
+    width:34px;
+    height:34px;
+    border:0;
+    border-radius:9px;
+    background:#f1f5f9;
+    color:#64748b;
+    font-size:14px;
+    cursor:pointer;
+    transition:.2s ease;
+}
+
+.modal-close:hover{
+    background:#fee2e2;
+    color:#b91c1c;
+}
+
+.modal-box-body{
+    padding:22px;
+    max-height:70vh;
+    overflow-y:auto;
+}
+
+/* Botón WhatsApp */
+.card-actions{
+    display:flex;
+    gap:8px;
+    margin-top:auto;
+}
+
+.card-actions .details-btn{
+    flex:1;
+}
+
+.whatsapp-btn{
+    flex:0 0 auto;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    height:46px;
+    padding:0 16px;
+    border:0;
+    border-radius:12px;
+    background:#25d366;
+    color:white;
+    font-size:13px;
+    font-weight:800;
+    text-decoration:none;
+    cursor:pointer;
+    transition:.2s ease;
+    white-space:nowrap;
+}
+
+.whatsapp-btn:hover{
+    background:#1ebe5c;
+    transform:translateY(-2px);
+    box-shadow:0 4px 14px rgba(37,211,102,.35);
+}
+
+/* =====================================================
+   MODO OSCURO
+===================================================== */
+
+
+/* Modal de Términos y Condiciones */
+.terms-modal-box{
+    max-width:720px !important;
+}
+
+.terms-date{
+    font-size:12px;
+    color:var(--muted);
+    font-weight:700;
+    margin:0 0 12px 0;
+}
+
+.terms-modal-body p{
+    font-size:13.5px;
+    line-height:1.65;
+    color:var(--text);
+    margin:0 0 11px 0;
+}
+
+.terms-modal-body h4{
+    font-size:14px;
+    color:var(--dark);
+    margin:18px 0 7px 0;
+    padding-top:12px;
+    border-top:1px solid #f1f5f9;
+}
+
+.terms-actions{
+    margin-top:22px;
+    padding-top:18px;
+    border-top:1px solid var(--border);
+    display:flex;
+    justify-content:flex-end;
+}
+
+.terms-actions .primary-btn{
+    width:auto;
+    height:48px;
+    padding:0 26px;
+}
+
+/* Checkbox de aceptación de términos en el login */
+.terms-check{
+    margin:2px 0 18px 0;
+}
+
+.terms-check-label{
+    display:flex;
+    align-items:flex-start;
+    gap:9px;
+    cursor:pointer;
+    font-size:13px;
+    color:#475569;
+    line-height:1.5;
+}
+
+.terms-check-label input[type="checkbox"]{
+    width:17px;
+    height:17px;
+    margin-top:2px;
+    accent-color:var(--primary);
+    cursor:pointer;
+    flex-shrink:0;
+}
+
+.terms-check-label span{
+    display:inline;
+}
+
+.terms-link{
+    border:0;
+    background:none;
+    padding:0;
+    color:var(--primary-dark);
+    font-size:13px;
+    font-weight:800;
+    text-decoration:underline;
+    cursor:pointer;
+    font-family:inherit;
+}
+
+.terms-link:hover{
+    color:var(--secondary);
+}
+
+@media(prefers-color-scheme:dark){
+    :root{
+        --bg:#0f172a;
+        --bg2:#1e293b;
+        --card:#1e293b;
+        --dark:#f1f5f9;
+        --text:#e2e8f0;
+        --muted:#94a3b8;
+        --border:#334155;
+        --primary:#38bdf8;
+        --primary-dark:#0ea5e9;
+        --secondary:#7dd3fc;
+        --primary-gradient:linear-gradient(135deg,#0ea5e9,#0369a1);
+        --card-gradient:linear-gradient(135deg,#1e293b,#0f172a);
+    }
+
+    body{
+        background:var(--bg);
+        color:var(--text);
+    }
+
+    .auth-wrapper{
+        background:var(--bg);
+    }
+
+    .auth-container{
+        background:var(--card);
+        box-shadow:0 25px 60px rgba(0,0,0,.45);
+    }
+
+    .auth-form-area{
+        background:var(--bg2);
+    }
+
+    .form-input,
+    .otp-input{
+        background:var(--bg);
+        border-color:var(--border);
+        color:var(--text);
+    }
+
+    .form-input:focus,
+    .otp-input:focus{
+        border-color:var(--primary);
+        box-shadow:0 0 0 4px rgba(56,189,248,.1);
+    }
+
+    .form-label{
+        color:var(--muted);
+    }
+
+    .dashboard-header{
+        background:var(--card);
+        border-bottom:1px solid var(--border);
+    }
+
+    .dashboard-logo{
+        color:var(--dark);
+    }
+
+    .dashboard-nav{
+        background:var(--card);
+        border-color:var(--border);
+    }
+
+    .dashboard-nav button{
+        color:var(--muted);
+    }
+
+    .dashboard-nav button:hover{
+        background:var(--bg);
+        color:var(--primary);
+    }
+
+    .dashboard-nav button.active{
+        background:var(--primary-gradient);
+        color:white;
+    }
+
+    .importadora-card{
+        background:var(--card);
+        border-color:var(--border);
+    }
+
+    .importadora-name{
+        color:var(--dark);
+    }
+
+    .stat-card{
+        background:var(--card);
+        border-color:var(--border);
+    }
+
+    .stat-label{
+        color:var(--muted);
+    }
+
+    .stat-value{
+        color:var(--dark);
+    }
+
+    .welcome h1{
+        color:var(--dark);
+    }
+
+    .welcome p{
+        color:var(--muted);
+    }
+
+    .section-header h2{
+        color:var(--dark);
+    }
+
+    .section-header p{
+        color:var(--muted);
+    }
+
+    .search-box{
+        background:var(--card);
+        border-color:var(--border);
+    }
+
+    .search-box input{
+        background:transparent;
+        color:var(--text);
+    }
+
+    .panel-card{
+        background:var(--card);
+        border-color:var(--border);
+    }
+
+    .panel-card h3{
+        color:var(--dark);
+    }
+
+    .table-wrap{
+        background:var(--card);
+        border-color:var(--border);
+    }
+
+    .admin-table th{
+        background:var(--bg);
+        color:var(--muted);
+        border-color:var(--border);
+    }
+
+    .admin-table td{
+        color:var(--text);
+        border-color:var(--border);
+    }
+
+    .admin-table tr:hover td{
+        background:var(--bg);
+    }
+
+    .admin-action-btn{
+        background:var(--bg);
+        border-color:var(--border);
+        color:var(--muted);
+    }
+
+    .admin-action-btn:hover{
+        background:var(--bg2);
+        color:var(--primary);
+        border-color:var(--primary);
+    }
+
+    .importadora-tag{
+        background:var(--bg);
+        border-color:var(--border);
+        color:var(--muted);
+    }
+
+    .modal-overlay{
+        background:rgba(0,0,0,.7);
+    }
+
+    .modal-box{
+        background:var(--card);
+        border:1px solid var(--border);
+    }
+
+    .modal-box-head{
+        border-color:var(--border);
+    }
+
+    .modal-box-head strong{
+        color:var(--dark);
+    }
+
+    .importadora-modal-card{
+        background:var(--card);
+    }
+
+    .importadora-modal-header{
+        background:var(--bg);
+        border-bottom:1px solid var(--border);
+    }
+
+    .importadora-modal-body{
+        background:var(--card);
+    }
+
+    .info-label{
+        color:var(--muted);
+    }
+
+    .info-value{
+        color:var(--text);
+    }
+
+    .empty-state strong{
+        color:var(--dark);
+    }
+
+    .empty-state span{
+        color:var(--muted);
+    }
+
+    .danger-zone{
+        background:#1a0a0a;
+        border-color:#7f1d1d;
+    }
+
+    .danger-zone h3{
+        color:#fca5a5;
+    }
+
+    .field input,
+    .field textarea,
+    .field select{
+        background:var(--bg);
+        border-color:var(--border);
+        color:var(--text);
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus{
+        border-color:var(--primary);
+        box-shadow:0 0 0 4px rgba(56,189,248,.1);
+    }
+
+    .alert.success{
+        background:#052e16;
+        color:#86efac;
+    }
+
+    .alert.error{
+        background:#450a0a;
+        color:#fca5a5;
+    }
+
+    .alert.info{
+        background:#0c4a6e;
+        color:#bae6fd;
+    }
+
+    .terms-check-label{
+        color:var(--text);
+    }
+
+    .admin-imp-card{
+        background:var(--card);
+        border-color:var(--border);
+    }
+
+    .admin-imp-name{
+        color:var(--dark);
+    }
+
+    .admin-imp-rol{
+        color:var(--muted);
+    }
+
+    .btn-edit-imp{
+        background:var(--bg);
+        color:var(--primary);
+    }
+
+    .btn-edit-imp:hover{
+        background:var(--bg2);
+    }
+
+    .btn-del-imp{
+        background:#2d0a0a;
+        color:#fca5a5;
+    }
+
+    .btn-del-imp:hover{
+        background:#450a0a;
+    }
+
+    .status-pill-a.activo{
+        background:#052e16;
+        color:#86efac;
+    }
+
+    .status-pill-a.inactivo{
+        background:#450a0a;
+        color:#fca5a5;
+    }
+
+    .status-pill-a.eliminado{
+        background:#1e293b;
+        color:#64748b;
+    }
+
+    .rol-pill.admin{
+        background:#0c4a6e;
+        color:#7dd3fc;
+    }
+
+    .rol-pill.importadora{
+        background:#431407;
+        color:#fdba74;
+    }
+
+    .rol-pill.cliente{
+        background:#052e16;
+        color:#86efac;
+    }
+
+    .admin-skeleton{
+        background:var(--card);
+        border-color:var(--border);
+    }
+
+    .admin-skeleton .skeleton-line{
+        background:var(--border);
+    }
+
+    .csv-btn{
+        background:var(--bg);
+        color:var(--muted);
+        border-color:var(--border);
+    }
+
+.csv-btn:hover{
+        background:var(--bg2);
+        color:var(--primary);
+        border-color:var(--primary);
+    }
+
+    .modal-close-btn{
+        background:var(--bg);
+        border-color:var(--border);
+        color:var(--muted);
+    }
+
+    .modal-close-btn:hover{
+        color:var(--danger);
+        border-color:var(--danger);
+    }
+
+    .modal-action-btn{
+        background:var(--bg);
+        border-color:var(--border);
+        color:var(--muted);
+    }
+
+    .modal-action-btn:hover{
+        background:var(--bg2);
+        color:var(--primary);
+        border-color:var(--primary);
+    }
+
+    .empty-state{
+        background:var(--card);
+        border:1px dashed var(--border);
+    }
+
+    .skeleton-card{
+        background:var(--border);
+    }
+
+    .skeleton{
+        background:var(--border);
+    }
+
+    .importadora-logo{
+        background:var(--bg);
+    }
+
+    .modal-info-grid{
+        background:var(--bg);
+    }
+
+    .modal-info-item{
+        background:var(--card);
+        border-color:var(--border);
+    }
+
+    .modal-subtitle{
+        color:var(--muted);
+    }
+
+    .modal-header-title{
+        color:var(--dark);
+    }
+
+    .cart-item,
+    .favorite-item,
+    .usuario-item{
+        background:var(--card);
+        border-color:var(--border);
+    }
+
+    .secondary-btn{
+        background:var(--bg);
+        border-color:var(--border);
+        color:var(--dark);
+    }
+
+    .secondary-btn:hover{
+        background:var(--bg2);
+    }
+
+    .tertiary-btn{
+        color:var(--secondary);
+    }
+
+    .secret-input{
+        background:var(--bg);
+        border-color:var(--border);
+        color:var(--text);
+    }
+
+    .field-label{
+        color:var(--muted);
+    }
+
+    .form-hint{
+        color:var(--muted);
+    }
+
+    .panel-empty{
+        color:var(--muted);
+    }
+
+    .user-avatar{
+        background:var(--primary-gradient);
+    }
+
+    .header-user .user-name{
+        color:var(--dark);
+    }
+
+    .header-user .user-sub{
+        color:var(--muted);
+    }
+
+    .admin-tabs{
+        background:var(--card);
+        border-color:var(--border);
+    }
+
+    .admin-tab{
+        color:var(--muted);
+    }
+
+    .admin-tab:hover{
+        background:var(--bg);
+        color:var(--primary);
+    }
+
+    .admin-tab.active{
+        background:var(--primary-gradient);
+        color:white;
+    }
+
+    .imp-form-field input,
+    .imp-form-field textarea,
+    .imp-form-field select{
+        background:var(--bg);
+        border-color:var(--border);
+        color:var(--text);
+    }
+
+    .otp-instruction{
+        color:var(--muted);
+    }
+
+    .brand-tagline{
+        color:var(--muted);
+    }
+
+    .logo-placeholder{
+        background:var(--primary-gradient);
+    }
+
+    .logout-btn{
+        background:var(--bg);
+        border-color:var(--border);
+        color:var(--muted);
+    }
+
+    .logout-btn:hover{
+        background:var(--bg2);
+        border-color:#7f1d1d;
+        color:#fca5a5;
+    }
+
+    .favorite-btn{
+        background:var(--bg);
+        border-color:var(--border);
+        color:var(--muted);
+    }
+
+    .favorite-btn:hover{
+        color:var(--warning);
+        border-color:var(--warning);
+    }
+
+    .favorite-btn.active{
+        background:#431407;
+        border-color:#7c2d12;
+        color:#fdba74;
+    }
+
+    .field select option,
+    .imp-form-field select option{
+        background:var(--bg);
+        color:var(--text);
+    }
+
+    .filters-bar .filter-select{
+        background:var(--bg);
+        color:var(--text);
+        border-color:var(--border);
+    }
+
+    .filters-clear{
+        background:var(--bg);
+        border-color:var(--border);
+        color:var(--danger);
+    }
+
+    .filters-clear:hover{
+        background:#7f1d1d;
+        color:#fecaca;
+    }
+
+    .filters-bar .filter-select option{
+        background:var(--bg);
+        color:var(--text);
+    }
+
+    .compare-bar{
+        background:var(--card);
+        border-color:var(--border);
+        box-shadow:0 10px 30px rgba(0,0,0,.5);
+    }
+
+    .compare-bar-title{
+        color:var(--text);
+    }
+
+    .compare-bar-ids{
+        color:var(--muted);
+    }
+
+    .compare-clear{
+        background:var(--bg);
+        border-color:var(--border);
+        color:var(--danger);
+    }
+
+    .app{
+        background:var(--bg);
+    }
+
+    .user-mini{
+        background:var(--bg);
+        border-color:var(--border);
+    }
+
+    .dashboard{
+        background:var(--bg);
+    }
+
+    .dashboard-content{
+        background:transparent;
+        color:var(--text);
+    }
+
+    .table-wrap{
+        background:var(--card);
+        border:1px solid var(--border);
+    }
+
+    .admin-table{
+        color:var(--text);
+    }
+
+    .admin-table th{
+        background:var(--bg);
+        color:var(--muted);
+    }
+
+    .admin-table td{
+        background:transparent;
+        color:var(--text);
+    }
+
+    .admin-table tr{
+        background:transparent;
+    }
+
+    .admin-table tr:hover td{
+        background:var(--bg);
+    }
+
+    .admin-table tbody{
+        background:var(--card);
+    }
+
+    .table-wrap table thead{
+        background:var(--bg);
+    }
+
+    .admin-table thead th{
+        background:var(--bg);
+    }
+
+    .status-pill-a.activo{
+        background:#052e16;
+        color:#86efac;
+    }
+
+    .status-pill-a.inactivo{
+        background:#450a0a;
+        color:#fca5a5;
+    }
+
+    .status-pill-a.eliminado{
+        background:#1e293b;
+        color:#94a3b8;
+    }
+
+    .hist-pill.hist-create_importadora{background:#0c4a6e;color:#7dd3fc}
+    .hist-pill.hist-update_importadora{background:#78350f;color:#fcd34d}
+    .hist-pill.hist-delete_importadora{background:#7f1d1d;color:#fecaca}
+    .hist-pill.hist-create_usuario{background:#064e3b;color:#6ee7b7}
+    .hist-pill.hist-update_usuario{background:#4c1d95;color:#c4b5fd}
+    .hist-pill.hist-reset_user{background:#7c2d12;color:#fdba74}
+
+    .rol-pill.admin{
+        background:#0c4a6e;
+        color:#7dd3fc;
+    }
+
+    .rol-pill.importadora{
+        background:#431407;
+        color:#fdba74;
+    }
+
+    .rol-pill.cliente{
+        background:#052e16;
+        color:#86efac;
+    }
+
+    .admin-imp-card{
+        background:var(--card);
+        border-color:var(--border);
+    }
+
+    .modal-box{
+        background:var(--card);
+        border-color:var(--border);
+    }
+
+    .modal-box-head{
+        background:var(--bg);
+        border-bottom:1px solid var(--border);
+    }
+
+    .modal-box-body{
+        background:var(--card);
+    }
+
+    .field{
+        background:transparent;
+    }
+
+    .field label{
+        color:var(--muted);
+    }
+
+    .modal-close{
+        background:var(--bg);
+        color:var(--muted);
+    }
+
+    .modal-close:hover{
+        background:var(--bg2);
+        color:var(--danger);
+    }
+
+    .visit-btn{
+        background:var(--bg);
+        color:var(--primary);
+        border-color:var(--border);
+    }
+
+    .visit-btn:hover{
+        background:var(--bg2);
+        border-color:var(--primary);
+    }
+
+    .modal-info-item{
+        background:var(--bg);
+    }
+
+    .modal-observations{
+        background:var(--bg);
+    }
+
+    .importadora-modal-logo{
+        background:var(--bg);
+    }
+
+    .otp-info{
+        background:var(--bg);
+        color:var(--text);
+    }
+
+    .maps-address{
+        background:var(--bg);
+        border-color:var(--border);
+        color:var(--text);
+    }
+
+    .maps-btn{
+        background:linear-gradient(135deg,#059669,#047857);
+    }
+}
+
+/* =====================================================
+   REFINAMIENTO UI / PULIDO VISUAL
+===================================================== */
+
+.importadora-card{
+    cursor:default;
+    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+.importadora-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 14px 34px rgba(15,23,42,.10);
+    border-color:#bae6fd;
+}
+
+.importadora-card .importadora-logo img,
+.importadora-card .importadora-logo .logo-placeholder{
+    transition:transform .25s ease;
+}
+
+.importadora-card:hover .importadora-logo img,
+.importadora-card:hover .importadora-logo .logo-placeholder{
+    transform:scale(1.05);
+}
+
+.primary-btn,
+.secondary-btn,
+.danger-btn,
+.csv-btn,
+.small-btn{
+    transition:transform .15s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.primary-btn:active,
+.secondary-btn:active,
+.danger-btn:active{
+    transform:scale(.97);
+}
+
+/* Transición suave al entrar en dashboard */
+.dashboard{
+    animation:fadeSlideIn .4s ease;
+}
+
+.admin-tab-panel{
+    animation:fadeIn .3s ease;
+}
+
+@keyframes fadeSlideIn{
+    from{opacity:0; transform:translateY(8px)}
+    to{opacity:1; transform:translateY(0)}
+}
+
+@keyframes fadeIn{
+    from{opacity:0}
+    to{opacity:1}
+}
+
+.view{
+    animation:fadeIn .25s ease;
+}
+
+@media(prefers-color-scheme:dark){
+    .importadora-card:hover{
+        border-color:#0ea5e9;
+        box-shadow:0 14px 34px rgba(0,0,0,.45);
+    }
+
+    .admin-imp-card:hover{
+        border-color:#0369a1;
+    }
+
+    .stat-card:hover{
+        border-color:#0ea5e9;
+    }
+}
+
+/* Scrollbar sutil */
+::-webkit-scrollbar{
+    width:10px;
+    height:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#cbd5e1;
+    border-radius:8px;
+    border:2px solid transparent;
+    background-clip:content-box;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#94a3b8;
+    background-clip:content-box;
+    border:2px solid transparent;
+}
+
+@media(prefers-color-scheme:dark){
+    ::-webkit-scrollbar-thumb{
+        background:#475569;
+        background-clip:content-box;
+        border:2px solid transparent;
+    }
+
+    ::-webkit-scrollbar-thumb:hover{
+        background:#64748b;
+        background-clip:content-box;
+        border:2px solid transparent;
+    }
+}
 </style>
 </head>
 
@@ -1235,7 +3147,7 @@ button{
                 <div class="brand-feature">
 
                     <div class="feature-icon">
-                        🔐
+🔐
                     </div>
 
                     Acceso seguro mediante código OTP
@@ -1308,7 +3220,7 @@ button{
                         <div class="input-wrapper">
 
                             <span class="input-icon">
-                                ✉
+                                ✉️
                             </span>
 
                             <input
@@ -1393,6 +3305,32 @@ button{
                     </div>
 
 
+                    <div class="terms-check">
+
+                        <label class="terms-check-label">
+
+                            <input
+                                id="termsCheckbox"
+                                type="checkbox"
+                            >
+
+                            <span>
+                                He leído y acepto los
+                                <button
+                                    id="openTermsBtn"
+                                    type="button"
+                                    class="terms-link"
+                                >
+                                    Términos y Condiciones
+                                </button>
+                                y la Política de Privacidad.
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
                     <button
                         id="verifyOtpBtn"
                         class="primary-btn"
@@ -1411,7 +3349,7 @@ button{
                         class="text-button"
                         type="button"
                     >
-                        ← Cambiar correo
+🔁 Cambiar correo
                     </button>
 
                     <span
@@ -1498,7 +3436,11 @@ button{
     </header>
 
 
+    <nav id="dashboardNav" class="dashboard-nav" aria-label="Secciones del panel"></nav>
+
     <main class="dashboard-content">
+
+        <div id="clienteView">
 
         <div class="welcome">
 
@@ -1506,7 +3448,7 @@ button{
                 Hola,
                 <span id="welcomeName">
                     Usuario
-                </span>
+</span>
                 👋
             </h1>
 
@@ -1593,9 +3535,9 @@ button{
         </div>
 
 
-        <div class="search-box">
+<div class="search-box">
 
-            <span>
+<span>
                 🔎
             </span>
 
@@ -1607,6 +3549,57 @@ button{
 
         </div>
 
+        <!-- FILTROS AVANZADOS -->
+        <div class="filters-bar" id="filtersBar">
+
+            <select class="filter-select" id="filterRubro">
+                <option value="">Rubro (todos)</option>
+            </select>
+
+            <select class="filter-select" id="filterCiudad">
+                <option value="">Ciudad (todas)</option>
+            </select>
+
+            <select class="filter-select" id="filterMetodo">
+                <option value="">Método de compra (todos)</option>
+            </select>
+
+            <button
+                type="button"
+                class="filters-clear"
+                id="btnClearFilters"
+            >
+                ✕ Limpiar
+            </button>
+
+        </div>
+
+        <!-- BARRA COMPARAR -->
+        <div id="compareBar" class="compare-bar hidden">
+
+            <span class="compare-bar-title"></span>
+            <span class="compare-bar-ids"></span>
+
+            <div class="compare-bar-actions">
+                <button
+                    type="button"
+                    class="details-btn"
+                    id="btnCompararAbrir"
+                    style="height:38px;width:auto;padding:0 18px;margin:0;"
+                >
+                    ⚖️ Comparar
+                </button>
+                <button
+                    type="button"
+                    class="compare-clear"
+                    id="btnCompararLimpiar"
+                >
+                    ✕
+                </button>
+            </div>
+
+        </div>
+
 
         <div
             id="importadorasGrid"
@@ -1615,12 +3608,19 @@ button{
 
 
         <div
+            id="importadorasSkeleton"
+            class="importadoras-grid hidden"
+            aria-hidden="true"
+        ></div>
+
+
+        <div
             id="emptyImportadoras"
             class="empty-state hidden"
         >
 
-            <div class="empty-icon">
-                📦
+<div class="empty-icon">
+                🔎
             </div>
 
             <strong>
@@ -1630,6 +3630,297 @@ button{
             <span>
                 Intenta con otro término de búsqueda.
             </span>
+
+        </div>
+
+        </div><!-- /#clienteView -->
+
+
+        <!-- =====================================================
+             VISTA IMPORTADORA (rol: importadora)
+        ===================================================== -->
+
+        <div id="importadoraView" class="hidden">
+
+            <div class="welcome">
+                <h1>
+Tu importadora
+                    <span id="impViewLed">🏠</span>
+                </h1>
+                <p>
+                    Aquí puedes ver y actualizar la información de tu importadora.
+                </p>
+            </div>
+
+            <div id="impViewBody"></div>
+
+        </div>
+
+
+        <!-- =====================================================
+             VISTA ADMIN (rol: admin)
+        ===================================================== -->
+
+        <div id="adminView" class="hidden">
+
+            <div class="welcome">
+                <h1>
+Panel de administración
+                    <span>🛠️</span>
+                </h1>
+                <p>
+                    Gestiona importadoras y usuarios de la plataforma.
+                </p>
+            </div>
+
+            <div class="admin-tabs" id="adminTabs">
+                <button type="button" class="admin-tab active" data-tab="importadoras">
+🏢 Importadoras
+                </button>
+<button type="button" class="admin-tab" data-tab="usuarios">
+👥 Usuarios
+                </button>
+                <button type="button" class="admin-tab" data-tab="historial">
+📜 Historial
+                </button>
+            </div>
+
+            <!-- SUBPANEL IMPORTADORAS -->
+            <div id="adminImportadorasTab" class="admin-tab-panel">
+
+                <div class="section-header">
+                    <div>
+                        <h2>Gestionar importadoras</h2>
+                        <p>Agrega, edita o elimina importadoras del directorio.</p>
+                    </div>
+                    <div class="header-actions">
+<button id="btnCsvImportadoras" type="button" class="csv-btn">
+                            ⬇️ CSV
+                        </button>
+<button id="btnNuevaImportadora" type="button" class="primary-btn small-btn">
+                            ➕ Nueva importadora
+                        </button>
+                    </div>
+                </div>
+
+                <div class="search-box">
+<span>🔎</span>
+                    <input
+                        id="adminImpSearch"
+                        type="text"
+                        placeholder="Buscar por nombre, rubro, ciudad o ID..."
+                    >
+                </div>
+
+                <div id="adminImpSkeleton" class="admin-skeleton hidden">
+                    <div class="skeleton-line long skeleton-pulse"></div>
+                    <div class="skeleton-line medium skeleton-pulse"></div>
+                    <div class="skeleton-line long skeleton-pulse"></div>
+                    <div class="skeleton-line medium skeleton-pulse"></div>
+                </div>
+
+                <div id="adminImportadorasGrid" class="importadoras-grid"></div>
+
+                <div id="emptyAdminImportadoras" class="empty-state hidden">
+<div class="empty-icon">🏭</div>
+                    <strong>Aún no se han registrado importadoras</strong>
+                    <span>Haz clic en "Nueva importadora" para comenzar.</span>
+                </div>
+
+            </div>
+
+            <!-- SUBPANEL USUARIOS -->
+            <div id="adminUsuariosTab" class="admin-tab-panel hidden">
+
+                <div class="section-header">
+                    <div>
+                        <h2>Gestionar usuarios</h2>
+                        <p>Controla accesos, roles y estados de las cuentas.</p>
+                    </div>
+                    <div class="header-actions">
+<button id="btnCsvUsuarios" type="button" class="csv-btn">
+                            ⬇️ CSV
+                        </button>
+<button id="btnNuevoUsuario" type="button" class="primary-btn small-btn">
+                            ➕ Nuevo usuario
+                        </button>
+                    </div>
+                </div>
+
+                <div class="search-box">
+<span>🔎</span>
+                    <input
+                        id="adminUsrSearch"
+                        type="text"
+                        placeholder="Buscar por nombre, correo, empresa o rol..."
+                    >
+                </div>
+
+                <div id="adminUsrSkeleton" class="admin-skeleton hidden">
+                    <div class="skeleton-line long skeleton-pulse"></div>
+                    <div class="skeleton-line medium skeleton-pulse"></div>
+                    <div class="skeleton-line long skeleton-pulse"></div>
+                    <div class="skeleton-line medium skeleton-pulse"></div>
+                </div>
+
+                <div class="table-wrap">
+                    <table class="admin-table" id="adminUsuariosTable">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Correo</th>
+                                <th>Empresa</th>
+                                <th>Rol</th>
+                                <th>Estado</th>
+<th>OTP</th>
+                                <th>Último acceso</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+<div id="emptyAdminUsuarios" class="empty-state hidden">
+                    <div class="empty-icon">👥</div>
+                    <strong>Aún no hay usuarios registrados</strong>
+                    <span>Haz clic en "Nuevo usuario" para comenzar.</span>
+                </div>
+
+            </div>
+
+            <!-- SUBPANEL HISTORIAL -->
+            <div id="adminHistorialTab" class="admin-tab-panel hidden">
+
+                <div class="section-header">
+                    <div>
+                        <h2>Historial de actividad</h2>
+                        <p>Registro de acciones realizadas sobre importadoras y usuarios.</p>
+                    </div>
+                </div>
+
+                <div id="adminHistSkeleton" class="admin-skeleton hidden">
+                    <div class="skeleton-line long skeleton-pulse"></div>
+                    <div class="skeleton-line medium skeleton-pulse"></div>
+                    <div class="skeleton-line long skeleton-pulse"></div>
+                </div>
+
+                <div class="table-wrap">
+                    <table class="admin-table" id="adminHistTable">
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Quién</th>
+                                <th>Acción</th>
+                                <th>Detalle</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div id="emptyAdminHistorial" class="empty-state hidden">
+                    <div class="empty-icon">📜</div>
+                    <strong>Aún no hay actividad registrada</strong>
+                    <span>Los cambios en importadoras y usuarios quedarán registrados aquí.</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             VISTA SOPORTE
+        ===================================================== -->
+
+        <div id="soporteView" class="hidden">
+
+            <div class="welcome">
+                <h1>
+Contactar soporte
+                    <span>💬</span>
+                </h1>
+                <p>
+                    Envíanos un mensaje y te responderemos a la brevedad.
+                </p>
+            </div>
+
+            <div class="panel-card">
+
+                <div class="field">
+                    <label for="soporteMensaje">Mensaje</label>
+                    <textarea id="soporteMensaje" rows="5" placeholder="Describe tu consulta o problema..."></textarea>
+                </div>
+
+                <button id="btnEnviarSoporte" type="button" class="primary-btn">
+💬 Enviar mensaje
+                </button>
+
+                <div id="soporteResultado" class="alert"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             VISTA MI CUENTA
+        ===================================================== -->
+
+        <div id="cuentaView" class="hidden">
+
+            <div class="welcome">
+                <h1>
+Mi cuenta
+                    <span>👤</span>
+                </h1>
+                <p>
+                    Administra tus datos personales y tu acceso.
+                </p>
+            </div>
+
+            <div class="panel-card">
+
+                <div class="section-header">
+                    <div>
+                        <h3>Datos personales</h3>
+                        <p>Actualiza tu nombre y apellido.</p>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="cuentaNombre">Nombre</label>
+                    <input id="cuentaNombre" type="text" placeholder="Tu nombre">
+                </div>
+
+                <div class="field">
+                    <label for="cuentaApellido">Apellido</label>
+                    <input id="cuentaApellido" type="text" placeholder="Tu apellido">
+                </div>
+
+                <button id="btnGuardarPerfil" type="button" class="primary-btn">
+💾 Guardar cambios
+                </button>
+
+                <div id="perfilResultado" class="alert"></div>
+
+            </div>
+
+            <div id="dangerZoneCard" class="panel-card danger-zone">
+
+                <div class="section-header">
+                    <div>
+                        <h3>Zona de peligro</h3>
+                        <p>Eliminar tu cuenta desactivará tu acceso de inmediato.</p>
+                    </div>
+                </div>
+
+                <button id="btnEliminarCuenta" type="button" class="danger-btn">
+🗑️ Eliminar mi cuenta
+                </button>
+
+            </div>
 
         </div>
 
@@ -1679,12 +3970,12 @@ button{
             </div>
 
             <button
-                id="closeImportadoraModal"
+id="closeImportadoraModal"
                 class="modal-close-btn"
                 type="button"
                 aria-label="Cerrar"
             >
-                ×
+                ✕
             </button>
 
         </div>
@@ -1698,6 +3989,195 @@ button{
 </div>
 
 
+<!-- =====================================================
+     MODAL TÉRMINOS Y CONDICIONES
+===================================================== -->
+
+<div
+    id="termsModal"
+    class="modal-overlay hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="termsModalTitle"
+>
+    <div class="modal-box terms-modal-box">
+
+        <div class="modal-box-head">
+            <strong id="termsModalTitle">
+                Términos y Condiciones · Intelicelyg.pe
+            </strong>
+            <button
+id="closeTermsModal"
+                type="button"
+                class="modal-close"
+                aria-label="Cerrar"
+            >
+                ✕
+            </button>
+        </div>
+
+        <div class="modal-box-body terms-modal-body">
+
+<p class="terms-date">
+                Última actualización: 1 de septiembre de 2026
+            </p>
+
+            <p>
+                Bienvenido(a) a <strong>Intelicelyg.pe</strong> (en adelante, la "Plataforma"),
+                un directorio digital que reúne importadoras y facilita el contacto entre
+                importadores, proveedores y consumidores en el Perú.
+            </p>
+
+            <p>
+                Al acceder, crear una cuenta o utilizar la Plataforma, declaras que has leído,
+                entendido y aceptado los presentes Términos y Condiciones, así como nuestra
+                Política de Privacidad. Si no estás de acuerdo, por favor no utilices el servicio.
+            </p>
+
+            <h4>1. Aceptación de los términos</h4>
+            <p>
+                El uso de la Plataforma implica la aceptación plena de estos Términos y
+                Condiciones. La Plataforma se reserva el derecho de modificarlos en cualquier
+                momento; los cambios serán publicados en esta misma página y entrarán en vigor
+                desde su publicación.
+            </p>
+
+            <h4>2. Naturaleza del servicio</h4>
+            <p>
+                Intelicelyg.pe actúa única y exclusivamente como un <strong>directorio
+                informativo</strong>. La Plataforma no es parte en las transacciones entre
+                importadoras y usuarios, no vende, no compra y no transporta mercancía alguna.
+                Toda negociación, contratación, pago, importación y entrega se realiza
+                directamente entre la importadora y el interesado, bajo su propio riesgo y
+                responsabilidad.
+            </p>
+
+            <h4>3. Registro y cuentas</h4>
+            <p>
+                3.1. El acceso a la Plataforma se realiza mediante un correo electrónico
+                autorizado y un código de verificación (OTP). La creación de cuentas es
+                exclusiva del administrador de la Plataforma.
+            </p>
+            <p>
+                3.2. Eres responsable de mantener la confidencialidad del acceso a tu cuenta y
+                de toda actividad realizada a través de ella. Debes notificar de inmediato
+                cualquier uso no autorizado.
+            </p>
+            <p>
+                3.3. La Plataforma podrá suspender o eliminar cuentas que incumplan estos
+                Términos y Condiciones, las normas peruanas aplicables o que pongan en riesgo
+                la integridad del servicio.
+            </p>
+
+            <h4>4. Registro de importadoras</h4>
+            <p>
+                Las importadoras que aparecen en el directorio han sido registradas por su
+                titular o por la administración. La información publicada es responsabilidad de
+                cada importadora, quien se obliga a mantenerla veraz, completa y actualizada
+                conforme al artículo 58 de la Ley de Importaciones y demás normativa aduanera
+                peruana (Ley General de Aduanas, Decreto Legislativo N.° 1053).
+            </p>
+
+            <h4>5. Prohibiciones</h4>
+            <p>
+                El usuario se compromete a no utilizar la Plataforma para fines ilícitos,
+                difamatorios, engañosos o que vulneren derechos de terceros. Queda prohibido
+                reproducir, duplicar, copiar, vender o explotar comercialmente el contenido del
+                directorio sin autorización previa y por escrito.
+            </p>
+
+            <h4>6. Protección de datos personales</h4>
+            <p>
+                El tratamiento de los datos personales se realiza conforme a la
+                <strong>Ley N.° 29733, Ley de Protección de Datos Personales</strong>, su
+                Reglamento (Decreto Supremo N.° 003-2013-JUS) y las directrices de la
+                Autoridad Nacional de Protección de Datos Personales del Perú.
+            </p>
+            <p>
+                Solicitamos únicamente los datos necesarios para brindar el servicio (nombre,
+                correo electrónico, empresa y datos de la importadora). No vendemos ni
+                compartimos tus datos personales con terceros con fines comerciales, salvo
+                mandato legal. Puedes ejercer tus derechos de acceso, rectificación,
+                cancelación y oposición (ARCO) escribiéndonos al soporte de la Plataforma.
+            </p>
+
+            <h4>7. Privacidad y seguridad</h4>
+            <p>
+                La Plataforma adopta medidas razonables de seguridad para proteger la
+                información de sus usuarios. Ningún sistema es infalible; por ello, no podemos
+                garantizar una seguridad absoluta pero trabajamos de forma continua para
+                proteger tus datos.
+            </p>
+
+            <h4>8. Contenido de terceros y enlaces</h4>
+            <p>
+                La Plataforma puede contener enlaces a sitios externos (redes sociales, páginas
+                web, WhatsApp de las importadoras). Estos enlaces son de exclusiva
+                responsabilidad de sus titulares y su uso se sujeta a las políticas de cada
+                sitio. Intelicelyg.pe no controla ni se responsabiliza por su contenido.
+            </p>
+
+            <h4>9. Propiedad intelectual</h4>
+            <p>
+                El diseño, la marca, el logo, los textos y el código de la Plataforma son
+                titularidad de Intelicelyg.pe o de terceros que han autorizado su uso. Queda
+                prohibida su reproducción total o parcial sin autorización, conforme al
+                Decreto Legislativo N.° 822 (Ley sobre el Derecho de Autor) vigente en el Perú.
+            </p>
+
+            <h4>10. Publicidad</h4>
+            <p>
+                Las importadoras pueden contratar la aparición de su información en la
+                Plataforma. La publicidad se identifica claramente y su contenido es
+                responsabilidad del anunciante, conforme a la Ley N.° 29571 (Código de
+                Protección y Defensa del Consumidor).
+            </p>
+
+            <h4>11. Limitación de responsabilidad</h4>
+            <p>
+                La Plataforma no será responsable por daños directos o indirectos derivados del
+                uso de la información publicada, de fallas técnicas ajenas a su control, o de
+                las relaciones comerciales establecidas entre importadoras y usuarios.
+                El contenido del directorio se ofrece "tal cual", sin garantías de exactitud,
+                integridad u oportunidad.
+            </p>
+
+            <h4>12. Suspensión y baja del servicio</h4>
+            <p>
+                Podrás solicitar la eliminación de tu cuenta en cualquier momento desde la
+                sección "Mi cuenta". La eliminación es inmediata e implica la desactivación de
+                tu acceso. Del mismo modo, la Plataforma puede suspender el acceso por
+                incumplimiento de estos Términos y Condiciones.
+            </p>
+
+            <h4>13. Ley aplicable y jurisdicción</h4>
+            <p>
+                Los presentes Términos y Condiciones se rigen por las leyes de la
+                República del Perú. Para cualquier controversia derivada del uso de la
+                Plataforma, las partes se someten a la jurisdicción de los jueces y tribunales
+                de la ciudad de Lima, Perú, renunciando a cualquier otro fuero que pudiera
+                corresponderles.
+            </p>
+
+            <h4>14. Contacto</h4>
+            <p>
+                Para consultas relacionadas con estos Términos y Condiciones o con la
+                Protección de Datos Personales, puedes escribirnos mediante la sección
+                "Soporte" de la Plataforma.
+            </p>
+
+            <div class="terms-actions">
+                <button id="termsAcceptBtn" type="button" class="primary-btn">
+✅ He leído y acepto
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
 <script>
 
 /* =====================================================
@@ -1705,7 +4185,7 @@ button{
 ===================================================== */
 
 const API_URL =
-    'https://script.google.com/macros/s/AKfycbwYcXyhnoSsARMvnzUJvyfApDpLUJXYbOQ1LNhKr_Q-pS2U4-0F-KljU3ZSCQc6j9Pf/exec';
+    'https://script.google.com/macros/s/AKfycbyXLTnSGM9OJf1X-9mDjswUj2QHy032OLkpnKRcrvBJJ6_ip6X2kGYio__PBlyK6RYP/exec';
 
 const SESSION_STORAGE_KEY =
     'intelicelyg_session';
@@ -1727,9 +4207,15 @@ let state = {
 
     user: null,
 
-    importadoras: [],
+importadoras: [],
 
     favoritos: [],
+
+    usuarios: [],
+
+    auditoria: [],
+
+    compara: [],
 
     otpExpiresAt: null,
 
@@ -1842,6 +4328,26 @@ const searchInput =
         'searchInput'
     );
 
+const filterRubro =
+    document.getElementById(
+        'filterRubro'
+    );
+
+const filterCiudad =
+    document.getElementById(
+        'filterCiudad'
+    );
+
+const filterMetodo =
+    document.getElementById(
+        'filterMetodo'
+    );
+
+const btnClearFilters =
+    document.getElementById(
+        'btnClearFilters'
+    );
+
 
 /* =====================================================
    MODAL EVENTS
@@ -1891,7 +4397,28 @@ document.addEventListener(
 );
 
 
+function setupPWA(){
+
+    if(!('serviceWorker' in navigator))return;
+
+    if(location.protocol !== 'https:' && location.hostname !== 'localhost')return;
+
+    window.addEventListener('load', function(){
+        navigator.serviceWorker.register('sw.js')
+            .catch(function(error){
+                console.warn('SW no registrado:', error);
+            });
+    });
+}
+
+
 async function init(){
+
+    setupAdminEvents();
+    setupSoporteEvents();
+    setupCuentaEvents();
+    setupTermsEvents();
+    setupPWA();
 
     try{
 
@@ -2144,6 +4671,27 @@ otpForm.addEventListener(
         event.preventDefault();
 
         clearAlert();
+
+
+        const termsCheckbox =
+            document.getElementById('termsCheckbox');
+
+        if(
+            !termsCheckbox ||
+            !termsCheckbox.checked
+        ){
+
+            showAlert(
+                'Debes aceptar los Términos y Condiciones para continuar.',
+                'error'
+            );
+
+            if(termsCheckbox){
+                termsCheckbox.focus();
+            }
+
+            return;
+        }
 
 
         const otp =
@@ -2443,12 +4991,32 @@ async function showDashboard(){
 
     updateUserInterface();
 
+    setupDashboardNav();
+
 
     try{
 
-        await loadImportadoras();
+        const rol =
+            getRole();
 
-        await loadFavoritos();
+        if(rol === 'admin'){
+
+            await loadAdminImportadoras();
+
+            await loadAdminUsuarios();
+
+        }else if(rol === 'importadora'){
+
+            await loadImportadoras();
+
+            await renderImportadoraPanel();
+
+        }else{
+
+            await loadImportadoras();
+
+            await loadFavoritos();
+        }
 
     }catch(error){
 
@@ -2458,6 +5026,127 @@ async function showDashboard(){
             'No fue posible cargar toda la información.',
             'error'
         );
+    }
+}
+
+
+/* =====================================================
+   ROL Y NAVEGACIÓN DE PANELES
+===================================================== */
+
+function getRole(){
+
+    const rol =
+        (state.user && state.user.rol)
+        ? String(state.user.rol).trim().toLowerCase()
+        : 'cliente';
+
+    if(rol.indexOf('admin') !== -1)return 'admin';
+    if(rol.indexOf('importadora') !== -1)return 'importadora';
+    return 'cliente';
+}
+
+
+function setupDashboardNav(){
+
+    const nav =
+        document.getElementById('dashboardNav');
+
+    if(!nav)return;
+
+    nav.innerHTML = '';
+
+    const rol =
+        getRole();
+
+    const items = [];
+
+    if(rol === 'cliente'){
+        items.push(['explorar', '🔍', 'Explorar']);
+    }
+
+    if(rol === 'importadora'){
+        items.push(['miimportadora', '🏠', 'Mi importadora']);
+    }
+
+    if(rol === 'admin'){
+        items.push(['adminimp', '🏢', 'Importadoras']);
+        items.push(['adminusers', '👥', 'Usuarios']);
+    }
+
+    items.push(['soporte', '💬', 'Soporte']);
+    items.push(['cuenta', '👤', 'Mi cuenta']);
+
+    items.forEach(
+        function([id, icon, label]){
+
+            const button =
+                document.createElement('button');
+
+            button.type = 'button';
+            button.dataset.nav = id;
+            button.innerHTML = `${icon} ${escapeHtml(label)}`;
+
+            button.addEventListener(
+                'click',
+                function(){
+                    showDashboardPanel(id);
+                }
+            );
+
+            nav.appendChild(button);
+        }
+    );
+
+    showDashboardPanel(rol === 'admin' ? 'adminimp' : (rol === 'importadora' ? 'miimportadora' : 'explorar'));
+}
+
+
+function showDashboardPanel(panelId){
+
+    const rol =
+        getRole();
+
+    const views = {
+        'explorar':       'clienteView',
+        'miimportadora':  'importadoraView',
+        'adminimp':       'adminView',
+        'adminusers':     'adminView',
+        'soporte':        'soporteView',
+        'cuenta':         'cuentaView'
+    };
+
+    const viewId =
+        views[panelId] || 'clienteView';
+
+    document.querySelectorAll('#clienteView, #importadoraView, #adminView, #soporteView, #cuentaView')
+        .forEach(
+            function(view){
+                view.classList.add('hidden');
+            }
+        );
+
+    const target =
+        document.getElementById(viewId);
+
+    if(target){
+        target.classList.remove('hidden');
+    }
+
+    if(panelId === 'adminimp'){ switchAdminTab('importadoras'); }
+    if(panelId === 'adminusers'){ switchAdminTab('usuarios'); }
+
+    document.querySelectorAll('#dashboardNav button').forEach(
+        function(button){
+            button.classList.toggle(
+                'active',
+                button.dataset.nav === panelId
+            );
+        }
+    );
+
+    if(panelId === 'cuenta'){
+        prefillCuentaForm();
     }
 }
 
@@ -2535,57 +5224,122 @@ function updateUserInterface(){
 
 
 /* =====================================================
+   SKELETON LOADER
+===================================================== */
+
+function showImportadoraSkeleton(){
+
+    const grid =
+        document.getElementById(
+            'importadorasSkeleton'
+        );
+
+    if(!grid)return;
+
+    grid.innerHTML = '';
+
+    /* Mostramos 6 marcadores de posición
+       acordes al layout de la cuadrícula. */
+    for(let i = 0; i < 6; i++){
+
+        const skeleton =
+            document.createElement('div');
+
+        skeleton.className =
+            'skeleton-card';
+
+        skeleton.innerHTML = `
+
+            <div class="skeleton-media skeleton-pulse"></div>
+            <div class="skeleton-line title skeleton-pulse"></div>
+            <div class="skeleton-line medium skeleton-pulse"></div>
+            <div class="skeleton-line long skeleton-pulse"></div>
+            <div class="skeleton-btn skeleton-pulse"></div>
+
+        `;
+
+        grid.appendChild(skeleton);
+    }
+
+    document.getElementById(
+        'importadorasGrid'
+    ).classList.add('hidden');
+
+    grid.classList.remove('hidden');
+}
+
+function hideImportadoraSkeleton(){
+
+    const grid =
+        document.getElementById(
+            'importadorasSkeleton'
+        );
+
+    if(grid){
+
+        grid.classList.add('hidden');
+        grid.innerHTML = '';
+    }
+
+    document.getElementById(
+        'importadorasGrid'
+    ).classList.remove('hidden');
+}
+
+
+/* =====================================================
    CARGAR IMPORTADORAS
 ===================================================== */
 
 async function loadImportadoras(){
 
-    const result =
-        await api(
-            'getImportadoras',
-            {
-                sessionToken:
-                    state.sessionToken
+    showImportadoraSkeleton();
+
+    try{
+
+        const result =
+            await api(
+                'getImportadoras',
+                {
+                    sessionToken:
+                        state.sessionToken
+                }
+            );
+
+        if(!result.success){
+
+            if(isSessionError(result)){
+
+                handleExpiredSession();
+                return;
             }
-        );
 
-
-    if(!result.success){
-
-        if(
-            isSessionError(
-                result
-            )
-        ){
-
-            handleExpiredSession();
-
-            return;
+            throw new Error(
+                result.message ||
+                'Error cargando importadoras.'
+            );
         }
 
+        state.importadoras =
+            Array.isArray(result.importadoras)
+            ? result.importadoras
+            : [];
 
-        throw new Error(
-            result.message ||
-            'Error cargando importadoras.'
-        );
+document.getElementById(
+            'totalImportadoras'
+        ).textContent =
+            state.importadoras.length;
+
+        poblarFiltros();
+
+        renderImportadoras();
+
+        return result;
+
+    }finally{
+
+        hideImportadoraSkeleton();
     }
-
-
-    state.importadoras =
-        Array.isArray(
-            result.importadoras
-        )
-        ? result.importadoras
-        : [];
-
-
-    document.getElementById(
-        'totalImportadoras'
-    ).textContent =
-        state.importadoras.length;
-
-
-    renderImportadoras();
 }
 
 
@@ -2648,6 +5402,34 @@ async function loadFavoritos(){
    RENDER IMPORTADORAS
 ===================================================== */
 
+function getSearchText(item){
+
+    return [
+        item.id,
+        item.nombre,
+        item.descripcion,
+        item.rubro,
+        item.direccion,
+        item.distrito,
+        item.ciudad,
+        item.departamentoProvincia,
+        item.pais,
+        item.metodoCompra,
+        item.whatsapp,
+        item.telefono,
+        item.facebook,
+        item.instagram,
+        item.tiktok,
+        item.paginaWeb,
+        item.correo,
+        item.estado,
+        item.observaciones
+    ]
+    .filter(Boolean)
+    .join(' ')
+    .toLowerCase();
+}
+
 function renderImportadoras(){
 
     const search =
@@ -2655,55 +5437,149 @@ function renderImportadoras(){
             .trim()
             .toLowerCase();
 
-    const filtered =
-        state.importadoras.filter(
+    const rubro =
+        filterRubro ? filterRubro.value : '';
+
+    const ciudad =
+        filterCiudad ? filterCiudad.value : '';
+
+    const metodo =
+        filterMetodo ? filterMetodo.value : '';
+
+    let filtered =
+        state.importadoras || [];
+
+    if(search){
+        filtered = filtered.filter(
             function(item){
-
-                const text = [
-                    item.id,
-                    item.nombre,
-                    item.descripcion,
-                    item.rubro,
-                    item.direccion,
-                    item.distrito,
-                    item.ciudad,
-                    item.departamentoProvincia,
-                    item.pais,
-                    item.metodoCompra,
-                    item.whatsapp,
-                    item.telefono,
-                    item.facebook,
-                    item.instagram,
-                    item.tiktok,
-                    item.paginaWeb,
-                    item.correo,
-                    item.estado,
-                    item.observaciones
-                ]
-                .filter(Boolean)
-                .join(' ')
-                .toLowerCase();
-
-                return text.includes(search);
+                return getSearchText(item).includes(search);
             }
         );
+    }
+
+    if(rubro){
+        filtered = filtered.filter(
+            function(item){ return String(getSearchText(item) && item.rubro || '').trim().toLowerCase() === rubro.toLowerCase(); }
+        );
+    }
+
+    if(ciudad){
+        filtered = filtered.filter(
+            function(item){ return String(item.ciudad || '').trim().toLowerCase() === ciudad.toLowerCase(); }
+        );
+    }
+
+    if(metodo){
+        filtered = filtered.filter(
+            function(item){ return String(item.metodoCompra || '').trim().toLowerCase() === metodo.toLowerCase(); }
+        );
+    }
 
     importadorasGrid.innerHTML = '';
 
     if(filtered.length === 0){
+
         emptyImportadoras.classList.remove('hidden');
+
+        /* Mensaje contextual: no hay nada registrado
+           vs. la búsqueda no devolvió resultados. */
+        const emptyTitle =
+            emptyImportadoras.querySelector('strong');
+
+        const emptyHint =
+            emptyImportadoras.querySelector('span');
+
+        if(state.importadoras.length === 0){
+
+            emptyTitle.textContent =
+                'Aún no hay importadoras registradas';
+
+            emptyHint.textContent =
+                'Cuando cargues importadoras, aparecerán aquí.';
+
+        }else{
+
+            emptyTitle.textContent =
+                'No encontramos importadoras';
+
+            emptyHint.textContent =
+                'Ajusta la búsqueda o los filtros e intenta de nuevo.';
+        }
+
         return;
     }
 
     emptyImportadoras.classList.add('hidden');
 
+    /* Usamos un DocumentFragment para minimizar
+       reflows del DOM al construir la cuadrícula. */
+    const fragment =
+        document.createDocumentFragment();
+
     filtered.forEach(
         function(item){
-            importadorasGrid.appendChild(
-                createImportadoraCard(item)
+            fragment.appendChild(
+                createImportadoraCard(
+                    item,
+                    search
+                )
             );
         }
     );
+
+    importadorasGrid.appendChild(fragment);
+
+    syncCompareCheckboxes();
+}
+
+
+function poblarFiltros(){
+
+    const items =
+        state.importadoras || [];
+
+    const rubros =
+        {};
+    const ciudades =
+        {};
+    const metodos =
+        {};
+
+    items.forEach(
+        function(item){
+
+            const r = String(item.rubro || '').trim();
+            const c = String(item.ciudad || '').trim();
+            const m = String(item.metodoCompra || '').trim();
+
+            if(r)rubros[r] = true;
+            if(c)ciudades[c] = true;
+            if(m)metodos[m] = true;
+        }
+    );
+
+    function fill(select, values){
+        if(!select)return;
+        const current = select.value;
+        const keep = [select.options[0]];
+        values.forEach(
+            function(v){
+                const opt = document.createElement('option');
+                opt.value = v;
+                opt.textContent = v;
+                keep.push(opt);
+            }
+        );
+        select.innerHTML = '';
+        keep.forEach(
+            function(o){ select.appendChild(o); }
+        );
+        select.value = current;
+    }
+
+    fill(filterRubro, Object.keys(rubros));
+    fill(filterCiudad, Object.keys(ciudades));
+    fill(filterMetodo, Object.keys(metodos));
 }
 
 
@@ -2711,7 +5587,35 @@ function renderImportadoras(){
    CREAR CARD
 ===================================================== */
 
-function createImportadoraCard(item){
+function highlightHtml(text, search){
+
+    const escaped =
+        escapeHtml(text);
+
+    if(!search){
+
+        return escaped;
+    }
+
+    /* Resaltamos las coincidencias de búsqueda
+       escapando primero y evitando regex de riesgos. */
+    const safeSearch =
+        search.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+    return escaped.replace(
+        new RegExp(
+            '(' +
+            safeSearch +
+            ')',
+            'ig'
+        ),
+        function(match){
+            return '<mark>' + match + '</mark>';
+        }
+    );
+}
+
+function createImportadoraCard(item, search = ''){
 
     const card = document.createElement('div');
     card.className = 'importadora-card';
@@ -2723,6 +5627,8 @@ function createImportadoraCard(item){
             <img
                 src="${escapeAttribute(item.logo)}"
                 alt="${escapeAttribute(item.nombre || 'Logo')}"
+                loading="lazy"
+                decoding="async"
                 onerror="this.parentElement.innerHTML='<div class=&quot;logo-placeholder&quot;>${escapeHtml(getInitial(item.nombre))}</div>'"
             >
           `
@@ -2752,35 +5658,54 @@ function createImportadoraCard(item){
                 ${logoHtml}
             </div>
 
-            <button
+<button
                 class="favorite-btn ${favorite ? 'active' : ''}"
                 type="button"
                 title="${favorite ? 'Quitar de favoritos' : 'Agregar a favoritos'}"
             >
-                ${favorite ? '★' : '☆'}
+${favorite ? '★' : '☆'}
             </button>
+
+            <label class="compare-check" title="Comparar">
+                <input type="checkbox" class="compare-input" value="${escapeAttribute(item.id)}">
+                <span>Comparar</span>
+            </label>
         </div>
 
         <div class="importadora-name">
-            ${escapeHtml(item.nombre || 'Importadora')}
+            ${highlightHtml(item.nombre || 'Importadora', search)}
         </div>
 
         <div class="importadora-description">
-            ${escapeHtml(
+            ${highlightHtml(
                 item.descripcion ||
                 item.observaciones ||
-                'Consulta la información completa de esta importadora.'
+                'Consulta la información completa de esta importadora.',
+                search
             )}
         </div>
 
         ${tags.length ? `<div class="importadora-summary">${tags.join('')}</div>` : ''}
 
-        <button
-            class="details-btn"
-            type="button"
-        >
-            Ver información completa →
-        </button>
+        <div class="card-actions">
+            <button
+                class="details-btn"
+                type="button"
+            >
+Ver información completa →
+            </button>
+            ${item.whatsapp ? `
+                <a
+                    href="https://wa.me/51${String(item.whatsapp).replace(/[^0-9]/g,'')}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="whatsapp-btn"
+                    title="Contactar por WhatsApp"
+                >
+💬 WhatsApp
+                </a>
+            ` : ''}
+        </div>
     `;
 
     const favoriteButton =
@@ -2793,7 +5718,7 @@ function createImportadoraCard(item){
         }
     );
 
-    const detailsButton =
+const detailsButton =
         card.querySelector('.details-btn');
 
     detailsButton.addEventListener(
@@ -2803,13 +5728,230 @@ function createImportadoraCard(item){
         }
     );
 
+    const compareInput =
+        card.querySelector('.compare-input');
+
+    if(compareInput){
+        compareInput.addEventListener(
+            'change',
+            function(){
+                toggleComparar(item.id, compareInput.checked);
+            }
+        );
+    }
+
     return card;
 }
 
 
 /* =====================================================
-   MODAL IMPORTADORA
+   COMPARADOR
 ===================================================== */
+
+function toggleComparar(id, on){
+
+    if(!Array.isArray(state.compara)){
+        state.compara = [];
+    }
+
+    if(on){
+
+        if(state.compara.indexOf(id) === -1){
+            state.compara.push(id);
+        }
+
+        if(state.compara.length > 3){
+            state.compara.shift();
+        }
+
+    }else{
+
+        state.compara =
+            state.compara.filter(
+                function(x){
+                    return x !== id;
+                }
+            );
+    }
+
+    renderCompararBar();
+}
+
+
+function itemComprado(id){
+    return state.compara && state.compara.indexOf(id) > -1;
+}
+
+
+function renderCompararBar(){
+
+    const bar =
+        document.getElementById('compareBar');
+
+    if(!bar)return;
+
+    if(!state.compara || state.compara.length === 0){
+
+        bar.classList.add('hidden');
+        bar.querySelector('.compare-bar-title').textContent = '';
+        bar.querySelector('.compare-bar-ids').textContent = '';
+
+        return;
+    }
+
+    const ids =
+        state.compara.join(', ');
+
+    bar.querySelector('.compare-bar-ids').textContent = ids;
+
+    bar.querySelector('.compare-bar-title').textContent =
+        'Comparando ' + state.compara.length + ' importadora(s)';
+
+    bar.classList.remove('hidden');
+}
+
+
+function openComparadorModal(){
+
+    const ids =
+        state.compara || [];
+
+    const items =
+        ids
+            .map(
+                function(id){
+                    return (state.importadoras || []).find(
+                        function(it){
+                            return String(it.id) === String(id);
+                        }
+                    );
+                }
+            )
+            .filter(Boolean);
+
+    if(items.length < 2){
+        toast('Selecciona al menos 2 importadoras para comparar.', 'warn');
+        return;
+    }
+
+    const campos = [
+        [ 'Rubro', function(i){ return i.rubro; } ],
+        [ 'Dirección', function(i){ return i.direccion; } ],
+        [ 'Distrito', function(i){ return i.distrito; } ],
+        [ 'Ciudad', function(i){ return i.ciudad; } ],
+        [ 'Departamento / Provincia', function(i){ return i.departamentoProvincia; } ],
+        [ 'País', function(i){ return i.pais; } ],
+        [ 'Método de compra', function(i){ return i.metodoCompra; } ],
+        [ 'WhatsApp', function(i){ return i.whatsapp; } ],
+        [ 'Teléfono', function(i){ return i.telefono; } ],
+        [ 'Correo', function(i){ return i.correo; } ],
+        [ 'Observaciones', function(i){ return i.observaciones; } ]
+    ];
+
+    const tabla =
+        campos.map(
+            function(campo){
+
+                const cells =
+                    items.map(
+                        function(it){
+                            const v = campo[1](it);
+                            return `<td>${v ? escapeHtml(v) : '—'}</td>`;
+                        }
+                    ).join('');
+
+                return `
+                    <tr>
+                        <th>${escapeHtml(campo[0])}</th>
+                        ${cells}
+                    </tr>
+                `;
+            }
+        ).join('');
+
+    const headers =
+        items.map(
+            function(it){
+                return `<th>${escapeHtml(it.nombre || 'Importadora')}</th>`;
+            }
+        ).join('');
+
+    openModalBox({
+        title: '⚖️ Comparar importadoras',
+        width: '860px',
+        content: `
+            <div class="table-wrap comp-wrap">
+                <table class="admin-table compare-table">
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            ${headers}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${tabla}
+                    </tbody>
+                </table>
+            </div>
+            <div style="margin-top:16px;display:flex;gap:10px;justify-content:flex-end;">
+                <button type="button" class="details-btn" style="height:40px;width:auto;padding:0 18px;" id="btnCompareCerrar">
+                    Cerrar
+                </button>
+            </div>
+        `,
+onMount: function(overlay){
+            const cerr = overlay.querySelector('#btnCompareCerrar');
+            if(cerr){
+                cerr.addEventListener(
+                    'click',
+                    function(){
+                        const mc = overlay.querySelector('.modal-close');
+                        if(mc){ mc.click(); }
+                    }
+                );
+            }
+        }
+    });
+}
+
+
+function syncCompareCheckboxes(){
+
+    if(!Array.isArray(state.compara)){
+        state.compara = [];
+    }
+
+    document.querySelectorAll('.compare-input').forEach(
+        function(cb){
+            const id = cb.value;
+            cb.checked =
+                state.compara.indexOf(id) > -1;
+        }
+    );
+}
+
+
+function renderImportadoraCards(items, search){
+
+    const fragment =
+        document.createDocumentFragment();
+
+    (items || []).forEach(
+        function(item){
+            fragment.appendChild(
+                createImportadoraCard(
+                    item,
+                    search
+                )
+            );
+        }
+    );
+
+    importadorasGrid.appendChild(fragment);
+
+    syncCompareCheckboxes();
+}
+
 
 function openImportadoraModal(item){
 
@@ -2894,11 +6036,40 @@ function openImportadoraModal(item){
         `;
     }
 
-    if(item.observaciones){
+if(item.observaciones){
         html += `
             <section class="modal-section">
                 <div class="modal-section-title">Observaciones</div>
                 <div class="modal-observations">${escapeHtml(item.observaciones)}</div>
+            </section>
+        `;
+    }
+
+    const mapsAddress = [
+        (item.direccion || ''),
+        (item.distrito || ''),
+        (item.ciudad || ''),
+        (item.departamentoProvincia || ''),
+        (item.pais || '')
+    ]
+    .filter(Boolean)
+    .join(', ');
+
+    if(mapsAddress){
+        html += `
+            <section class="modal-section">
+                <div class="modal-section-title">¿Cómo llegar?</div>
+                <div class="modal-observations">
+                    <div class="maps-address">${escapeHtml(mapsAddress)}</div>
+                </div>
+                <a
+                    class="maps-btn"
+                    href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsAddress)}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    📍 Ver en Google Maps
+                </a>
             </section>
         `;
     }
@@ -2951,7 +6122,7 @@ function addAction(list, label, url, value){
             target="_blank"
             rel="noopener noreferrer"
         >
-            ${escapeHtml(label)} →
+${escapeHtml(label)} →
         </a>
     `);
 }
@@ -3155,10 +6326,73 @@ async function toggleFavorite(
    SEARCH
 ===================================================== */
 
+let searchTimer = null;
+
 searchInput.addEventListener(
     'input',
-    renderImportadoras
+    function(){
+
+        clearTimeout(searchTimer);
+
+        /* Debounce: esperamos a que la persona deje
+           de escribir para evitar renders por tecla. */
+        searchTimer = setTimeout(
+            renderImportadoras,
+            180
+        );
+    }
 );
+
+[filterRubro, filterCiudad, filterMetodo].forEach(
+    function(el){
+        if(el){
+            el.addEventListener(
+                'change',
+                function(){
+                    renderImportadoras();
+                }
+            );
+        }
+    }
+);
+
+if(btnClearFilters){
+    btnClearFilters.addEventListener(
+        'click',
+        function(){
+            [filterRubro, filterCiudad, filterMetodo].forEach(
+                function(el){
+                    if(el)el.value = '';
+                }
+            );
+            renderImportadoras();
+        }
+    );
+}
+
+const btnCompararAbrir =
+    document.getElementById('btnCompararAbrir');
+
+if(btnCompararAbrir){
+    btnCompararAbrir.addEventListener(
+        'click',
+        openComparadorModal
+    );
+}
+
+const btnCompararLimpiar =
+    document.getElementById('btnCompararLimpiar');
+
+if(btnCompararLimpiar){
+    btnCompararLimpiar.addEventListener(
+        'click',
+        function(){
+            state.compara = [];
+            syncCompareCheckboxes();
+            renderCompararBar();
+        }
+    );
+}
 
 
 /* =====================================================
@@ -3373,6 +6607,9 @@ function clearSession(){
         [];
 
     state.favoritos =
+        [];
+
+    state.usuarios =
         [];
 }
 
@@ -3690,6 +6927,1612 @@ function getInitial(
         'I'
     )
     .toUpperCase();
+}
+
+
+/* =====================================================
+   PANEL IMPORTADORA (rol: importadora)
+===================================================== */
+
+async function renderImportadoraPanel(){
+
+    const body =
+        document.getElementById('impViewBody');
+
+    if(!body)return;
+
+    body.innerHTML =
+        '<div class="empty-state"><div class="empty-icon">⏳</div><strong>Cargando...</strong></div>';
+
+    const result =
+        await withSession(
+            function(){
+                return api(
+                    'getMyImportadora',
+                    {
+                        sessionToken:
+                            state.sessionToken
+                    }
+                );
+            }
+        );
+
+    if(!result){
+        return;
+    }
+
+    const item =
+        result.importadora;
+
+    if(!item){
+
+        body.innerHTML = `
+<div class="empty-state">
+                <div class="empty-icon">🏭</div>
+                <strong>No tienes una importadora vinculada</strong>
+                <span>Contacta al administrador para enlazar tu cuenta.</span>
+            </div>
+        `;
+
+        return;
+    }
+
+    document.getElementById('impViewLed').textContent = '🏠';
+
+    const estado =
+        String(item.estado || 'Activo');
+
+    body.innerHTML = `
+
+        <div class="${estado.toLowerCase() === 'inactivo' ? 'status-pill-a inactivo' : 'status-pill-a activo'}"
+             style="margin-bottom:14px;">
+            Estado: ${escapeHtml(estado)}
+        </div>
+
+        <div class="panel-card">
+
+            <div class="section-header">
+                <div>
+                    <h3>Información de tu importadora</h3>
+                    <p>Actualiza los datos y guarda los cambios.</p>
+                </div>
+            </div>
+
+            ${buildImpFormHtml(item, false)}
+
+            <button id="btnGuardarMiImportadora" type="button" class="primary-btn">
+💾 Guardar cambios
+            </button>
+
+            <div id="impPanelResultado" class="alert"></div>
+
+        </div>
+    `;
+
+    document.getElementById('btnGuardarMiImportadora').addEventListener(
+        'click',
+        function(){
+            saveImportadoraFromForm(
+                item.id,
+                null,
+                null,
+                'impPanelResultado'
+            );
+        }
+    );
+}
+
+
+function buildImpFormHtml(item, isAdmin = false){
+
+    const estadoOptions =
+        isAdmin
+        ? [
+            ['Activo', item.estado || 'Activo'],
+            ['Inactivo', item.estado]
+        ]
+        : null;
+
+    return `
+        <div class="field">
+            <label>Nombre de la importadora *</label>
+            <input id="fImp_nombre" type="text" value="${escapeAttribute(item.nombre || '')}" required>
+        </div>
+        <div class="field">
+            <label>Rubro</label>
+            <input id="fImp_rubro" type="text" value="${escapeAttribute(item.rubro || '')}">
+        </div>
+        <div class="field">
+            <label>Dirección</label>
+            <input id="fImp_direccion" type="text" value="${escapeAttribute(item.direccion || '')}">
+        </div>
+        <div class="field">
+            <label>Distrito</label>
+            <input id="fImp_distrito" type="text" value="${escapeAttribute(item.distrito || '')}">
+        </div>
+        <div class="field">
+            <label>Ciudad</label>
+            <input id="fImp_ciudad" type="text" value="${escapeAttribute(item.ciudad || '')}">
+        </div>
+        <div class="field">
+            <label>Departamento / Provincia</label>
+            <input id="fImp_departamento" type="text" value="${escapeAttribute(item.departamentoProvincia || '')}">
+        </div>
+        <div class="field">
+            <label>País</label>
+            <input id="fImp_pais" type="text" value="${escapeAttribute(item.pais || '')}">
+        </div>
+        <div class="field">
+            <label>Método de compra</label>
+            <input id="fImp_metodo" type="text" value="${escapeAttribute(item.metodoCompra || '')}">
+        </div>
+        <div class="field">
+            <label>WhatsApp</label>
+            <input id="fImp_whatsapp" type="text" value="${escapeAttribute(item.whatsapp || '')}">
+        </div>
+        <div class="field">
+            <label>Teléfono</label>
+            <input id="fImp_telefono" type="text" value="${escapeAttribute(item.telefono || '')}">
+        </div>
+        <div class="field">
+            <label>Facebook</label>
+            <input id="fImp_facebook" type="text" value="${escapeAttribute(item.facebook || '')}">
+        </div>
+        <div class="field">
+            <label>Instagram</label>
+            <input id="fImp_instagram" type="text" value="${escapeAttribute(item.instagram || '')}">
+        </div>
+        <div class="field">
+            <label>TikTok</label>
+            <input id="fImp_tiktok" type="text" value="${escapeAttribute(item.tiktok || '')}">
+        </div>
+        <div class="field">
+            <label>Página web</label>
+            <input id="fImp_paginaWeb" type="text" value="${escapeAttribute(item.paginaWeb || '')}">
+        </div>
+        <div class="field">
+            <label>Correo</label>
+            <input id="fImp_correo" type="email" value="${escapeAttribute(item.correo || '')}">
+        </div>
+        ${isAdmin ? `
+            <div class="field">
+                <label>Estado</label>
+                <select id="fImp_estado">
+                    ${estadoOptions.map(function(o){
+                        const sel = normalizeId(o[0]) === normalizeId(o[1]);
+                        return '<option value="' + escapeAttribute(o[0]) + '"' + (sel ? ' selected' : '') + '>' + escapeHtml(o[0]) + '</option>';
+                    }).join('')}
+                </select>
+            </div>
+        ` : ''}
+        <div class="field">
+            <label>Observaciones</label>
+            <textarea id="fImp_observaciones" rows="3">${escapeHtml(item.observaciones || '')}</textarea>
+        </div>
+    `;
+}
+
+
+function collectImpFormData(){
+
+    return {
+        nombre:        valueOf('fImp_nombre'),
+        rubro:         valueOf('fImp_rubro'),
+        direccion:     valueOf('fImp_direccion'),
+        distrito:      valueOf('fImp_distrito'),
+        ciudad:        valueOf('fImp_ciudad'),
+        departamentoProvincia: valueOf('fImp_departamento'),
+        pais:          valueOf('fImp_pais'),
+        metodoCompra:  valueOf('fImp_metodo'),
+        whatsapp:      valueOf('fImp_whatsapp'),
+        telefono:      valueOf('fImp_telefono'),
+        facebook:      valueOf('fImp_facebook'),
+        instagram:     valueOf('fImp_instagram'),
+        tiktok:        valueOf('fImp_tiktok'),
+        paginaWeb:     valueOf('fImp_paginaWeb'),
+        correo:        valueOf('fImp_correo'),
+        estado:        valueOf('fImp_estado'),
+        observaciones: valueOf('fImp_observaciones')
+    };
+}
+
+
+function valueOf(id){
+
+    const el =
+        document.getElementById(id);
+
+    return el
+        ? el.value.trim()
+        : '';
+}
+
+
+function setAlertText(id, message, type = 'success'){
+
+    const el =
+        document.getElementById(id);
+
+    if(!el)return;
+
+    el.textContent = message;
+    el.className = `alert show ${type}`;
+}
+
+
+/* =====================================================
+   PANEL ADMIN - IMPORTADORAS
+===================================================== */
+
+async function loadAdminImportadoras(){
+
+    const skeleton =
+        document.getElementById('adminImpSkeleton');
+
+    const grid =
+        document.getElementById('adminImportadorasGrid');
+
+    const empty =
+        document.getElementById('emptyAdminImportadoras');
+
+    if(skeleton)skeleton.classList.remove('hidden');
+    if(grid)grid.classList.add('hidden');
+    if(empty)empty.classList.add('hidden');
+
+    const result =
+        await withSession(
+            function(){
+                return api(
+                    'getImportadorasAdmin',
+                    {
+                        sessionToken:
+                            state.sessionToken
+                    }
+                );
+            }
+        );
+
+    if(skeleton)skeleton.classList.add('hidden');
+    if(grid)grid.classList.remove('hidden');
+
+    if(!result)return;
+
+    state.importadoras =
+        Array.isArray(result.importadoras)
+        ? result.importadoras
+        : [];
+
+    renderAdminImportadoras();
+}
+
+
+function renderAdminImportadoras(){
+
+    const grid =
+        document.getElementById('adminImportadorasGrid');
+
+    const empty =
+        document.getElementById('emptyAdminImportadoras');
+
+    if(!grid)return;
+
+    grid.innerHTML = '';
+
+    const searchInputEl =
+        document.getElementById('adminImpSearch');
+
+    const search =
+        searchInputEl
+            ? searchInputEl.value.trim().toLowerCase()
+            : '';
+
+    const filtered =
+        search
+        ? state.importadoras.filter(
+            function(item){
+                return getSearchText(item).includes(search);
+            }
+        )
+        : state.importadoras;
+
+    if(filtered.length === 0){
+
+        if(empty)empty.classList.remove('hidden');
+
+        return;
+    }
+
+    if(empty)empty.classList.add('hidden');
+
+    const fragment =
+        document.createDocumentFragment();
+
+    filtered.forEach(
+        function(item){
+
+            const card =
+                document.createElement('div');
+
+            card.className =
+                'importadora-card admin-imp-card';
+
+            const estado =
+                String(item.estado || 'Activo');
+
+            const ownerName =
+                item.propietarioNombre || '—';
+
+            card.innerHTML = `
+                <div class="card-top">
+                    <div class="importadora-logo">
+                        <div class="logo-placeholder">${escapeHtml(getInitial(item.nombre))}</div>
+                    </div>
+                    <span class="status-pill-a ${estado.toLowerCase() === 'inactivo' ? 'inactivo' : 'activo'}">
+                        ${escapeHtml(estado)}
+                    </span>
+                </div>
+                <div class="admin-imp-name">${escapeHtml(item.nombre || 'Sin nombre')}</div>
+                <div class="admin-imp-rol">Propietario: ${escapeHtml(ownerName)}</div>
+                <div class="admin-imp-rol">ID: ${escapeHtml(item.id || '—')}</div>
+                <div class="admin-imp-actions">
+                    <button type="button" class="btn-edit-imp" data-accion="editar">✏️ Editar</button>
+                    <button type="button" class="btn-del-imp" data-accion="eliminar">🗑️ Eliminar</button>
+                </div>
+            `;
+
+            card.querySelector('[data-accion="editar"]').addEventListener(
+                'click',
+                function(){
+                    openImpAdminForm(item);
+                }
+            );
+
+            card.querySelector('[data-accion="eliminar"]').addEventListener(
+                'click',
+                function(){
+                    deleteImportadoraConfirm(item);
+                }
+            );
+
+            fragment.appendChild(card);
+        }
+    );
+
+    grid.appendChild(fragment);
+}
+
+
+function openImpAdminForm(item = null){
+
+    const isNew =
+        !item;
+
+    item = item || {
+        id: '',
+        nombre: '',
+        rubro: '',
+        direccion: '',
+        distrito: '',
+        ciudad: '',
+        departamentoProvincia: '',
+        pais: '',
+        metodoCompra: '',
+        whatsapp: '',
+        telefono: '',
+        facebook: '',
+        instagram: '',
+        tiktok: '',
+        paginaWeb: '',
+        correo: '',
+        estado: 'Activo',
+        observaciones: ''
+    };
+
+    openModalBox({
+        title: isNew ? '➕. Nueva importadora' : `✏️ Editar: ${item.nombre || item.id}`,
+        width: '620px',
+        content: `
+            ${buildImpFormHtml(item, true)}
+            <button id="modalGuardar" type="button" class="primary-btn" style="width:100%;margin-top:6px;">
+                ${isNew ? 'Crear importadora' : 'Guardar cambios'}
+            </button>
+            <div id="modalResultado" class="alert"></div>
+        `,
+        onMount: function(modalBox){
+
+            document.getElementById('modalGuardar').addEventListener(
+                'click',
+                function(){ saveImportadoraFromForm(item.id, true, isNew, 'modalResultado', modalBox); }
+            );
+        }
+    });
+}
+
+
+async function saveImportadoraFromForm(id, isAdmin, isNew, resultId, modalBox = null){
+
+    const datos =
+        collectImpFormData();
+
+    if(!datos.nombre){
+
+        setAlertText(
+            resultId,
+            'El nombre de la importadora es obligatorio.',
+            'error'
+        );
+
+        return;
+    }
+
+    if(!isNew && !id){
+        return;
+    }
+
+    const action = isNew ? 'createImportadora' : 'updateImportadora';
+
+    const payload = isNew
+        ? { sessionToken: state.sessionToken, ...datos }
+        : { sessionToken: state.sessionToken, id: id, ...datos };
+
+    const result =
+        await withSession(
+            function(){
+                return api(action, payload);
+            }
+        );
+
+    if(!result)return;
+
+    if(!result.success){
+
+        setAlertText(resultId, result.message || 'No fue posible guardar.', 'error');
+        return;
+    }
+
+    if(modalBox){
+        closeModalBox(modalBox);
+    }else{
+        setAlertText(resultId, result.message || 'Guardado correctamente.', 'success');
+    }
+
+    showToast(result.message || 'Cambios guardados.', 'success');
+
+    if(isAdmin){
+
+        await loadAdminImportadoras();
+        await loadAdminUsuarios();
+
+    }else{
+
+        await renderImportadoraPanel();
+    }
+}
+
+
+async function deleteImportadoraConfirm(item){
+
+    const ok =
+        confirm(`¿Eliminar la importadora "${item.nombre}"?\nQuedará como inactiva.`);
+
+    if(!ok)return;
+
+    const result =
+        await withSession(
+            function(){
+                return api(
+                    'deleteImportadora',
+                    {
+                        sessionToken: state.sessionToken,
+                        id: item.id
+                    }
+                );
+            }
+        );
+
+    if(!result)return;
+
+    if(result.success){
+
+        showToast(result.message || 'Importadora eliminada.', 'success');
+
+        await loadAdminImportadoras();
+        await loadAdminUsuarios();
+
+    }else{
+
+        showToast(result.message || 'No fue posible eliminar.', 'error');
+    }
+}
+
+
+/* =====================================================
+   PANEL ADMIN - USUARIOS
+===================================================== */
+
+async function loadAdminUsuarios(){
+
+    const skeleton =
+        document.getElementById('adminUsrSkeleton');
+
+    const wrap =
+        document.querySelector('.table-wrap');
+
+    const empty =
+        document.getElementById('emptyAdminUsuarios');
+
+    if(skeleton)skeleton.classList.remove('hidden');
+    if(wrap)wrap.classList.add('hidden');
+    if(empty)empty.classList.add('hidden');
+
+    const result =
+        await withSession(
+            function(){
+                return api(
+                    'getUsuarios',
+                    {
+                        sessionToken:
+                            state.sessionToken
+                    }
+                );
+            }
+        );
+
+    if(skeleton)skeleton.classList.add('hidden');
+    if(wrap)wrap.classList.remove('hidden');
+
+    if(!result)return;
+
+    state.usuarios =
+        Array.isArray(result.usuarios)
+        ? result.usuarios
+        : [];
+
+    renderAdminUsuarios();
+}
+
+
+function renderAdminUsuarios(){
+
+    const tbody =
+        document.querySelector('#adminUsuariosTable tbody');
+
+    const empty =
+        document.getElementById('emptyAdminUsuarios');
+
+    if(!tbody)return;
+
+    tbody.innerHTML = '';
+
+    const searchEl =
+        document.getElementById('adminUsrSearch');
+
+    const search =
+        searchEl
+            ? searchEl.value.trim().toLowerCase()
+            : '';
+
+    let usuarios =
+        state.usuarios || [];
+
+    if(search){
+
+        usuarios =
+            usuarios.filter(
+                function(u){
+
+                    return [
+                        u.id,
+                        u.nombre,
+                        u.apellido,
+                        u.correo,
+                        u.empresa,
+                        u.rol,
+                        u.estado,
+                        u.idImportadora
+                    ]
+                    .filter(Boolean)
+                    .join(' ')
+                    .toLowerCase()
+                    .includes(search);
+                }
+            );
+    }
+
+    if(usuarios.length === 0){
+
+        if(empty){ empty.classList.remove('hidden'); tbody.closest('.table-wrap').classList.add('hidden'); }
+
+        return;
+    }
+
+    if(empty){ empty.classList.add('hidden'); tbody.closest('.table-wrap').classList.remove('hidden'); }
+
+    const fragment =
+        document.createDocumentFragment();
+
+    usuarios.forEach(
+        function(u){
+
+            const tr =
+                document.createElement('tr');
+
+            const rol =
+                String(u.rol || '').toLowerCase();
+
+            const estado =
+                normalizeId(u.estado);
+
+            const otp =
+                String(u.otpHabilitado || 'Si');
+
+            tr.innerHTML = `
+                <td>
+                    <strong>${escapeHtml(u.nombre || '')}</strong>
+                    ${u.apellido ? `<br><span style="color:#64748b;font-size:12px;">${escapeHtml(u.apellido)}</span>` : ''}
+                </td>
+                <td>${escapeHtml(u.correo || '')}</td>
+                <td>${escapeHtml(u.empresa || '—"')}</td>
+                <td><span class="rol-pill ${rol}">${escapeHtml(u.rol || 'cliente')}</span></td>
+<td><span class="status-pill-a ${estado}">${escapeHtml(u.estado || 'Activo')}</span></td>
+                <td>${escapeHtml(otp)}</td>
+                <td>${escapeHtml(u.ultimoAcceso || '—')}</td>
+                <td>
+                    <button type="button" class="admin-action-btn" data-accion="editar">Editar</button>
+                    ${u.correo && normalizeId(u.rol) !== 'admin' ? `<button type="button" class="admin-action-btn" data-accion="reset">Reset acceso</button>` : ''}
+                </td>
+            `;
+
+            tr.querySelector('[data-accion="editar"]').addEventListener(
+                'click',
+                function(){
+                    openUserAdminForm(u);
+                }
+            );
+
+            const resetBtn = tr.querySelector('[data-accion="reset"]');
+
+            if(resetBtn){
+                resetBtn.addEventListener(
+                    'click',
+                    function(){
+                        resetUserAccess(u);
+                    }
+                );
+            }
+
+            fragment.appendChild(tr);
+        }
+    );
+
+tbody.appendChild(fragment);
+}
+
+
+async function resetUserAccess(u){
+
+    const ok =
+        confirm(
+            '¿Reiniciar el acceso de ' +
+            (u.nombre || u.correo || '') +
+            '?\n\nSe cerrará su sesión y deberá iniciar sesión nuevamente.'
+        );
+
+    if(!ok)return;
+
+    const result =
+        await withSession(
+            function(){
+                return api(
+                    'adminResetUser',
+                    {
+                        sessionToken: state.sessionToken,
+                        id: u.id,
+                        email: u.correo
+                    }
+                );
+            }
+        );
+
+    if(!result)return;
+
+    if(result.success){
+        toast('Acceso reiniciado. ' + (result.message || ''), 'success');
+        loadAdminUsuarios();
+    }else{
+        toast(result.message || 'No fue posible reiniciar el acceso.', 'error');
+    }
+}
+
+
+async function loadAdminHistorial(){
+
+    const skeleton =
+        document.getElementById('adminHistSkeleton');
+
+    const wrap =
+        document.querySelector('#adminHistorialTab .table-wrap');
+
+    const empty =
+        document.getElementById('emptyAdminHistorial');
+
+    if(skeleton)skeleton.classList.remove('hidden');
+    if(wrap)wrap.classList.add('hidden');
+    if(empty)empty.classList.add('hidden');
+
+    const result =
+        await withSession(
+            function(){
+                return api(
+                    'getAuditoria',
+                    {
+                        sessionToken:
+                            state.sessionToken
+                    }
+                );
+            }
+        );
+
+    if(skeleton)skeleton.classList.add('hidden');
+
+    if(!result)return;
+
+    state.auditoria =
+        Array.isArray(result.auditoria)
+        ? result.auditoria
+        : [];
+
+    renderAdminHistorial();
+}
+
+
+function renderAdminHistorial(){
+
+    const tbody =
+        document.querySelector('#adminHistTable tbody');
+
+    const wrap =
+        document.querySelector('#adminHistorialTab .table-wrap');
+
+    const empty =
+        document.getElementById('emptyAdminHistorial');
+
+    if(!tbody)return;
+
+    tbody.innerHTML = '';
+
+    const registros =
+        state.auditoria || [];
+
+    if(registros.length === 0){
+
+        if(empty){ empty.classList.remove('hidden'); if(wrap){ wrap.classList.add('hidden'); } }
+
+        return;
+    }
+
+    if(empty){ empty.classList.add('hidden'); if(wrap){ wrap.classList.remove('hidden'); } }
+
+    const fragment =
+        document.createDocumentFragment();
+
+    registros.forEach(
+        function(r){
+
+            const tr =
+                document.createElement('tr');
+
+            const accion =
+                String(r.accion || '');
+            const detalle =
+                String(r.detalle || '');
+
+            tr.innerHTML = `
+                <td>
+                    <strong>${escapeHtml(r.fecha || '—')}</strong>
+                    <br><span style="color:#64748b;font-size:12px;">${escapeHtml(r.rol ? 'Rol: ' + r.rol : '')}</span>
+                </td>
+                <td>${escapeHtml(r.quien || 'sistema')}</td>
+                <td><span class="hist-pill hist-${accion.toLowerCase()}">${escapeHtml(accion)}</span></td>
+                <td>${escapeHtml(detalle)}</td>
+            `;
+
+            fragment.appendChild(tr);
+        }
+    );
+
+    tbody.appendChild(fragment);
+}
+
+
+function openUserAdminForm(u = null){
+
+    const isNew =
+        !u;
+
+    u = u || {
+        id: '',
+        nombre: '',
+        apellido: '',
+        correo: '',
+        empresa: '',
+        idImportadora: '',
+        rol: 'cliente',
+        estado: 'Activo',
+        otpHabilitado: 'Si'
+    };
+
+    const rolOptions = [
+        'admin', 'importadora', 'cliente'
+    ];
+
+    const estadoOptions = [
+        'Activo', 'Inactivo', 'Eliminado'
+    ];
+
+    const otpOptions = [
+        'Si', 'No'
+    ];
+
+    openModalBox({
+        title: isNew ? '➕. Nuevo usuario' : `✏️ Editar: ${u.nombre || ''} ${u.apellido || ''}`,
+        width: '560px',
+        content: `
+            <div class="field">
+                <label>Nombre *</label>
+                <input id="fUsr_nombre" type="text" value="${escapeAttribute(u.nombre || '')}" required>
+            </div>
+            <div class="field">
+                <label>Apellido</label>
+                <input id="fUsr_apellido" type="text" value="${escapeAttribute(u.apellido || '')}">
+            </div>
+            <div class="field">
+                <label>Correo * ${isNew ? '' : '(no editable)'}</label>
+                <input id="fUsr_correo" type="email" value="${escapeAttribute(u.correo || '')}" ${isNew ? '' : 'disabled'}>
+            </div>
+            <div class="field">
+                <label>Empresa</label>
+                <input id="fUsr_empresa" type="text" value="${escapeAttribute(u.empresa || '')}">
+            </div>
+            <div class="field">
+                <label>Rol</label>
+                <select id="fUsr_rol">
+                    ${rolOptions.map(function(r){
+                        return `<option value="${r}" ${normalizeId(r) === normalizeId(u.rol) ? 'selected' : ''}>${escapeHtml(r)}</option>`;
+                    }).join('')}
+                </select>
+            </div>
+            <div class="field" id="fUsr_impWrap">
+                <label>ID Importadora (para el rol "importadora")</label>
+                <input id="fUsr_idImportadora" type="text" value="${escapeAttribute(u.idImportadora || '')}" placeholder="Ej: IMP-ABCD1234">
+            </div>
+            ${isNew ? '' : `
+                <div class="field">
+                    <label>Estado</label>
+                    <select id="fUsr_estado">
+                        ${estadoOptions.map(function(e){
+                            return `<option value="${e}" ${normalizeId(e) === normalizeId(u.estado) ? 'selected' : ''}>${escapeHtml(e)}</option>`;
+                        }).join('')}
+                    </select>
+                </div>
+            `}
+            <div class="field">
+                <label>OTP habilitado</label>
+                <select id="fUsr_otp">
+                    ${otpOptions.map(function(o){
+                        return `<option value="${o}" ${normalizeId(o) === normalizeId(u.otpHabilitado || 'Si') ? 'selected' : ''}>${escapeHtml(o)}</option>`;
+                    }).join('')}
+                </select>
+            </div>
+            <button id="modalGuardarUsuario" type="button" class="primary-btn" style="width:100%;">
+                ${isNew ? 'Crear usuario' : 'Guardar cambios'}
+            </button>
+            <div id="modalResultadoUsuario" class="alert"></div>
+        `,
+        onMount: function(modalBox){
+
+            const rolSelect =
+                document.getElementById('fUsr_rol');
+
+            const impWrap =
+                document.getElementById('fUsr_impWrap');
+
+            function toggleImpField(){
+                if(impWrap){
+                    impWrap.style.display =
+                        rolSelect.value === 'importadora' ? 'block' : 'none';
+                }
+            }
+
+            rolSelect.addEventListener('change', toggleImpField);
+            toggleImpField();
+
+            document.getElementById('modalGuardarUsuario').addEventListener(
+                'click',
+                function(){
+                    saveUsuarioFromForm(u, isNew, 'modalResultadoUsuario', modalBox);
+                }
+            );
+        }
+    });
+}
+
+
+async function saveUsuarioFromForm(u, isNew, resultId, modalBox = null){
+
+    const nombre =
+        valueOf('fUsr_nombre');
+
+    const correo =
+        valueOf_Disabled('fUsr_correo');
+
+    if(!nombre){
+
+        setAlertText(resultId, 'El nombre es obligatorio.', 'error');
+        return;
+    }
+
+    if(isNew && !isValidEmail(correo)){
+
+        setAlertText(resultId, 'Ingresa un correo válido.', 'error');
+        return;
+    }
+
+    const datos = {
+        nombre: nombre,
+        apellido: valueOf('fUsr_apellido'),
+        empresa: valueOf('fUsr_empresa'),
+        rol: valueOf('fUsr_rol') || 'cliente',
+        idImportadora: valueOf('fUsr_idImportadora'),
+        otpHabilitado: valueOf('fUsr_otp') || 'Si'
+    };
+
+    if(!isNew){
+        datos.estado = valueOf('fUsr_estado') || 'Activo';
+    }
+
+    const payload = isNew
+        ? { sessionToken: state.sessionToken, ...datos, correo: correo }
+        : { sessionToken: state.sessionToken, id: u.id, ...datos };
+
+    const result =
+        await withSession(
+            function(){
+                return api(isNew ? 'createUsuario' : 'updateUsuario', payload);
+            }
+        );
+
+    if(!result)return;
+
+    if(!result.success){
+
+        setAlertText(resultId, result.message || 'No fue posible guardar.', 'error');
+        return;
+    }
+
+    if(modalBox){
+        closeModalBox(modalBox);
+    }
+
+    showToast(result.message || 'Usuario guardado.', 'success');
+
+    await loadAdminUsuarios();
+}
+
+
+function valueOf_Disabled(id){
+
+    const el =
+        document.getElementById(id);
+
+    return el
+        ? el.value.trim()
+        : '';
+}
+
+
+/* =====================================================
+   MODAL GENÉRICO
+===================================================== */
+
+function openModalBox(config){
+
+    const overlay =
+        document.createElement('div');
+
+    overlay.className = 'modal-overlay';
+
+    const box =
+        document.createElement('div');
+
+    box.className = 'modal-box';
+
+    box.style.maxWidth = config.width || '540px';
+
+    box.innerHTML = `
+        <div class="modal-box-head">
+            <strong>${escapeHtml(config.title || '')}</strong>
+            <button type="button" class="modal-close">✕</button>
+        </div>
+        <div class="modal-box-body">${config.content}</div>
+    `;
+
+    function close(){
+        closeModalBox(overlay);
+    }
+
+    box.querySelector('.modal-close').addEventListener('click', close);
+
+    overlay.addEventListener(
+        'click',
+        function(e){
+            if(e.target === overlay){ close(); }
+        }
+    );
+
+    overlay.appendChild(box);
+
+    document.body.appendChild(overlay);
+
+    if(config.onMount){
+        config.onMount(overlay);
+    }
+}
+
+
+function closeModalBox(overlay){
+
+    if(overlay && overlay.parentNode){
+        overlay.parentNode.removeChild(overlay);
+    }
+}
+
+
+/* =====================================================
+   ADMIN TABS + BOTONES
+===================================================== */
+
+function switchAdminTab(tabName){
+
+    const tabs =
+        document.querySelectorAll('#adminTabs .admin-tab');
+
+    tabs.forEach(
+        function(tab){
+            tab.classList.toggle(
+                'active',
+                tab.dataset.tab === tabName
+            );
+        }
+    );
+
+    const goImps =
+        document.getElementById('adminImportadorasTab');
+
+const goUsrs =
+        document.getElementById('adminUsuariosTab');
+
+    const goHist =
+        document.getElementById('adminHistorialTab');
+
+    if(goImps){
+        goImps.classList.toggle('hidden', tabName !== 'importadoras');
+    }
+
+    if(goUsrs){
+        goUsrs.classList.toggle('hidden', tabName !== 'usuarios');
+    }
+
+    if(goHist){
+        goHist.classList.toggle('hidden', tabName !== 'historial');
+    }
+
+    if(tabName === 'historial'){
+        loadAdminHistorial();
+    }
+}
+
+
+function setupAdminEvents(){
+
+    const tabBar =
+        document.getElementById('adminTabs');
+
+    if(tabBar){
+        tabBar.querySelectorAll('.admin-tab').forEach(
+            function(tab){
+                tab.addEventListener(
+                    'click',
+                    function(){
+                        switchAdminTab(tab.dataset.tab);
+                    }
+                );
+            }
+        );
+    }
+
+    const btnNuevaImp =
+        document.getElementById('btnNuevaImportadora');
+
+    if(btnNuevaImp){
+        btnNuevaImp.addEventListener('click', function(){ openImpAdminForm(null); });
+    }
+
+    const btnNuevoUsr =
+        document.getElementById('btnNuevoUsuario');
+
+    if(btnNuevoUsr){
+        btnNuevoUsr.addEventListener('click', function(){ openUserAdminForm(null); });
+    }
+
+    const adminImpSearch =
+        document.getElementById('adminImpSearch');
+
+    if(adminImpSearch){
+        adminImpSearch.addEventListener(
+            'input',
+            function(){
+                clearTimeout(searchTimer);
+                searchTimer = setTimeout(
+                    renderAdminImportadoras,
+                    180
+                );
+            }
+        );
+    }
+
+    const adminUsrSearch =
+        document.getElementById('adminUsrSearch');
+
+    if(adminUsrSearch){
+        adminUsrSearch.addEventListener(
+            'input',
+            function(){
+                clearTimeout(searchTimer);
+                searchTimer = setTimeout(
+                    renderAdminUsuarios,
+                    180
+                );
+            }
+        );
+    }
+
+    const btnCsvImps =
+        document.getElementById('btnCsvImportadoras');
+
+    if(btnCsvImps){
+        btnCsvImps.addEventListener('click', function(){ exportImportadorasCSV(); });
+    }
+
+    const btnCsvUsrs =
+        document.getElementById('btnCsvUsuarios');
+
+    if(btnCsvUsrs){
+        btnCsvUsrs.addEventListener('click', function(){ exportUsuariosCSV(); });
+    }
+}
+
+
+/* =====================================================
+   EXPORTAR CSV
+===================================================== */
+
+function exportCSV_(rows, headers, filename){
+
+    const esc =
+        function(value){
+            const v = String(value == null ? '' : value);
+            return '"' + v.replace(/"/g, '""') + '"';
+        };
+
+    const lines =
+        [headers.map(esc).join(',')]
+        .concat(
+            rows.map(
+                function(row){
+                    return headers.map(
+                        function(h){
+                            return esc(row[h]);
+                        }
+                    ).join(',');
+                }
+            )
+        );
+
+    const csv = '\uFEFF' + lines.join('\r\n');
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setTimeout(function(){ URL.revokeObjectURL(link.href); }, 1000);
+}
+
+
+function exportImportadorasCSV(){
+
+    const headers = [
+        'id', 'nombre', 'rubro', 'direccion', 'distrito', 'ciudad',
+        'departamentoProvincia', 'pais', 'metodoCompra', 'whatsapp',
+        'telefono', 'facebook', 'instagram', 'tiktok', 'paginaWeb',
+        'correo', 'estado', 'observaciones', 'fechaRegistro'
+    ];
+
+    const rows = state.importadoras.map(
+        function(item){
+            return {
+                id: item.id,
+                nombre: item.nombre,
+                rubro: item.rubro,
+                direccion: item.direccion,
+                distrito: item.distrito,
+                ciudad: item.ciudad,
+                departamentoProvincia: item.departamentoProvincia,
+                pais: item.pais,
+                metodoCompra: item.metodoCompra,
+                whatsapp: item.whatsapp,
+                telefono: item.telefono,
+                facebook: item.facebook,
+                instagram: item.instagram,
+                tiktok: item.tiktok,
+                paginaWeb: item.paginaWeb,
+                correo: item.correo,
+                estado: item.estado,
+                observaciones: item.observaciones,
+                fechaRegistro: item.fechaRegistro
+            };
+        }
+    );
+
+    exportCSV_(rows, headers, 'importadoras.csv');
+}
+
+
+function exportUsuariosCSV(){
+
+    const headers = [
+        'id', 'nombre', 'apellido', 'correo', 'empresa',
+        'idImportadora', 'rol', 'estado', 'idUsuarios'
+    ];
+
+    const rows = (state.usuarios || []).map(
+        function(u){
+            return {
+                id: u.id,
+                nombre: u.nombre,
+                apellido: u.apellido,
+                correo: u.correo,
+                empresa: u.empresa,
+                idImportadora: u.idImportadora,
+                rol: u.rol,
+                estado: u.estado,
+                idUsuarios: u.idUsuarios
+            };
+        }
+    );
+
+    exportCSV_(rows, headers, 'usuarios.csv');
+}
+
+
+/* =====================================================
+   SOPORTE
+===================================================== */
+
+function setupSoporteEvents(){
+
+    const btn =
+        document.getElementById('btnEnviarSoporte');
+
+    if(!btn)return;
+
+    btn.addEventListener(
+        'click',
+        async function(){
+
+            const mensaje =
+                valueOf('soporteMensaje');
+
+            if(!mensaje){
+
+                setAlertText('soporteResultado', 'Escribe un mensaje.', 'error');
+                return;
+            }
+
+            setAlertText('soporteResultado', 'Enviando...', 'info');
+
+            const result =
+                await withSession(
+                    function(){
+                        return api(
+                            'contactarSoporte',
+                            {
+                                sessionToken: state.sessionToken,
+                                mensaje: mensaje
+                            }
+                        );
+                    }
+                );
+
+            if(!result)return;
+
+            if(result.success){
+
+                setAlertText('soporteResultado', result.message || 'Mensaje enviado.', 'success');
+
+                document.getElementById('soporteMensaje').value = '';
+
+            }else{
+
+                setAlertText('soporteResultado', result.message || 'No fue posible enviar.', 'error');
+            }
+        }
+    );
+}
+
+
+/* =====================================================
+   MI CUENTA
+===================================================== */
+
+function prefillCuentaForm(){
+
+    if(!state.user)return;
+
+    const rol =
+        getRole();
+
+    const dangerZone =
+        document.getElementById('dangerZoneCard');
+
+    if(dangerZone){
+        dangerZone.classList.toggle(
+            'hidden',
+            rol === 'admin'
+        );
+    }
+
+    const nombre =
+        document.getElementById('cuentaNombre');
+
+    const apellido =
+        document.getElementById('cuentaApellido');
+
+    if(nombre){
+        nombre.value = state.user.nombre || '';
+    }
+
+    if(apellido){
+        apellido.value = state.user.apellido || '';
+    }
+}
+
+
+function setupCuentaEvents(){
+
+    const btnGuardar =
+        document.getElementById('btnGuardarPerfil');
+
+    if(btnGuardar){
+        btnGuardar.addEventListener(
+            'click',
+            async function(){
+
+                const nombre =
+                    valueOf('cuentaNombre');
+
+                const apellido =
+                    valueOf('cuentaApellido');
+
+                if(!nombre){
+
+                    setAlertText('perfilResultado', 'Escribe tu nombre.', 'error');
+                    return;
+                }
+
+                setAlertText('perfilResultado', 'Guardando...', 'info');
+
+                const result =
+                    await withSession(
+                        function(){
+                            return api(
+                                'updatePerfil',
+                                {
+                                    sessionToken: state.sessionToken,
+                                    nombre: nombre,
+                                    apellido: apellido
+                                }
+                            );
+                        }
+                    );
+
+                if(!result)return;
+
+                if(result.success){
+
+                    if(state.user){
+                        state.user.nombre = nombre;
+                        state.user.apellido = apellido;
+                        updateUserInterface();
+                    }
+
+                    setAlertText('perfilResultado', 'Perfil actualizado.', 'success');
+
+                }else{
+
+                    setAlertText('perfilResultado', result.message || 'No fue posible guardar.', 'error');
+                }
+            }
+        );
+    }
+
+    const btnEliminar =
+        document.getElementById('btnEliminarCuenta');
+
+    if(btnEliminar){
+        btnEliminar.addEventListener(
+            'click',
+            async function(){
+
+                const ok =
+                    confirm('¿Seguro que deseas eliminar tu cuenta?\nEsta acción es inmediata y definitiva.');
+
+                if(!ok)return;
+
+                const result =
+                    await withSession(
+                        function(){
+                            return api(
+                                'deleteMyAccount',
+                                {
+                                    sessionToken: state.sessionToken
+                                }
+                            );
+                        }
+                    );
+
+                if(!result)return;
+
+                clearSession();
+
+                showToast(result.message || 'Cuenta eliminada.', 'success');
+
+                appSection.classList.add('hidden');
+
+                authSection.classList.remove('hidden');
+
+                emailStep.classList.remove('hidden');
+
+                otpStep.classList.add('hidden');
+            }
+        );
+    }
+}
+
+
+/* =====================================================
+   TÉRMINOS Y CONDICIONES
+===================================================== */
+
+function setupTermsEvents(){
+
+    const openBtn =
+        document.getElementById('openTermsBtn');
+
+    if(openBtn){
+        openBtn.addEventListener(
+            'click',
+            function(){
+                openTermsModal();
+            }
+        );
+    }
+
+    const closeBtn =
+        document.getElementById('closeTermsModal');
+
+    if(closeBtn){
+        closeBtn.addEventListener(
+            'click',
+            function(){
+                closeTermsModal();
+            }
+        );
+    }
+
+    const termsModal =
+        document.getElementById('termsModal');
+
+    if(termsModal){
+        termsModal.addEventListener(
+            'click',
+            function(event){
+                if(event.target === termsModal){
+                    closeTermsModal();
+                }
+            }
+        );
+    }
+
+    const acceptBtn =
+        document.getElementById('termsAcceptBtn');
+
+    if(acceptBtn){
+        acceptBtn.addEventListener(
+            'click',
+            function(){
+
+                const termsCheckbox =
+                    document.getElementById('termsCheckbox');
+
+                if(termsCheckbox){
+                    termsCheckbox.checked = true;
+                }
+
+                closeTermsModal();
+            }
+        );
+    }
+}
+
+
+function openTermsModal(){
+
+    const termsModal =
+        document.getElementById('termsModal');
+
+    if(termsModal){
+        termsModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+
+function closeTermsModal(){
+
+    const termsModal =
+        document.getElementById('termsModal');
+
+    if(termsModal){
+        termsModal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+}
+
+
+/* =====================================================
+   WITH SESSION (envuelve la sesión y maneja expiración)
+===================================================== */
+
+async function withSession(callable){
+
+    try{
+
+        const result =
+            await callable();
+
+        if(
+            result &&
+            isSessionError(result)
+        ){
+            handleExpiredSession();
+            return null;
+        }
+
+        return result;
+
+    }catch(error){
+
+        console.error(error);
+
+        showToast('Error de conexión. Intenta nuevamente.', 'error');
+
+        return null;
+    }
 }
 
 </script>
