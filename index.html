@@ -145,6 +145,63 @@ button{
 }
 
 /* =====================================================
+   MANTENIMIENTO
+===================================================== */
+
+.maintenance-screen{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+    background:linear-gradient(135deg,#f8fafc,#eef2f6);
+}
+
+.maintenance-box{
+    max-width:440px;
+    width:100%;
+    text-align:center;
+    padding:44px 36px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:22px;
+    box-shadow:0 18px 45px rgba(15,23,42,.08);
+}
+
+.maintenance-icon{
+    font-size:52px;
+    line-height:1;
+    margin-bottom:16px;
+}
+
+.maintenance-title{
+    font-size:20px;
+    font-weight:900;
+    color:var(--dark);
+    margin-bottom:10px;
+}
+
+.maintenance-message{
+    font-size:14px;
+    color:var(--muted);
+    line-height:1.7;
+}
+
+.maintenance-footer{
+    margin-top:26px;
+    padding-top:18px;
+    border-top:1px solid var(--border);
+    font-size:13px;
+    font-weight:800;
+    color:#64748b;
+}
+
+.maintenance-footer span{
+    color:var(--primary);
+}
+
+
+/* =====================================================
    LOGIN
 ===================================================== */
 
@@ -1980,6 +2037,102 @@ mark{
 }
 .btn-del-imp:hover{background:#fee2e2}
 
+/* Mantenimiento */
+.maint-card{
+    max-width:640px;
+    padding:22px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:16px;
+}
+
+.maint-toggle-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+    margin-bottom:18px;
+}
+
+.maint-info{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+
+.maint-info strong{
+    font-size:14px;
+    color:var(--dark);
+}
+
+.maint-info span{
+    font-size:12px;
+    color:var(--muted);
+    line-height:1.5;
+}
+
+.maint-textarea{
+    width:100%;
+    padding:12px 14px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:white;
+    color:var(--text);
+    font-size:13px;
+    font-family:inherit;
+    resize:vertical;
+    outline:none;
+}
+
+.maint-textarea:focus{
+    border-color:var(--primary);
+}
+
+/* Switch */
+.switch{
+    position:relative;
+    display:inline-block;
+    width:52px;
+    height:28px;
+    flex-shrink:0;
+}
+
+.switch input{
+    opacity:0;
+    width:0;
+    height:0;
+}
+
+.switch .slider{
+    position:absolute;
+    cursor:pointer;
+    top:0;left:0;right:0;bottom:0;
+    background:#cbd5e1;
+    border-radius:999px;
+    transition:.25s ease;
+}
+
+.switch .slider:before{
+    content:"";
+    position:absolute;
+    height:22px;
+    width:22px;
+    left:3px;
+    bottom:3px;
+    background:white;
+    border-radius:50%;
+    box-shadow:0 1px 3px rgba(0,0,0,.2);
+    transition:.25s ease;
+}
+
+.switch input:checked + .slider{
+    background:linear-gradient(135deg,#f43f5e,#dc2626);
+}
+
+.switch input:checked + .slider:before{
+    transform:translateX(24px);
+}
+
 /* Skeleton admin table */
 .admin-skeleton{
     background:white;
@@ -2967,6 +3120,44 @@ mark{
     .maps-btn{
         background:linear-gradient(135deg,#059669,#047857);
     }
+
+    .maint-card{
+        background:var(--card);
+        border-color:var(--border);
+    }
+
+    .maint-info strong{
+        color:var(--text);
+    }
+
+    .maint-textarea{
+        background:var(--bg);
+        border-color:var(--border);
+        color:var(--text);
+    }
+
+    .maint-textarea::placeholder{
+        color:var(--muted);
+    }
+
+    .maintenance-screen{
+        background:var(--bg);
+    }
+
+    .maintenance-box{
+        background:var(--card);
+        border-color:var(--border);
+        box-shadow:0 18px 45px rgba(0,0,0,.5);
+    }
+
+    .maintenance-title{
+        color:var(--text);
+    }
+
+    .maintenance-footer{
+        border-color:var(--border);
+        color:var(--muted);
+    }
 }
 
 /* =====================================================
@@ -3110,6 +3301,36 @@ mark{
 <!-- =====================================================
      AUTENTICACIÓN
 ===================================================== -->
+
+<!-- =====================================================
+     MANTENIMIENTO
+===================================================== -->
+
+<div
+    id="maintenanceScreen"
+    class="maintenance-screen hidden"
+>
+    <div class="maintenance-box">
+
+        <div class="maintenance-icon">
+            🛠️
+        </div>
+
+        <div class="maintenance-title">
+            Estamos en mantenimiento
+        </div>
+
+        <div class="maintenance-message">
+            Estamos realizando mejoras. Vuelve en unos minutos.
+        </div>
+
+        <div class="maintenance-footer">
+            Intelicelyg<span>.pe</span>
+        </div>
+
+    </div>
+</div>
+
 
 <section
     id="authSection"
@@ -3683,6 +3904,9 @@ Panel de administración
                 <button type="button" class="admin-tab" data-tab="historial">
 📜 Historial
                 </button>
+                <button type="button" class="admin-tab" data-tab="mantenimiento">
+🛠️ Mantenimiento
+                </button>
             </div>
 
             <!-- SUBPANEL IMPORTADORAS -->
@@ -3823,6 +4047,44 @@ Panel de administración
                     <div class="empty-icon">📜</div>
                     <strong>Aún no hay actividad registrada</strong>
                     <span>Los cambios en importadoras y usuarios quedarán registrados aquí.</span>
+                </div>
+
+            </div>
+
+            <!-- SUBPANEL MANTENIMIENTO -->
+            <div id="adminMantenimientoTab" class="admin-tab-panel hidden">
+
+                <div class="section-header">
+                    <div>
+                        <h2>Modo mantenimiento</h2>
+                        <p>Activa un aviso para todos los usuarios mientras haces cambios o actualizaciones.</p>
+                    </div>
+                </div>
+
+                <div class="maint-card">
+
+                    <div class="maint-toggle-row">
+                        <div class="maint-info">
+                            <strong>Página en mantenimiento</strong>
+                            <span>Si está activo, los clientes e importadoras verán el aviso de abajo.</span>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="maintSwitch">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="field">
+                        <label for="maintMensaje">Mensaje que verán los usuarios</label>
+                        <textarea id="maintMensaje" class="maint-textarea" rows="3" placeholder="Estamos realizando mejoras. Vuelve en unos minutos."></textarea>
+                    </div>
+
+                    <button id="btnGuardarMantenimiento" type="button" class="primary-btn" style="width:100%;margin-top:6px;">
+                        💾 Guardar
+                    </button>
+
+                    <div id="maintResultado" class="alert"></div>
+
                 </div>
 
             </div>
@@ -4185,7 +4447,7 @@ id="closeTermsModal"
 ===================================================== */
 
 const API_URL =
-    'https://script.google.com/macros/s/AKfycbyXLTnSGM9OJf1X-9mDjswUj2QHy032OLkpnKRcrvBJJ6_ip6X2kGYio__PBlyK6RYP/exec';
+    'https://script.google.com/macros/s/AKfycbxdsqtCB6VhXrlqcWiU0NkDPdL7VP6dsCqedUQhhqEPeBZhvyRjN7tnTUgoUVKbrQmr/exec';
 
 const SESSION_STORAGE_KEY =
     'intelicelyg_session';
@@ -4214,6 +4476,8 @@ importadoras: [],
     usuarios: [],
 
     auditoria: [],
+
+    mantenimiento: null,
 
     compara: [],
 
@@ -4501,7 +4765,7 @@ async function init(){
         }
 
 
-        state.user =
+state.user =
             result.user;
 
         state.expiresAt =
@@ -4510,7 +4774,6 @@ async function init(){
         saveSession();
 
         await showDashboard();
-
 
     }catch(error){
 
@@ -4976,6 +5239,31 @@ function clearOtpTimer(){
 
 async function showDashboard(){
 
+    const esAdmin =
+        getRole() === 'admin';
+
+    if(!esAdmin){
+
+        const maint =
+            await api(
+                'getMantenimiento',
+                {
+                    sessionToken:
+                        state.sessionToken
+                }
+            );
+
+        if(
+            maint &&
+            maint.mantenimiento &&
+            maint.mantenimiento.activo
+        ){
+            state.mantenimiento = maint.mantenimiento;
+            showMaintenanceScreen();
+            return;
+        }
+    }
+
     authSection.classList.add(
         'hidden'
     );
@@ -5030,6 +5318,34 @@ async function showDashboard(){
 }
 
 
+function showMaintenanceScreen(){
+
+    const msg =
+        state.mantenimiento &&
+        state.mantenimiento.mensaje
+            ? state.mantenimiento.mensaje
+            : 'Estamos realizando mejoras. Vuelve en unos minutos.';
+
+    const maintEl =
+        document.getElementById('maintenanceScreen');
+
+    if(!maintEl)return;
+
+    const msgEl =
+        maintEl.querySelector('.maintenance-message');
+
+    if(msgEl){
+        msgEl.textContent = msg;
+    }
+
+    authSection.classList.add('hidden');
+    appSection.classList.add('hidden');
+    loadingScreen.classList.add('hidden');
+
+    maintEl.classList.remove('hidden');
+}
+
+
 /* =====================================================
    ROL Y NAVEGACIÓN DE PANELES
 ===================================================== */
@@ -5069,9 +5385,10 @@ function setupDashboardNav(){
         items.push(['miimportadora', '🏠', 'Mi importadora']);
     }
 
-    if(rol === 'admin'){
+if(rol === 'admin'){
         items.push(['adminimp', '🏢', 'Importadoras']);
         items.push(['adminusers', '👥', 'Usuarios']);
+        items.push(['adminmaint', '🛠️', 'Mantenimiento']);
     }
 
     items.push(['soporte', '💬', 'Soporte']);
@@ -5107,11 +5424,12 @@ function showDashboardPanel(panelId){
     const rol =
         getRole();
 
-    const views = {
+const views = {
         'explorar':       'clienteView',
         'miimportadora':  'importadoraView',
         'adminimp':       'adminView',
         'adminusers':     'adminView',
+        'adminmaint':     'adminView',
         'soporte':        'soporteView',
         'cuenta':         'cuentaView'
     };
@@ -5133,8 +5451,9 @@ function showDashboardPanel(panelId){
         target.classList.remove('hidden');
     }
 
-    if(panelId === 'adminimp'){ switchAdminTab('importadoras'); }
+if(panelId === 'adminimp'){ switchAdminTab('importadoras'); }
     if(panelId === 'adminusers'){ switchAdminTab('usuarios'); }
+    if(panelId === 'adminmaint'){ switchAdminTab('mantenimiento'); }
 
     document.querySelectorAll('#dashboardNav button').forEach(
         function(button){
@@ -5830,7 +6149,7 @@ function openComparadorModal(){
             .filter(Boolean);
 
     if(items.length < 2){
-        toast('Selecciona al menos 2 importadoras para comparar.', 'warn');
+        showToast('Selecciona al menos 2 importadoras para comparar.', 'warn');
         return;
     }
 
@@ -7637,10 +7956,10 @@ async function resetUserAccess(u){
     if(!result)return;
 
     if(result.success){
-        toast('Acceso reiniciado. ' + (result.message || ''), 'success');
+        showToast('Acceso reiniciado. ' + (result.message || ''), 'success');
         loadAdminUsuarios();
     }else{
-        toast(result.message || 'No fue posible reiniciar el acceso.', 'error');
+        showToast(result.message || 'No fue posible reiniciar el acceso.', 'error');
     }
 }
 
@@ -7742,6 +8061,90 @@ function renderAdminHistorial(){
     );
 
     tbody.appendChild(fragment);
+}
+
+
+async function loadAdminMantenimiento(){
+
+    const result =
+        await withSession(
+            function(){
+                return api(
+                    'getMantenimiento',
+                    {
+                        sessionToken:
+                            state.sessionToken
+                    }
+                );
+            }
+        );
+
+    if(!result)return;
+
+    const m =
+        result.mantenimiento ||
+        { activo: false, mensaje: '' };
+
+    state.mantenimiento = m;
+
+    const sw =
+        document.getElementById('maintSwitch');
+
+    const txt =
+        document.getElementById('maintMensaje');
+
+    if(sw){ sw.checked = Boolean(m.activo); }
+    if(txt){ txt.value = m.mensaje || ''; }
+}
+
+
+async function guardarMantenimiento(){
+
+    const sw =
+        document.getElementById('maintSwitch');
+
+    const txt =
+        document.getElementById('maintMensaje');
+
+    const resultadoEl =
+        document.getElementById('maintResultado');
+
+    const btn =
+        document.getElementById('btnGuardarMantenimiento');
+
+    const datos = {
+        sessionToken: state.sessionToken,
+        activo: sw ? sw.checked : false,
+        mensaje: txt ? txt.value : ''
+    };
+
+    if(btn){ btn.disabled = true; btn.textContent = 'Guardando...'; }
+
+    const result =
+        await withSession(
+            function(){
+                return api(
+                    'updateMantenimiento',
+                    datos
+                );
+            }
+        );
+
+    if(btn){ btn.disabled = false; btn.textContent = '💾 Guardar'; }
+
+    if(!result)return;
+
+    if(result.success){
+        if(resultadoEl){
+            resultadoEl.textContent = result.message || 'Guardado correctamente.';
+            resultadoEl.className = 'alert alert-success';
+        }
+    }else{
+        if(resultadoEl){
+            resultadoEl.textContent = result.message || 'No fue posible guardar.';
+            resultadoEl.className = 'alert alert-error';
+        }
+    }
 }
 
 
@@ -8015,6 +8418,9 @@ const goUsrs =
     const goHist =
         document.getElementById('adminHistorialTab');
 
+    const goMaint =
+        document.getElementById('adminMantenimientoTab');
+
     if(goImps){
         goImps.classList.toggle('hidden', tabName !== 'importadoras');
     }
@@ -8027,8 +8433,16 @@ const goUsrs =
         goHist.classList.toggle('hidden', tabName !== 'historial');
     }
 
+    if(goMaint){
+        goMaint.classList.toggle('hidden', tabName !== 'mantenimiento');
+    }
+
     if(tabName === 'historial'){
         loadAdminHistorial();
+    }
+
+    if(tabName === 'mantenimiento'){
+        loadAdminMantenimiento();
     }
 }
 
@@ -8107,8 +8521,41 @@ function setupAdminEvents(){
     const btnCsvUsrs =
         document.getElementById('btnCsvUsuarios');
 
-    if(btnCsvUsrs){
+if(btnCsvUsrs){
         btnCsvUsrs.addEventListener('click', function(){ exportUsuariosCSV(); });
+    }
+
+    const btnGuardarMaint =
+        document.getElementById('btnGuardarMantenimiento');
+
+    if(btnGuardarMaint){
+        btnGuardarMaint.addEventListener(
+            'click',
+            guardarMantenimiento
+        );
+    }
+
+    const maintSwitch =
+        document.getElementById('maintSwitch');
+
+    if(maintSwitch){
+        maintSwitch.addEventListener(
+            'change',
+            function(){
+                const txt = document.getElementById('maintMensaje');
+                const resultadoEl = document.getElementById('maintResultado');
+                if(!maintSwitch.checked && txt){
+                    txt.value = '';
+                }
+                if(resultadoEl){
+                    resultadoEl.textContent = '';
+                    resultadoEl.className = 'alert';
+                }
+                if(maintSwitch.checked && txt && !txt.value.trim()){
+                    txt.value = 'Estamos realizando mejoras. Vuelve en unos minutos.';
+                }
+            }
+        );
     }
 }
 
