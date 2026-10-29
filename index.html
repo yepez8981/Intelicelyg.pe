@@ -4,9 +4,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intelicelyg.pe | Acceso</title>
+<title>Intelicelyg.pe | Encuentra y conecta con importadoras</title>
+<meta name="description" content="Descubre importadoras, compara información y contacta directamente desde el directorio digital de Intelicelyg.pe.">
+<meta property="og:title" content="Intelicelyg.pe | Encuentra y conecta con importadoras">
+<meta property="og:description" content="Un directorio digital para descubrir importadoras, comparar opciones y contactar directamente.">
+<meta property="og:type" content="website">
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#0ea5e9">
+<meta name="theme-color" content="#0f766e">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Intelicelyg">
@@ -3273,6 +3277,626 @@ mark{
         border:2px solid transparent;
     }
 }
+
+/* =====================================================
+   CAPA VISUAL PREMIUM + RESPONSIVE
+===================================================== */
+:root{
+    --primary:#0f766e;
+    --primary-dark:#115e59;
+    --secondary:#2dd4bf;
+    --dark:#102a43;
+    --dark-2:#243b53;
+    --text:#243b53;
+    --muted:#627d98;
+    --light:#f3f7fa;
+    --border:#d9e2ec;
+    --shadow:0 24px 70px rgba(16,42,67,.11);
+    --primary-gradient:linear-gradient(135deg,#0f766e,#115e59);
+}
+
+html{scroll-behavior:smooth; scroll-padding-top:100px}
+body{
+    background:
+        radial-gradient(ellipse at 10% -10%,rgba(45,212,191,.10),transparent 32rem),
+        linear-gradient(180deg,#f8fbfd 0%,#f1f5f8 100%);
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+}
+button,input,select,textarea{font:inherit}
+button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:3px solid rgba(15,118,110,.42);outline-offset:3px}
+
+.auth-wrapper{padding:clamp(16px,4vw,48px)}
+.auth-container{
+    max-width:1120px;
+    border:1px solid rgba(217,226,236,.85);
+    border-radius:28px;
+    box-shadow:0 32px 90px rgba(16,42,67,.16);
+}
+.auth-brand{
+    background:
+        radial-gradient(circle at 18% 12%,rgba(45,212,191,.18),transparent 34%),
+        linear-gradient(150deg,#102a43 0%,#163e56 58%,#115e59 125%);
+}
+.brand-badge{color:#99f6e4;background:rgba(45,212,191,.10);border-color:rgba(153,246,228,.24)}
+.auth-brand h1{font-size:clamp(34px,4vw,46px);line-height:1.08}
+.auth-form-area{padding:clamp(28px,5vw,64px)}
+.form-input,.otp-input,.search-box input,.filters-bar .filter-select,
+.field input,.field textarea,.field select{transition:border-color .18s ease,box-shadow .18s ease,background .18s ease}
+.primary-btn,.details-btn,.visit-btn,.whatsapp-btn{transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.primary-btn{
+    background:var(--primary-gradient);
+    box-shadow:0 8px 20px rgba(15,118,110,.18);
+}
+.primary-btn:hover{box-shadow:0 12px 26px rgba(15,118,110,.25)}
+
+.app{background:transparent}
+.dashboard-header{
+    height:72px;
+    padding:0 clamp(18px,4vw,56px);
+    background:rgba(255,255,255,.94);
+    border-bottom:1px solid rgba(217,226,236,.9);
+    box-shadow:0 4px 18px rgba(16,42,67,.035);
+    backdrop-filter:blur(14px);
+}
+.dashboard-logo{letter-spacing:-.7px}
+.dashboard-logo span{color:var(--primary)}
+.dashboard-content{max-width:1320px;padding:clamp(24px,4vw,48px) clamp(18px,4vw,48px) 80px}
+.dashboard-nav{
+    max-width:1230px;
+    margin:16px auto 0;
+    padding:7px;
+    border-radius:14px;
+    background:var(--card);
+    border:1px solid var(--border);
+    box-shadow:0 8px 26px rgba(16,42,67,.045);
+}
+.dashboard-nav button{min-height:44px;color:var(--muted)}
+.dashboard-nav button:hover{background:var(--bg);color:var(--primary)}
+.dashboard-nav button.active{background:var(--primary-gradient);box-shadow:0 7px 18px rgba(15,118,110,.22)}
+.dashboard-nav.is-admin-nav{width:fit-content;max-width:100%;margin-left:auto;margin-right:auto;justify-content:center;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.dashboard-nav.is-admin-nav button{flex:0 0 auto;min-width:auto;padding:0 13px;white-space:nowrap}
+#adminView #adminTabs{display:none!important}
+.welcome{margin-bottom:32px}
+.welcome h1{font-size:clamp(26px,3vw,36px);letter-spacing:-.8px;line-height:1.2}
+.welcome p{font-size:15px;line-height:1.65}
+.stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:36px}
+.stat-card{
+    position:relative;
+    overflow:hidden;
+    min-height:118px;
+    padding:22px 24px;
+    border-radius:16px;
+    box-shadow:0 7px 22px rgba(16,42,67,.045);
+}
+.stat-card::after{content:"";position:absolute;width:86px;height:86px;right:-32px;bottom:-42px;border-radius:50%;background:rgba(45,212,191,.08)}
+.stat-label{font-size:12px;font-weight:700;letter-spacing:.02em}
+.stat-value{font-size:30px;letter-spacing:-.8px}
+.section-header{gap:18px;align-items:flex-end}
+.section-header h2{font-size:22px;letter-spacing:-.35px}
+.section-header p{margin-top:4px;line-height:1.5}
+.search-box{margin-bottom:14px}
+.search-box input{
+    height:54px;
+    border-radius:14px;
+    padding-left:48px;
+    border:1px solid var(--border);
+    box-shadow:0 4px 14px rgba(16,42,67,.025);
+    font-size:14px;
+}
+.search-box input:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(15,118,110,.11)}
+.search-box span{left:17px}
+.filters-bar{gap:9px;margin-bottom:24px}
+.filters-bar .filter-select,.filters-clear{height:42px;border-radius:11px;font-size:13px}
+.filters-bar .filter-select{min-width:160px}
+.filters-clear{font-weight:750}
+.importadoras-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:18px}
+.importadora-card{
+    min-height:250px;
+    padding:22px;
+    border-radius:18px;
+    border-color:#e0e8ef;
+    box-shadow:0 7px 22px rgba(16,42,67,.045);
+}
+.importadora-card:hover{transform:translateY(-4px);border-color:#99d8d1;box-shadow:0 18px 38px rgba(16,42,67,.10)}
+.importadora-logo{width:62px;height:62px;border-radius:16px;background:#f5f9fb;border-color:#e5edf2}
+.logo-placeholder{color:var(--primary)}
+.favorite-btn{width:40px;height:40px;border-radius:12px;color:#78909c}
+.favorite-btn.active{color:#d97706;background:#fffbeb;border-color:#fde68a}
+.compare-check{min-height:40px;padding:0 9px;border:1px solid var(--border);border-radius:10px;background:var(--card);font-weight:700}
+.importadora-name{margin-top:16px;font-size:18px;letter-spacing:-.25px;line-height:1.35}
+.importadora-description{margin-top:8px;font-size:13px;line-height:1.65;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.importadora-summary{gap:7px;margin-top:16px}
+.importadora-tag{border:1px solid #dbece9;border-radius:999px;background:#f0fdfa;color:#0f625d;font-weight:700;padding:6px 10px}
+.card-actions{gap:9px;margin-top:auto;padding-top:18px}
+.card-actions .details-btn{min-height:42px;border-radius:11px;font-weight:800}
+.whatsapp-btn{min-height:42px;border-radius:11px}
+.details-btn:hover,.visit-btn:hover,.whatsapp-btn:hover{transform:translateY(-1px)}
+.empty-state{padding:clamp(34px,6vw,58px) 20px;border-radius:18px;background:var(--card)}
+.compare-bar{bottom:max(16px,env(safe-area-inset-bottom));border-radius:16px;padding:12px 14px;box-shadow:0 16px 42px rgba(16,42,67,.19)}
+.admin-tabs{border-radius:14px}
+.admin-tab{min-height:42px}
+.table-wrap{max-width:100%;border-radius:14px;overscroll-behavior-x:contain}
+.modal-box,.importadora-modal-card{border-radius:20px}
+.modal-overlay,.importadora-modal{overscroll-behavior:contain}
+
+@media(max-width:900px){
+    .dashboard-content{padding-top:30px}
+    .dashboard-nav{margin-left:18px;margin-right:18px}
+    .importadoras-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:700px){
+    html{scroll-padding-top:80px}
+    .dashboard-header{position:sticky;top:0;z-index:100;min-height:62px;padding:9px 14px!important;flex-wrap:nowrap!important}
+    .dashboard-logo{font-size:17px}
+    .header-right{margin-left:auto;min-width:0}
+    .user-mini{padding:4px;border:0;background:transparent}
+    .user-avatar{width:36px;height:36px}
+    .logout-btn{height:36px;padding:0 10px;border-radius:9px;font-size:11px}
+    .dashboard-nav{position:sticky;top:61px;z-index:90;margin:0;border:0;border-bottom:1px solid var(--border);border-radius:0;padding:7px 10px;box-shadow:0 5px 14px rgba(16,42,67,.06)}
+    .dashboard-nav button{min-height:42px}
+    .dashboard-content{padding:24px 16px calc(88px + env(safe-area-inset-bottom))!important}
+    .welcome{margin-bottom:24px}
+    .welcome h1{font-size:25px}
+    .welcome p{font-size:13px}
+    .stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:28px}
+    .stat-card{min-height:95px;padding:14px 11px;border-radius:13px}
+    .stat-label{font-size:10px;line-height:1.35}
+    .stat-value{font-size:23px;margin-top:3px}
+    .section-header{align-items:flex-start}
+    .section-header h2{font-size:19px}
+    .search-box input{height:50px;font-size:16px}
+    .filters-bar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+    .filters-bar .filter-select{width:100%;min-width:0;height:44px;font-size:12px}
+    .filters-clear{grid-column:1/-1;width:100%;height:42px}
+    .importadoras-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .importadora-card{min-height:unset;padding:15px;border-radius:15px}
+    .importadora-logo{width:48px;height:48px;border-radius:12px}
+    .favorite-btn{width:36px;height:36px}
+    .compare-check{gap:3px;padding:0 6px;font-size:10px}
+    .compare-check input{width:14px;height:14px}
+    .importadora-name{font-size:15px;overflow-wrap:anywhere}
+    .importadora-description{font-size:12px;line-height:1.5;-webkit-line-clamp:4}
+    .importadora-summary{gap:5px}
+    .importadora-tag{font-size:10px;padding:5px 8px}
+    .card-actions{flex-direction:column;align-items:stretch;gap:7px;padding-top:14px}
+    .card-actions .details-btn,.card-actions .whatsapp-btn{width:100%;min-height:42px;margin:0;font-size:11px}
+    .compare-bar{left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));transform:none;width:auto;max-width:none;gap:8px;padding:10px;border-radius:14px}
+    .compare-bar-title{font-size:11px}
+    .compare-bar-ids{display:none}
+    .compare-bar-actions{margin-left:auto;gap:6px}
+    .compare-bar-actions .details-btn{height:38px!important;padding:0 12px!important;font-size:11px}
+    .compare-clear{width:36px;height:36px}
+    .section-header .header-actions{width:100%}
+    .section-header .header-actions>*{flex:1}
+    .admin-tabs{scrollbar-width:none}
+    .admin-tabs::-webkit-scrollbar,.dashboard-nav::-webkit-scrollbar{display:none}
+    .table-wrap{margin-left:-16px;margin-right:-16px;border-radius:0}
+    .toast-container{bottom:calc(12px + env(safe-area-inset-bottom))}
+}
+@media(max-width:520px){
+    .importadoras-grid{grid-template-columns:1fr}
+    .importadora-card{padding:17px}
+    .importadora-logo{width:54px;height:54px}
+    .importadora-name{font-size:17px}
+    .importadora-description{font-size:13px;-webkit-line-clamp:3}
+    .importadora-tag{font-size:11px;padding:6px 9px}
+    .card-actions .details-btn,.card-actions .whatsapp-btn{font-size:12px}
+}
+@media(max-width:420px){
+    .dashboard-logo{font-size:15px}
+    .header-right{gap:4px}
+    .logout-btn{padding:0 8px;font-size:10px}
+    .dashboard-content{padding-left:12px!important;padding-right:12px!important}
+    .importadoras-grid{gap:12px}
+    .importadora-card{padding:15px}
+    .card-top{gap:5px}
+    .compare-check span{font-size:9px}
+    .importadora-tag{font-size:10px}
+    .card-actions .details-btn,.card-actions .whatsapp-btn{min-height:46px;height:auto;font-size:11px;line-height:1.3;padding:9px 8px;white-space:normal}
+}
+@media(prefers-color-scheme:dark){
+    :root{--primary:#2dd4bf;--primary-dark:#0f766e;--secondary:#5eead4;--dark:#f1f5f9;--dark-2:#dbeafe;--text:#e2e8f0;--muted:#a9bacb;--border:#334155;--primary-gradient:linear-gradient(135deg,#0f766e,#115e59)}
+    body{background:radial-gradient(ellipse at 10% -10%,rgba(45,212,191,.08),transparent 32rem),#0f172a}
+    .auth-brand{background:radial-gradient(circle at 18% 12%,rgba(45,212,191,.14),transparent 34%),linear-gradient(150deg,#0b1728,#123b48 125%)}
+    .dashboard-header{background:rgba(15,23,42,.94);border-color:var(--border)}
+    .stat-card,.importadora-card,.dashboard-nav,.search-box,.empty-state{background:var(--card);border-color:var(--border)}
+    .importadora-logo{background:#172638;border-color:var(--border)}
+    .importadora-tag{background:#123b38;border-color:#1e5d57;color:#99f6e4}
+    .compare-check{background:var(--bg);border-color:var(--border);color:var(--text)}
+    .filters-bar .filter-select,.filters-clear,.csv-btn{background:var(--card);color:var(--text);border-color:var(--border)}
+    .filters-bar .filter-select option{background:var(--card);color:var(--text)}
+    .stat-card::after{background:rgba(45,212,191,.06)}
+}
+
+/* =====================================================
+   SITIO PÚBLICO DE PRESENTACIÓN
+===================================================== */
+.landing-page{min-height:100vh;background:var(--bg)}
+.landing-shell{width:min(1180px,calc(100% - 48px));margin:0 auto}
+.landing-header{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid rgba(217,226,236,.75)}
+.landing-brand{color:var(--dark);font-size:22px;font-weight:900;letter-spacing:-.8px;text-decoration:none}
+.landing-brand span{color:var(--primary)}
+.landing-nav{display:flex;align-items:center;gap:30px}
+.landing-nav a{color:var(--muted);font-size:13px;font-weight:700;text-decoration:none;transition:color .18s ease}
+.landing-nav a:hover{color:var(--primary)}
+.landing-nav .landing-nav-cta{padding:11px 17px;border:1px solid var(--border);border-radius:11px;color:var(--dark);background:var(--card)}
+.landing-hero{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(360px,.98fr);align-items:center;gap:52px;padding:74px 0 78px}
+.landing-eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:20px;color:var(--primary);font-size:11px;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
+.landing-eyebrow::before{content:"";width:24px;height:2px;border-radius:99px;background:var(--secondary)}
+.landing-copy h1{max-width:650px;color:var(--dark);font-size:clamp(42px,5.3vw,66px);font-weight:900;letter-spacing:-.055em;line-height:1.02}
+.landing-copy h1 em{color:var(--primary);font-style:normal}
+.landing-copy>p{max-width:560px;margin-top:22px;color:var(--muted);font-size:17px;line-height:1.75}
+.landing-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:30px}
+.landing-primary,.landing-secondary{min-height:50px;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:0 20px;border-radius:12px;text-decoration:none;font-size:13px;font-weight:850;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.landing-primary{border:1px solid var(--primary);background:var(--primary-gradient);color:#fff;box-shadow:0 10px 24px rgba(15,118,110,.2)}
+.landing-primary:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(15,118,110,.27)}
+.landing-secondary{border:1px solid var(--border);background:var(--card);color:var(--dark)}
+.landing-secondary:hover{background:var(--bg);transform:translateY(-1px)}
+.landing-assurance{display:flex;align-items:center;gap:9px;margin-top:22px;color:var(--muted);font-size:12px;line-height:1.5}
+.landing-assurance span{display:grid;width:22px;height:22px;place-items:center;border-radius:50%;background:rgba(15,118,110,.1);color:var(--primary);font-weight:900}
+.landing-visual{position:relative;min-height:420px;display:grid;place-items:center;overflow:hidden;border:1px solid rgba(15,118,110,.12);border-radius:30px;background:radial-gradient(circle at 50% 40%,rgba(45,212,191,.16),transparent 48%),linear-gradient(145deg,#eaf6f4,#f4f8fb 62%,#e8f0f5);box-shadow:0 30px 75px rgba(16,42,67,.11)}
+.landing-visual::before,.landing-visual::after{content:"";position:absolute;border:1px solid rgba(15,118,110,.11);border-radius:50%}
+.landing-visual::before{width:340px;height:340px}.landing-visual::after{width:450px;height:450px}
+.landing-orbit{position:absolute;inset:0;background-image:radial-gradient(rgba(15,118,110,.18) 1px,transparent 1px);background-size:22px 22px;mask-image:radial-gradient(ellipse at center,#000 10%,transparent 72%);opacity:.55}
+.landing-package{position:relative;z-index:1;width:190px;height:190px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.8);border-radius:34px;background:linear-gradient(145deg,#fff,#eaf5f3);box-shadow:0 26px 55px rgba(16,42,67,.17);transform:rotate(-5deg)}
+.landing-package-mark{width:96px;height:96px;display:grid;place-items:center;border-radius:27px;background:var(--primary-gradient);color:#eafffb;font-size:43px;font-weight:900;letter-spacing:-4px;box-shadow:0 14px 28px rgba(15,118,110,.24)}
+.landing-float-card{position:absolute;z-index:2;display:flex;align-items:center;gap:11px;padding:13px 16px;border:1px solid rgba(217,226,236,.85);border-radius:14px;background:rgba(255,255,255,.93);box-shadow:0 14px 34px rgba(16,42,67,.12);backdrop-filter:blur(12px)}
+.landing-float-card strong{display:block;color:#102a43;font-size:12px}.landing-float-card small{display:block;margin-top:3px;color:#627d98;font-size:10px}
+.landing-float-icon{width:36px;height:36px;display:grid;place-items:center;border-radius:11px;background:#e6f6f3;color:#0f766e;font-size:17px}
+.landing-float-one{top:68px;left:28px}.landing-float-two{right:22px;top:178px}.landing-float-three{left:48px;bottom:50px}
+.landing-section{padding:76px 0;border-top:1px solid var(--border)}
+.landing-section-heading{max-width:650px;margin:0 auto 38px;text-align:center}
+.landing-section-heading .landing-eyebrow{justify-content:center}
+.landing-section-heading h2{color:var(--dark);font-size:clamp(28px,3.4vw,40px);letter-spacing:-.04em;line-height:1.12}
+.landing-section-heading p{margin-top:12px;color:var(--muted);font-size:15px;line-height:1.7}
+.landing-benefits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.landing-benefit{min-height:205px;padding:25px;border:1px solid var(--border);border-radius:17px;background:var(--card);box-shadow:0 8px 22px rgba(16,42,67,.035)}
+.landing-benefit-icon{width:44px;height:44px;display:grid;place-items:center;margin-bottom:20px;border-radius:13px;background:rgba(15,118,110,.09);color:var(--primary);font-size:19px}
+.landing-benefit h3{color:var(--dark);font-size:16px;letter-spacing:-.2px}
+.landing-benefit p{margin-top:9px;color:var(--muted);font-size:13px;line-height:1.65}
+.landing-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;counter-reset:step}
+.landing-step{position:relative;padding:4px 8px 4px 60px;counter-increment:step}
+.landing-step::before{content:"0" counter(step);position:absolute;left:0;top:0;width:42px;height:42px;display:grid;place-items:center;border:1px solid rgba(15,118,110,.2);border-radius:13px;background:rgba(15,118,110,.07);color:var(--primary);font-size:12px;font-weight:900}
+.landing-step h3{color:var(--dark);font-size:15px}
+.landing-step p{margin-top:8px;color:var(--muted);font-size:13px;line-height:1.65}
+.landing-cta{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:34px 38px;border-radius:22px;background:linear-gradient(120deg,#102a43,#164e63 70%,#0f766e);color:#fff;box-shadow:0 20px 50px rgba(16,42,67,.16)}
+.landing-cta h2{font-size:clamp(22px,3vw,30px);letter-spacing:-.035em}
+.landing-cta p{margin-top:8px;color:#c9dbe5;font-size:13px;line-height:1.6}
+.landing-cta .landing-secondary{flex:0 0 auto;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:white}
+.landing-footer{display:flex;justify-content:space-between;gap:18px;padding:25px 0 30px;color:var(--muted);font-size:11px}
+.landing-footer a{color:var(--muted);text-decoration:none}.landing-footer a:hover{color:var(--primary)}
+.landing-footer-links{display:flex;gap:18px}
+.auth-back{position:fixed;top:18px;left:clamp(16px,4vw,48px);z-index:5;min-height:40px;padding:0 13px;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--muted);font-size:12px;font-weight:800;box-shadow:0 5px 16px rgba(16,42,67,.06)}
+.auth-back:hover{color:var(--primary);border-color:var(--primary)}
+@media(max-width:850px){
+    .landing-hero{grid-template-columns:1fr;gap:38px;padding:56px 0 62px}
+    .landing-copy{text-align:center}.landing-copy h1,.landing-copy>p{margin-left:auto;margin-right:auto}
+    .landing-eyebrow,.landing-actions,.landing-assurance{justify-content:center}
+    .landing-visual{min-height:360px}
+}
+@media(max-width:600px){
+    .landing-shell{width:min(100% - 32px,480px)}
+    .landing-header{height:66px}.landing-brand{font-size:19px}
+    .landing-nav{gap:10px}.landing-nav a:not(.landing-nav-cta){display:none}
+    .landing-nav .landing-nav-cta{padding:10px 12px;font-size:11px}
+    .landing-hero{padding:43px 0 48px;gap:30px}
+    .landing-copy h1{font-size:clamp(38px,11vw,52px)}
+    .landing-copy>p{font-size:14px;line-height:1.7}
+    .landing-actions{display:grid;grid-template-columns:1fr;width:100%}
+    .landing-primary,.landing-secondary{width:100%;min-height:48px}
+    .landing-assurance{font-size:11px;text-align:left;justify-content:flex-start}
+    .landing-visual{min-height:300px;border-radius:23px}
+    .landing-visual::before{width:240px;height:240px}.landing-visual::after{width:330px;height:330px}
+    .landing-package{width:140px;height:140px;border-radius:27px}.landing-package-mark{width:76px;height:76px;border-radius:22px;font-size:34px}
+    .landing-float-card{padding:10px 12px;gap:8px}.landing-float-icon{width:31px;height:31px}
+    .landing-float-card strong{font-size:10px}.landing-float-card small{font-size:9px}
+    .landing-float-one{top:33px;left:10px}.landing-float-two{right:8px;top:135px}.landing-float-three{left:14px;bottom:25px}
+    .landing-section{padding:55px 0}
+    .landing-section-heading{margin-bottom:26px}.landing-section-heading h2{font-size:30px}.landing-section-heading p{font-size:13px}
+    .landing-benefits,.landing-steps{grid-template-columns:1fr;gap:11px}
+    .landing-benefit{min-height:unset;padding:20px}.landing-benefit-icon{margin-bottom:14px}
+    .landing-step{padding:4px 4px 4px 56px;min-height:52px}
+    .landing-cta{align-items:flex-start;flex-direction:column;padding:25px 21px;border-radius:18px}
+    .landing-cta .landing-secondary{width:100%}
+    .landing-footer{flex-direction:column;padding-bottom:calc(25px + env(safe-area-inset-bottom))}
+    .auth-back{top:10px;left:10px;min-height:36px}
+}
+@media(prefers-color-scheme:dark){
+    .landing-header{border-color:var(--border)}
+    .landing-visual{border-color:#294450;background:radial-gradient(circle at 50% 40%,rgba(45,212,191,.12),transparent 48%),linear-gradient(145deg,#142d39,#1b2938 62%,#172a35)}
+    .landing-package{border-color:#43515c;background:linear-gradient(145deg,#293847,#1c2c38)}
+    .landing-float-card{background:rgba(30,41,59,.94);border-color:#415365}
+    .landing-float-card strong{color:#f1f5f9}.landing-float-card small{color:#a9bacb}
+    .landing-float-icon{background:#123b38;color:#99f6e4}
+}
+
+/* Mejoras de experiencia para clientes e importadoras */
+.client-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:-4px 0 14px}
+.favorites-filter{min-height:40px;display:inline-flex;align-items:center;gap:8px;padding:0 13px;border:1px solid var(--border);border-radius:11px;background:var(--card);color:var(--text);font-size:12px;font-weight:800;transition:all .18s ease}
+.favorites-filter:hover{border-color:#f2c779;background:#fffbeb;color:#a16207}
+.favorites-filter.active{border-color:#f2c779;background:#fffbeb;color:#a16207;box-shadow:0 3px 12px rgba(217,119,6,.08)}
+.favorites-filter-star{font-size:17px;line-height:1;color:#d97706}
+.favorites-filter-count{min-width:22px;height:22px;display:grid;place-items:center;border-radius:7px;background:var(--bg);color:var(--muted);font-size:10px}
+.results-meta{color:var(--muted);font-size:11px;font-weight:700}
+.imp-profile-overview,.imp-edit-card{max-width:900px}
+.imp-profile-overview{margin-bottom:18px;padding:24px;border:1px solid var(--border);border-radius:18px;background:linear-gradient(135deg,var(--card),rgba(15,118,110,.035));box-shadow:0 8px 24px rgba(16,42,67,.045)}
+.imp-overview-top{display:flex;align-items:flex-start;justify-content:space-between;gap:18px}
+.imp-overview-kicker{color:var(--primary);font-size:10px;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
+.imp-overview-top h2{margin-top:7px;color:var(--dark);font-size:21px;letter-spacing:-.4px}
+.imp-overview-top p{margin-top:6px;color:var(--muted);font-size:13px;line-height:1.55}
+.imp-overview-actions{display:flex;flex-direction:column;align-items:flex-end;gap:10px;flex:0 0 auto}
+.imp-preview-btn{min-height:40px;padding:0 12px;border-radius:10px;font-size:11px;font-weight:800}
+.imp-progress-row{display:flex;align-items:center;gap:12px;margin-top:20px}
+.imp-progress-track{height:9px;flex:1;overflow:hidden;border-radius:99px;background:var(--bg);box-shadow:inset 0 0 0 1px var(--border)}
+.imp-progress-track span{height:100%;display:block;border-radius:inherit;background:linear-gradient(90deg,#0f766e,#2dd4bf);transition:width .3s ease}
+.imp-progress-row strong{min-width:42px;color:var(--primary);font-size:13px;text-align:right}
+.imp-completion-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:16px;padding:0;list-style:none}
+.imp-completion-list li{min-width:0;display:grid;grid-template-columns:20px 1fr;column-gap:7px;align-items:center;padding:10px;border:1px solid var(--border);border-radius:11px;background:var(--card)}
+.imp-check-icon{width:19px;height:19px;display:grid;place-items:center;border-radius:50%;background:var(--bg);color:var(--muted);font-size:11px;font-weight:900;grid-row:span 2}
+.imp-completion-list .is-complete .imp-check-icon{background:#dcfce7;color:#15803d}
+.imp-check-label{overflow:hidden;color:var(--dark);font-size:10px;font-weight:800;text-overflow:ellipsis;white-space:nowrap}
+.imp-check-state{margin-top:3px;color:var(--muted);font-size:9px}
+.imp-completion-list .is-complete .imp-check-state{color:#15803d}
+.imp-edit-card{padding:26px}
+.imp-profile-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:15px;margin-top:20px}
+.imp-profile-form .field{min-width:0;margin-bottom:15px}
+.imp-profile-form .field:last-child{grid-column:1/-1}
+.imp-save-hint{margin-top:10px;color:var(--muted);font-size:11px;line-height:1.5}
+#btnGuardarMiImportadora{min-height:48px}
+#btnGuardarMiImportadora.is-dirty{box-shadow:0 0 0 3px rgba(245,158,11,.17),0 8px 20px rgba(15,118,110,.18)}
+.imp-save-hint.is-dirty{color:#a16207;font-weight:750}
+.client-view .section-header{align-items:center}
+.imp-unlinked-state .secondary-btn{margin-top:18px;padding:0 16px;min-height:42px;border-radius:10px;font-weight:800}
+.imp-loading-card{max-width:900px;min-height:190px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:15px;padding:24px;border:1px solid var(--border);border-radius:18px;background:var(--card);box-shadow:0 8px 24px rgba(16,42,67,.045)}
+.imp-loading-mark,.imp-loading-lines span{display:block;border-radius:8px;background:linear-gradient(90deg,var(--bg),var(--card),var(--bg));background-size:200% 100%;animation:skeletonPulse 1.4s ease-in-out infinite}
+.imp-loading-mark{width:52px;height:52px;border-radius:14px}
+.imp-loading-lines{width:min(100%,360px);display:grid;gap:8px}
+.imp-loading-lines span{height:10px}.imp-loading-lines span:nth-child(2){width:80%}.imp-loading-lines span:nth-child(3){width:56%}
+.imp-loading-card strong{color:var(--muted);font-size:12px}
+
+@media(max-width:700px){
+    .client-tools{margin:0 0 12px}
+    .favorites-filter{min-height:42px}
+    .results-meta{font-size:10px}
+    .imp-profile-overview{padding:19px 16px;border-radius:15px}
+    .imp-overview-top{flex-direction:column;gap:14px}
+    .imp-overview-top h2{font-size:19px}
+    .imp-overview-actions{width:100%;flex-direction:row;align-items:center;justify-content:space-between}
+    .imp-preview-btn{min-height:42px}
+    .imp-completion-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+    .imp-completion-list li{padding:9px 8px}
+    .imp-edit-card{padding:19px 16px}
+    .imp-profile-form{grid-template-columns:1fr;gap:0;margin-top:15px}
+    .imp-profile-form .field:last-child{grid-column:auto}
+    #btnGuardarMiImportadora{position:sticky;bottom:calc(12px + env(safe-area-inset-bottom));z-index:10;box-shadow:0 9px 25px rgba(15,118,110,.25)}
+}
+@media(max-width:400px){
+    .imp-completion-list{grid-template-columns:1fr}
+    .imp-overview-actions{align-items:flex-start;flex-direction:column}
+    .imp-preview-btn{width:100%}
+    .client-tools{align-items:flex-start}
+}
+@media(prefers-color-scheme:dark){
+    .favorites-filter{background:var(--card);border-color:var(--border);color:var(--text)}
+    .favorites-filter.active,.favorites-filter:hover{background:#3b2c12;border-color:#7c5a1d;color:#fcd34d}
+    .favorites-filter-count{background:var(--bg);color:var(--muted)}
+    .imp-profile-overview{background:linear-gradient(135deg,var(--card),rgba(45,212,191,.035));border-color:var(--border)}
+    .imp-completion-list li{background:var(--card);border-color:var(--border)}
+    .imp-check-icon{background:var(--bg);color:var(--muted)}
+    .imp-completion-list .is-complete .imp-check-icon{background:#123b38;color:#99f6e4}
+    .imp-completion-list .is-complete .imp-check-state{color:#99f6e4}
+    .imp-save-hint.is-dirty{color:#fcd34d}
+}
+    .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px}
+    #membershipView .panel-card{width:100%;max-width:860px;border-radius:18px;background:var(--card);border-color:var(--border);box-shadow:0 8px 28px rgba(16,42,67,.06)}
+    #membershipPanel h2{margin:22px 0 12px;color:var(--dark);font-size:19px;letter-spacing:-.2px}
+    .membership-enforcement{display:flex;align-items:flex-start;gap:10px;margin:14px 0;color:var(--text);font-size:13px;font-weight:750;line-height:1.5}
+    .membership-enforcement input{width:18px;height:18px;flex:0 0 auto;margin-top:1px;accent-color:var(--primary)}
+    .membership-plan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:16px 0}
+    .membership-plan{position:relative;display:block;min-width:0;padding:17px 18px;border:1px solid var(--border);border-radius:15px;background:var(--card);color:var(--text);box-shadow:0 5px 18px rgba(16,42,67,.045);cursor:pointer;transition:border-color .18s ease,box-shadow .18s ease,transform .18s ease}
+    .membership-plan:hover{border-color:var(--primary);transform:translateY(-1px);box-shadow:0 9px 24px rgba(16,42,67,.09)}
+    .membership-plan:has(input:checked){border-color:var(--primary);box-shadow:0 0 0 3px rgba(15,118,110,.10)}
+    .membership-plan input{margin:0 6px 0 0;accent-color:var(--primary)}
+    .membership-plan h3{display:inline;margin:0;color:var(--dark);font-size:15px}
+    .membership-plan span{color:var(--muted);font-size:12px}
+    .membership-price{margin:12px 0 5px;color:var(--primary);font-size:26px;font-weight:850;letter-spacing:-.6px}
+    .membership-payment-card{margin:12px 0;padding:15px 16px;border:1px solid var(--border);border-radius:13px;background:var(--bg);color:var(--text)}
+    .membership-payment-card p{margin:5px 0;color:var(--muted);font-size:13px;line-height:1.55;overflow-wrap:anywhere}
+    .membership-payment-card strong{color:var(--dark)}
+    .membership-status{margin-bottom:16px;padding:14px 16px;border:1px solid rgba(15,118,110,.16);border-radius:13px;background:rgba(15,118,110,.06);color:var(--text);font-size:13px;line-height:1.55}
+    .membership-status strong{color:var(--dark)}
+    .membership-payment-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    body.client-content-protected #appSection{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+    body.client-content-protected #appSection input,body.client-content-protected #appSection textarea,body.client-content-protected #appSection select{user-select:text;-webkit-user-select:text}
+    .client-security-watermark{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:90;max-width:min(72vw,360px);padding:7px 10px;border:1px solid rgba(255,255,255,.22);border-radius:9px;background:rgba(16,42,67,.70);color:#fff;font-size:10px;font-weight:700;letter-spacing:.02em;line-height:1.35;opacity:.72;pointer-events:none;overflow-wrap:anywhere;box-shadow:0 3px 12px rgba(16,42,67,.12);backdrop-filter:blur(6px)}
+    #registerStep{width:100%;padding:2px 0 4px}
+    .auth-wrapper.register-mode{align-items:flex-start;padding-top:72px;padding-bottom:28px}
+    .register-mode .auth-form-area{justify-content:flex-start}
+    #registerStep .auth-form-header{margin-bottom:20px}
+    #registrationForm .field{min-width:0;margin-bottom:13px}
+    #registrationForm .field label{color:var(--muted);font-size:13px;font-weight:750}
+    #registrationForm .field input,#registrationForm .field select{height:50px;min-height:50px;padding:0 14px;border-color:var(--border);border-radius:13px;background:var(--bg2);color:var(--text);font-size:14px}
+    #registrationForm .field input:focus,#registrationForm .field select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(15,118,110,.12)}
+    #registerStep .terms-check-label{color:var(--muted);font-size:12px;line-height:1.5}
+    #registerStep .terms-check-label input{flex:0 0 auto;margin-top:2px;accent-color:var(--primary)}
+    #registrationSubmitBtn{min-height:48px;border-radius:11px}
+    @media(max-width:640px){.membership-plan-grid,.form-grid{grid-template-columns:1fr}.membership-payment-actions button{flex:1;min-height:42px}.membership-plan{padding:15px}.auth-wrapper.register-mode{padding:58px 12px 18px}.register-mode .auth-form-area{padding:24px 18px}}
+    @media(prefers-color-scheme:dark){
+        #membershipView .panel-card{box-shadow:0 12px 32px rgba(0,0,0,.18)}
+        .membership-plan{box-shadow:none}
+        .membership-plan:hover{box-shadow:0 8px 22px rgba(0,0,0,.2)}
+        .membership-plan:has(input:checked){box-shadow:0 0 0 3px rgba(45,212,191,.13)}
+        .membership-payment-card{background:var(--bg2)}
+        .membership-status{background:rgba(45,212,191,.08);border-color:rgba(45,212,191,.22)}
+        .client-security-watermark{background:rgba(15,23,42,.76);border-color:rgba(148,163,184,.28)}
+    }
+.admin-overview{margin:0 0 22px;padding:20px;border:1px solid var(--border);border-radius:18px;background:var(--card);box-shadow:0 8px 24px rgba(16,42,67,.05)}
+.admin-overview-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px}
+.admin-overview-head h2{margin:4px 0 0;font-size:20px;color:var(--dark)}
+.admin-overview-kicker{font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--primary)}
+.admin-overview-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.admin-kpi{min-width:0;padding:15px;border:1px solid var(--border);border-radius:14px;background:var(--bg)}
+.admin-kpi-label{display:block;color:var(--muted);font-size:12px;font-weight:700}
+.admin-kpi-value{display:block;margin-top:7px;color:var(--dark);font-size:24px;font-weight:850;letter-spacing:-.5px;overflow-wrap:anywhere}
+.admin-kpi-note{display:block;margin-top:4px;color:var(--muted);font-size:11px}
+.admin-expiring-list{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:14px}
+.admin-expiring-list:empty{display:none}
+.admin-expiring-label{font-size:12px;font-weight:800;color:var(--dark);margin-right:3px}
+.admin-expiring-chip{padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:var(--bg2);color:var(--text);font-size:11px;font-weight:750}
+.admin-filter-row{display:grid;grid-template-columns:minmax(150px,.7fr) minmax(220px,1.3fr) repeat(2,minmax(150px,.7fr));gap:12px;margin:12px 0 16px}
+.admin-filter-row .field{margin:0}
+.revoke-ad-btn{border-color:var(--danger);color:var(--danger)}
+.revoke-ad-btn:hover{background:var(--danger);border-color:var(--danger);color:#fff}
+.featured-badge{display:inline-flex;align-items:center;gap:5px;padding:6px 10px;border:1px solid rgba(14,165,233,.32);border-radius:999px;background:rgba(14,165,233,.10);color:var(--primary-dark);font-size:11px;font-weight:850;letter-spacing:.01em}
+.importadora-card.is-featured{border-color:var(--primary);box-shadow:0 10px 28px rgba(14,165,233,.10)}
+.importadora-card .card-top{position:relative}
+.card-featured-badge{position:absolute;top:-9px;left:0;z-index:2;padding:4px 8px;font-size:10px}
+.imp-ad-card{margin-bottom:18px;border:1px solid var(--border);background:var(--card);color:var(--text)}
+.imp-ad-card h3{margin:0 0 6px;color:var(--dark)}
+.imp-ad-card>p{margin:0 0 14px;color:var(--muted);font-size:13px;line-height:1.55}
+.imp-ad-plan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:14px 0}
+.imp-ad-plan{display:block;padding:14px;border:1px solid var(--border);border-radius:13px;background:var(--bg2);color:var(--text);cursor:pointer}
+.imp-ad-plan:has(input:checked){border-color:var(--primary);box-shadow:0 0 0 3px rgba(14,165,233,.14)}
+.imp-ad-plan input{margin:0 6px 0 0;accent-color:var(--primary)}
+.imp-ad-plan strong{color:var(--dark)}
+.imp-ad-price{display:block;margin:9px 0 2px;color:var(--primary-dark);font-size:22px;font-weight:850}
+.chat-shell{display:grid;grid-template-columns:minmax(250px,320px) minmax(0,1fr);max-width:none;min-height:620px;padding:0;overflow:hidden;background:var(--card);color:var(--text)}
+.chat-inbox{min-width:0;border-right:1px solid var(--border);background:var(--bg2)}
+.chat-inbox-heading{display:flex;align-items:center;justify-content:space-between;padding:18px 16px;border-bottom:1px solid var(--border);color:var(--dark)}
+.chat-unread-badge{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:var(--primary);color:#fff;font-size:11px;font-weight:850}
+.chat-nav-count{display:inline-grid;place-items:center;min-width:19px;height:19px;padding:0 5px;border-radius:999px;background:#ef4444;color:#fff;font-size:10px;font-weight:850}
+.chat-thread-list{max-height:560px;overflow:auto}
+.chat-thread{display:block;width:100%;padding:14px 15px;border:0;border-bottom:1px solid var(--border);background:transparent;text-align:left;color:var(--text);cursor:pointer}
+.chat-thread:hover,.chat-thread.active{background:var(--bg)}
+.chat-thread-top{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.chat-thread-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--dark);font-size:13px;font-weight:800}
+.chat-thread-date{flex:none;color:var(--muted);font-size:10px}
+.chat-thread-preview{display:block;margin-top:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted);font-size:12px}
+.chat-thread-unread{display:inline-block;width:8px;height:8px;margin-left:6px;border-radius:50%;background:var(--primary)}
+.chat-conversation{display:flex;min-width:0;min-height:0;flex-direction:column;background:var(--card)}
+.chat-conversation-header{display:flex;align-items:center;gap:10px;min-height:67px;padding:12px 18px;border-bottom:1px solid var(--border);color:var(--dark)}
+.chat-conversation-header strong{font-size:14px}
+.chat-conversation-subtitle{display:block;margin-top:3px;color:var(--muted);font-size:11px;font-weight:500}
+.chat-back-btn{display:none;border:1px solid var(--border);border-radius:9px;padding:8px 10px;background:var(--bg2);color:var(--text)}
+.chat-message-list{display:flex;flex:1;min-height:360px;max-height:520px;flex-direction:column;gap:12px;overflow:auto;padding:20px;background:var(--bg)}
+.chat-message{display:flex;max-width:min(78%,620px);flex-direction:column;align-self:flex-start;padding:10px 13px;border:1px solid var(--border);border-radius:14px 14px 14px 4px;background:var(--card);color:var(--text);box-shadow:0 3px 12px rgba(15,23,42,.04);overflow-wrap:anywhere}
+.chat-message.mine{align-self:flex-end;border-color:transparent;border-radius:14px 14px 4px 14px;background:var(--primary-gradient);color:#fff}
+.chat-message-body{font-size:13px;line-height:1.55;white-space:pre-wrap}
+.chat-message-meta{margin-top:5px;color:var(--muted);font-size:10px}
+.chat-message.mine .chat-message-meta{color:rgba(255,255,255,.8);text-align:right}
+.chat-empty-state{display:grid;place-content:center;justify-items:center;min-height:300px;text-align:center;color:var(--muted)}
+.chat-empty-state>span{font-size:35px;margin-bottom:10px}
+.chat-empty-state strong{color:var(--dark);font-size:14px}
+.chat-empty-state p{max-width:340px;margin-top:6px;font-size:12px;line-height:1.5}
+.chat-composer{padding:13px 16px 15px;border-top:1px solid var(--border);background:var(--card)}
+.chat-composer textarea{width:100%;min-height:62px;resize:vertical;padding:11px 12px;border:1px solid var(--border);border-radius:12px;background:var(--bg2);color:var(--text);font:inherit;font-size:13px}
+.chat-composer textarea:focus{outline:2px solid color-mix(in srgb,var(--primary) 35%,transparent);border-color:var(--primary)}
+.chat-composer-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px}
+.chat-composer-footer span{color:var(--muted);font-size:11px}
+.chat-composer-footer button{min-height:39px}
+.chat-shell:not(.has-thread) .chat-composer{opacity:.55}
+.chat-shell:not(.has-thread) #chatMessageInput,.chat-shell:not(.has-thread) #btnSendChatMessage{pointer-events:none}
+.chat-start-btn{margin-top:14px}
+.chat-empty-inbox{padding:22px 16px;text-align:center;color:var(--muted)}
+.chat-empty-inbox strong{display:block;color:var(--dark);font-size:13px}
+.chat-empty-inbox p{margin-top:6px;font-size:11px;line-height:1.5}
+.verified-badge{display:inline-flex;align-items:center;gap:5px;margin:6px 0 0;padding:5px 9px;border:1px solid rgba(22,163,74,.28);border-radius:999px;background:rgba(22,163,74,.09);color:var(--success);font-size:10px;font-weight:850}
+.verification-card{max-width:none;background:var(--card);color:var(--text)}
+.verification-card h3{margin-top:10px;color:var(--dark)}
+.verification-card>p{margin:7px 0;color:var(--muted);font-size:13px;line-height:1.55}
+.verification-pending{display:inline-flex;padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:var(--bg2);color:var(--primary-dark);font-size:11px;font-weight:800}
+.verification-rejected{padding:10px 12px;border-radius:10px;background:rgba(220,38,38,.08);color:var(--danger)!important}
+.imp-catalog-card{max-width:none;background:var(--card);color:var(--text)}
+.imp-catalog-card .field textarea{min-height:90px}
+.imp-catalog-post-list{display:grid;gap:10px}
+.imp-catalog-post{padding:13px;border:1px solid var(--border);border-radius:13px;background:var(--bg2);color:var(--text)}
+.imp-catalog-post h4{margin:0;color:var(--dark);font-size:14px}
+.imp-catalog-post p{margin:6px 0 0;color:var(--muted);font-size:12px;line-height:1.5;white-space:pre-wrap}
+.imp-catalog-post-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px;color:var(--muted);font-size:11px}
+.public-catalog-feed{display:grid;gap:10px}
+.public-catalog-item{padding:13px;border:1px solid var(--border);border-radius:12px;background:var(--bg2);color:var(--text)}
+.public-catalog-item h4{color:var(--dark);font-size:14px}
+.public-catalog-item p{margin-top:6px;color:var(--muted);font-size:12px;line-height:1.5;white-space:pre-wrap}
+.public-catalog-item .catalog-price{display:block;margin-top:8px;color:var(--primary-dark);font-weight:850}
+.public-catalog-item a{display:inline-block;margin-top:8px;color:var(--primary);font-size:12px;font-weight:750}
+@media(max-width:760px){.admin-overview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-filter-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.dashboard-nav.is-admin-nav{width:100%;justify-content:flex-start}}
+@media(max-width:760px){.chat-shell{grid-template-columns:minmax(0,1fr);min-height:520px}.chat-shell.has-thread .chat-inbox{display:none}.chat-shell.has-thread .chat-conversation{display:flex}.chat-shell:not(.has-thread) .chat-conversation{display:none}.chat-shell:not(.has-thread) .chat-inbox{display:block;border-right:0}.chat-thread-list{max-height:calc(100dvh - 300px);min-height:340px}.chat-message-list{min-height:280px;max-height:none}.chat-back-btn{display:inline-flex}.chat-message{max-width:88%}}
+@media(max-width:480px){.admin-overview{padding:15px}.admin-overview-head{align-items:flex-start}.admin-overview-head h2{font-size:18px}.admin-overview-grid{gap:8px}.admin-kpi{padding:12px}.admin-kpi-value{font-size:20px}.admin-overview-head .details-btn{min-height:38px;padding:0 10px}}
+
+/* Admin workspace: una sola navegación por secciones y componentes alineados */
+#adminView{width:100%;min-width:0}
+#adminView #adminTabs{display:none!important}
+#adminView .admin-tab-panel:not(.hidden){display:block;width:100%;min-width:0;animation:fadeIn .22s ease}
+#adminOverviewTab #adminOverview{max-width:none;margin:0}
+#adminOverviewTab .admin-overview{background:linear-gradient(135deg,var(--card),rgba(15,118,110,.035));}
+#adminView .section-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-bottom:16px}
+#adminView .section-header>div:first-child{flex:1 1 280px;min-width:0}
+#adminView .section-header h2,#adminView .section-header h3{margin:0;color:var(--dark);line-height:1.3}
+#adminView .section-header p{max-width:760px;margin:5px 0 0;color:var(--muted);line-height:1.55}
+#adminView .header-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:9px}
+#adminView .header-actions button,#adminView .section-header>.details-btn{min-height:42px;width:auto;white-space:nowrap}
+#adminView .admin-filter-row{align-items:end;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:14px 0 18px}
+#adminView .admin-filter-row .field{min-width:0;width:100%}
+#adminView .admin-filter-row .field input,#adminView .admin-filter-row .field select{min-width:0;width:100%;height:44px}
+#adminView .membership-payments{display:grid;grid-template-columns:1fr;gap:12px;min-width:0}
+#adminView .membership-payment-card{width:100%;min-width:0;margin:0;padding:18px;border:1px solid var(--border);border-radius:15px;background:var(--card);box-shadow:0 6px 18px rgba(16,42,67,.035);overflow-wrap:anywhere}
+#adminView .membership-payment-card>div:first-child{align-items:center}
+#adminView .membership-payment-card p{margin:8px 0;color:var(--muted);line-height:1.55}
+#adminView .membership-payment-card strong{color:var(--dark)}
+#adminView .membership-payment-actions{align-items:center;gap:9px}
+#adminView .membership-payment-actions button{min-height:42px;min-width:140px}
+#adminView .admin-overview-grid{grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch}
+#adminView .admin-kpi{display:flex;min-height:124px;flex-direction:column;align-items:flex-start;justify-content:flex-start;background:var(--bg2);box-shadow:0 5px 16px rgba(16,42,67,.025)}
+#adminView .admin-kpi-note{margin-top:auto;padding-top:7px;line-height:1.4}
+#adminView .admin-imp-card{height:100%;min-width:0;display:flex;flex-direction:column}
+#adminView .table-wrap{width:100%;max-width:100%}
+#adminView .panel-card{min-width:0}
+#adminView .field{min-width:0}
+#adminView input,#adminView select,#adminView textarea{max-width:100%}
+.verification-badge-preview{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin:14px 0 18px;padding:13px 14px;border:1px solid rgba(22,163,74,.2);border-radius:13px;background:linear-gradient(120deg,rgba(22,163,74,.06),var(--card))}
+.verification-preview-label{color:var(--dark);font-size:12px;font-weight:800}
+.verification-preview-note{flex:1 1 220px;color:var(--muted);font-size:11px;line-height:1.45}
+.modal-verified-banner{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:16px;padding:12px 14px;border:1px solid rgba(22,163,74,.2);border-radius:13px;background:rgba(22,163,74,.055)}
+.modal-verified-banner>span:last-child{color:var(--muted);font-size:12px;line-height:1.45}
+.verification-admin-config{margin:0 0 18px;padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--card);color:var(--text);box-shadow:0 7px 20px rgba(16,42,67,.04)}
+.verification-admin-config h3{margin:0;color:var(--dark);font-size:16px}
+.verification-admin-config>p{margin:6px 0 14px;color:var(--muted);font-size:12px;line-height:1.55}
+.verification-payment-form{display:grid;gap:12px;margin-top:14px}
+.verification-payment-form .membership-payment-card{margin:0;padding:14px;background:var(--bg2)}
+.verification-payment-form .form-grid{align-items:start}
+.verification-active-card,.verification-pending-card{display:grid;justify-items:start;gap:7px;margin:14px 0;padding:15px;border:1px solid var(--border);border-radius:13px;background:var(--bg2);color:var(--text)}
+.verification-active-card{border-color:rgba(22,163,74,.25);background:linear-gradient(120deg,rgba(22,163,74,.06),var(--card))}
+.verification-active-card strong,.verification-pending-card strong{color:var(--dark);font-size:13px}
+.verification-active-card>span:last-child,.verification-pending-card>span,.verification-pending-card small{color:var(--muted);font-size:11px;line-height:1.5}
+.verification-unavailable{display:grid;gap:5px;margin-top:14px;padding:14px;border:1px dashed var(--border);border-radius:12px;color:var(--muted);font-size:12px}
+.verification-unavailable strong{color:var(--dark)}
+.verification-sunat-link{display:inline-flex;align-items:center;min-height:32px;padding:0 10px;border:1px solid var(--border);border-radius:9px;color:var(--primary);font-size:11px;font-weight:800;text-decoration:none}
+.verification-sunat-link:hover{background:var(--bg2);text-decoration:underline}
+.chat-header-identity{flex:1;min-width:0}
+.chat-header-identity strong{display:block;overflow-wrap:anywhere}
+.chat-moderation-btn{flex:0 0 auto;min-height:38px;padding:0 12px;border:1px solid var(--danger);border-radius:10px;background:var(--card);color:var(--danger);font-size:11px;font-weight:850;cursor:pointer}
+.chat-moderation-btn:hover,.chat-moderation-btn.is-active{background:var(--danger);color:#fff}
+.chat-moderation-notice{display:grid;gap:4px;padding:11px 16px;border-bottom:1px solid rgba(217,119,6,.24);background:rgba(245,158,11,.10);color:#854d0e;font-size:12px;line-height:1.45}
+.chat-moderation-notice strong{font-size:12px}
+.chat-moderation-notice small{font-size:10px;opacity:.85}
+.chat-thread.is-suspended{background:rgba(245,158,11,.035)}
+.chat-suspended-mark{margin-left:5px;font-size:10px;font-style:normal}
+.imp-profile-overview,.imp-edit-card,.verification-card,.imp-ad-card,.imp-catalog-card{width:100%;max-width:900px;margin-left:auto;margin-right:auto;border-radius:18px;box-shadow:0 8px 24px rgba(16,42,67,.045)}
+.verification-card .form-grid,.imp-catalog-card .form-grid{align-items:start}
+.verification-card .primary-btn,.imp-catalog-card>.primary-btn,.imp-ad-card>.primary-btn,#btnGuardarMiImportadora{min-height:46px;border-radius:11px}
+.imp-catalog-card .section-header{align-items:flex-start}
+#importadoraView .panel-card{min-width:0}
+#importadoraView .field input,#importadoraView .field select,#importadoraView .field textarea{width:100%;min-width:0;max-width:100%}
+#importadoraView .imp-profile-form{align-items:start}
+#importadoraView .imp-catalog-post-meta{flex-wrap:wrap}
+
+@media(max-width:900px){#adminView .admin-overview-grid{grid-template-columns:repeat(3,minmax(0,1fr))}#adminView .admin-filter-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){#adminView .section-header{align-items:flex-start;gap:11px}#adminView .header-actions{width:100%;justify-content:stretch}#adminView .header-actions>*{flex:1 1 130px}#adminView .admin-overview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#adminView .admin-kpi{min-height:112px}#adminView .membership-payment-card{padding:15px}#adminView .membership-payment-actions button{flex:1 1 145px}#adminView .table-wrap{border-radius:12px}.verification-badge-preview{align-items:flex-start;flex-direction:column;gap:7px}.imp-profile-overview,.imp-edit-card,.verification-card,.imp-ad-card,.imp-catalog-card{border-radius:15px}.chat-conversation-header{gap:7px;padding:10px}.chat-moderation-btn{min-height:36px;padding:0 9px;font-size:10px}.verification-admin-config{padding:16px}}
+@media(max-width:480px){#adminView .admin-filter-row{grid-template-columns:minmax(0,1fr);gap:9px}#adminView .admin-overview-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}#adminView .admin-kpi{min-height:104px;padding:11px}#adminView .admin-kpi-value{font-size:19px}#adminView .admin-kpi-note{font-size:10px}#adminView .section-header h2{font-size:18px}#adminView .membership-payment-actions{display:grid;grid-template-columns:1fr}#adminView .membership-payment-actions button{width:100%}}
 </style>
 </head>
 
@@ -3296,6 +3920,82 @@ mark{
 
     </div>
 </div>
+
+
+<!-- =====================================================
+     PRESENTACIÓN PÚBLICA
+===================================================== -->
+
+<main id="landingSection" class="landing-page hidden">
+    <header class="landing-shell landing-header">
+        <a class="landing-brand" href="#inicio" aria-label="Intelicelyg, inicio">Intelicelyg<span>.pe</span></a>
+        <nav class="landing-nav" aria-label="Navegación principal">
+            <a href="#landingFeatures">Qué puedes hacer</a>
+            <a href="#landingHow">Cómo funciona</a>
+            <button type="button" class="landing-nav-cta js-show-login">Entrar <span aria-hidden="true">↗</span></button>
+        </nav>
+    </header>
+
+    <div id="inicio" class="landing-shell">
+        <section class="landing-hero" aria-labelledby="landingTitle">
+            <div class="landing-copy">
+                <div class="landing-eyebrow">Directorio digital de importadoras</div>
+                <h1 id="landingTitle">Encuentra opciones.<br><em>Conecta directo.</em></h1>
+                <p>Explora información de importadoras en un solo lugar. Compara lo que ofrece cada perfil y contacta directamente con la empresa que mejor se ajuste a tu búsqueda.</p>
+                <div class="landing-actions">
+                    <button type="button" class="landing-primary js-show-login">Acceder al directorio <span aria-hidden="true">→</span></button>
+                    <a class="landing-secondary" href="#landingHow">Conoce cómo funciona</a>
+                </div>
+                <div class="landing-assurance"><span aria-hidden="true">✓</span> Revisa la información disponible y valida las condiciones directamente con cada importadora.</div>
+            </div>
+            <div class="landing-visual" role="img" aria-label="Ilustración de una plataforma para descubrir importadoras y conectar con ellas">
+                <div class="landing-orbit"></div>
+                <div class="landing-package"><div class="landing-package-mark" aria-hidden="true">I.</div></div>
+                <div class="landing-float-card landing-float-one"><div class="landing-float-icon" aria-hidden="true">⌕</div><div><strong>Explora el directorio</strong><small>Busca por lo que necesitas</small></div></div>
+                <div class="landing-float-card landing-float-two"><div class="landing-float-icon" aria-hidden="true">⇄</div><div><strong>Compara opciones</strong><small>Revisa perfiles lado a lado</small></div></div>
+                <div class="landing-float-card landing-float-three"><div class="landing-float-icon" aria-hidden="true">↗</div><div><strong>Contacta directamente</strong><small>Elige el canal disponible</small></div></div>
+            </div>
+        </section>
+
+        <section id="landingFeatures" class="landing-section">
+            <div class="landing-section-heading">
+                <div class="landing-eyebrow">Una búsqueda más clara</div>
+                <h2>Todo empieza con la información correcta</h2>
+                <p>Herramientas simples para encontrar perfiles, entender sus datos y decidir con quién conversar.</p>
+            </div>
+            <div class="landing-benefits">
+                <article class="landing-benefit"><div class="landing-benefit-icon" aria-hidden="true">⌕</div><h3>Encuentra con filtros</h3><p>Busca por nombre y explora las opciones usando rubro, ciudad o método de compra cuando esa información esté disponible.</p></article>
+                <article class="landing-benefit"><div class="landing-benefit-icon" aria-hidden="true">⇄</div><h3>Compara y guarda</h3><p>Revisa varias importadoras, compara sus datos y conserva tus perfiles favoritos para consultarlos después.</p></article>
+                <article class="landing-benefit"><div class="landing-benefit-icon" aria-hidden="true">↗</div><h3>Habla con la empresa</h3><p>Consulta los canales de contacto publicados en cada perfil y coordina directamente los detalles de compra.</p></article>
+            </div>
+        </section>
+
+        <section id="landingHow" class="landing-section">
+            <div class="landing-section-heading">
+                <div class="landing-eyebrow">En tres pasos</div>
+                <h2>De explorar a conversar</h2>
+                <p>La plataforma organiza el descubrimiento; cada empresa gestiona directamente su oferta y relación comercial.</p>
+            </div>
+            <div class="landing-steps">
+                <article class="landing-step"><h3>Busca lo que necesitas</h3><p>Explora el directorio y aplica los filtros que te ayuden a acotar las opciones.</p></article>
+                <article class="landing-step"><h3>Revisa cada perfil</h3><p>Consulta descripción, ubicación, métodos de compra y los datos publicados por la empresa.</p></article>
+                <article class="landing-step"><h3>Contacta directamente</h3><p>Elige el canal disponible para resolver dudas y confirmar condiciones con la importadora.</p></article>
+            </div>
+        </section>
+
+        <section class="landing-section">
+            <div class="landing-cta">
+                <div><h2>Empieza a explorar el directorio</h2><p>Ingresa con tu correo para continuar. Si representas una importadora registrada, accede a tu panel para revisar y actualizar su perfil.</p></div>
+                <button type="button" class="landing-secondary js-show-login">Ingresar a Intelicelyg <span aria-hidden="true">→</span></button>
+            </div>
+        </section>
+    </div>
+
+    <footer class="landing-shell landing-footer">
+        <span>© <span id="landingYear"></span> Intelicelyg.pe · Directorio digital de importadoras</span>
+        <div class="landing-footer-links"><button type="button" id="landingTermsBtn" class="text-button">Términos y condiciones</button><button type="button" class="text-button js-show-login">Acceso</button></div>
+    </footer>
+</main>
 
 
 <!-- =====================================================
@@ -3336,6 +4036,8 @@ mark{
     id="authSection"
     class="auth-wrapper hidden"
 >
+
+    <button type="button" class="auth-back" id="authBackBtn">← Volver al inicio</button>
 
     <div class="auth-container">
 
@@ -3423,8 +4125,7 @@ mark{
                     </h2>
 
                     <p>
-                        Ingresa tu correo autorizado
-                        para recibir tu código de acceso.
+                        Ingresa tu correo para recibir un código de acceso.
                     </p>
 
                 </div>
@@ -3466,8 +4167,36 @@ mark{
                         Enviar código de acceso
                     </button>
 
+                    <button type="button" id="openRegistrationBtn" class="text-button" style="display:block;margin:14px auto 0;">¿Primera vez? Crear cuenta</button>
+
                 </form>
 
+            </div>
+
+            <div id="registerStep" class="hidden">
+                <div class="auth-form-header">
+                    <h2>Crear cuenta ✨</h2>
+                    <p>Regístrate, paga por Yape, Plin o banco y espera la validación manual para activar tu acceso.</p>
+                </div>
+                <form id="registrationForm">
+                    <div class="form-grid">
+                        <div class="field"><label for="registerName">Nombre *</label><input id="registerName" type="text" maxlength="100" autocomplete="given-name" required></div>
+                        <div class="field"><label for="registerLastName">Apellido</label><input id="registerLastName" type="text" maxlength="100" autocomplete="family-name"></div>
+                    </div>
+                    <div class="field"><label for="registerEmail">Correo *</label><input id="registerEmail" type="email" maxlength="180" autocomplete="email" required></div>
+                    <div class="form-grid">
+                        <div class="field"><label for="registerPlan">Plan *</label><select id="registerPlan" required><option value="">Cargando planes…</option></select></div>
+                        <div class="field"><label for="registerMethod">Medio de pago *</label><select id="registerMethod" required><option value="">Cargando opciones…</option></select></div>
+                    </div>
+                    <div id="registrationPaymentInfo" class="membership-payment-card">Cargando datos de pago…</div>
+                    <div class="field"><label for="registerReference">Número de operación o referencia *</label><input id="registerReference" type="text" maxlength="100" placeholder="Referencia de Yape, Plin o transferencia" required></div>
+                    <div id="registrationOtpWrap" class="field hidden"><label for="registerOtp">Código enviado a tu correo *</label><input id="registerOtp" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="000000"></div>
+                    <label class="terms-check-label" style="display:flex;gap:9px;align-items:flex-start;margin:12px 0"><input id="registerTerms" type="checkbox"><span>Acepto los <button type="button" id="registerTermsBtn" class="terms-link">Términos y Condiciones</button> y la Política de Privacidad.</span></label>
+                    <button id="registrationSubmitBtn" class="primary-btn" type="submit">Enviar código de verificación</button>
+                    <button type="button" id="resendRegistrationOtpBtn" class="text-button hidden" style="display:block;margin:12px auto 0">Reenviar código</button>
+                </form>
+                <div id="registrationAlert" class="alert" role="status"></div>
+                <button type="button" id="backToLoginBtn" class="text-button" style="display:block;margin:14px auto 0">← Ya tengo una cuenta</button>
             </div>
 
 
@@ -3661,7 +4390,7 @@ mark{
 
     <main class="dashboard-content">
 
-        <div id="clienteView">
+        <div id="clienteView" class="client-view">
 
         <div class="welcome">
 
@@ -3755,6 +4484,15 @@ mark{
 
         </div>
 
+        <div class="client-tools">
+            <button type="button" id="btnToggleFavorites" class="favorites-filter" aria-pressed="false">
+                <span class="favorites-filter-star" aria-hidden="true">☆</span>
+                <span>Mis favoritos</span>
+                <span id="favoritesFilterCount" class="favorites-filter-count">0</span>
+            </button>
+            <span id="clientResultsMeta" class="results-meta" aria-live="polite"></span>
+        </div>
+
 
 <div class="search-box">
 
@@ -3765,6 +4503,7 @@ mark{
             <input
                 id="searchInput"
                 type="text"
+                aria-label="Buscar importadoras por nombre o información"
                 placeholder="Buscar importadora..."
             >
 
@@ -3856,6 +4595,27 @@ mark{
 
         </div><!-- /#clienteView -->
 
+        <div id="membershipView" class="hidden">
+            <div class="welcome">
+                <h1>Membresía <span>✨</span></h1>
+                <p>Accede al directorio premium con pago manual por Yape, Plin o banco.</p>
+            </div>
+            <div id="membershipPanel" class="panel-card" aria-live="polite">
+                <div class="admin-skeleton"><div class="skeleton-line long skeleton-pulse"></div><div class="skeleton-line medium skeleton-pulse"></div></div>
+            </div>
+        </div>
+
+        <div id="mensajesView" class="hidden">
+            <div class="welcome">
+                <h1>Mensajes <span>💬</span></h1>
+                <p id="chatWelcomeText">Conversa directamente con clientes o importadoras desde Intelicelyg.</p>
+            </div>
+            <section id="chatPanel" class="chat-shell panel-card" aria-label="Mensajes privados">
+                <aside class="chat-inbox"><div class="chat-inbox-heading"><strong>Conversaciones</strong><span id="chatUnreadBadge" class="chat-unread-badge hidden">0</span></div><div id="chatThreadList" class="chat-thread-list"><div class="admin-skeleton"><div class="skeleton-line long skeleton-pulse"></div></div></div></aside>
+                <section class="chat-conversation"><header id="chatConversationHeader" class="chat-conversation-header"><strong>Elige una conversación</strong></header><div id="chatModerationNotice" class="chat-moderation-notice hidden" role="status"></div><div id="chatMessageList" class="chat-message-list"><div class="chat-empty-state"><span>💬</span><strong>Tus conversaciones, en un solo lugar</strong><p>Selecciona una conversación o contacta una importadora desde su perfil.</p></div></div><div class="chat-composer"><textarea id="chatMessageInput" rows="2" maxlength="2000" placeholder="Escribe tu mensaje…" aria-label="Escribe tu mensaje"></textarea><div class="chat-composer-footer"><span id="chatComposerHint">Máximo 2,000 caracteres</span><button id="btnSendChatMessage" type="button" class="primary-btn">Enviar</button></div><div id="chatSendResult" class="alert" role="status"></div></div></section>
+            </section>
+        </div>
+
 
         <!-- =====================================================
              VISTA IMPORTADORA (rol: importadora)
@@ -3883,18 +4643,16 @@ Tu importadora
         ===================================================== -->
 
         <div id="adminView" class="hidden">
-
-            <div class="welcome">
-                <h1>
-Panel de administración
-                    <span>🛠️</span>
-                </h1>
-                <p>
-                    Gestiona importadoras y usuarios de la plataforma.
-                </p>
+            <div id="adminOverviewTab" class="admin-tab-panel">
+            <section id="adminOverview" class="admin-overview" aria-live="polite">
+                <div class="admin-overview-head"><div><span class="admin-overview-kicker">Indicadores principales</span><h2>Resumen del panel</h2></div><button id="btnReloadAdminOverview" type="button" class="details-btn">↻ Actualizar</button></div>
+                <div id="adminOverviewStats" class="admin-overview-grid"><div class="admin-skeleton"><div class="skeleton-line long skeleton-pulse"></div></div></div>
+                <div id="adminExpiringList" class="admin-expiring-list"></div>
+            </section>
             </div>
 
             <div class="admin-tabs" id="adminTabs">
+                <button type="button" class="admin-tab active" data-tab="resumen">📊 Resumen</button>
                 <button type="button" class="admin-tab active" data-tab="importadoras">
 🏢 Importadoras
                 </button>
@@ -3907,6 +4665,14 @@ Panel de administración
                 <button type="button" class="admin-tab" data-tab="mantenimiento">
 🛠️ Mantenimiento
                 </button>
+                <button type="button" class="admin-tab" data-tab="membresias">
+💳 Membresías y pagos
+                </button>
+                <button type="button" class="admin-tab" data-tab="publicidad">
+ ✨ Publicidad destacada
+                </button>
+                <button type="button" class="admin-tab" data-tab="verificaciones">✓ Verificaciones</button>
+                <button type="button" class="admin-tab" data-tab="catalogo">📦 Catálogo</button>
             </div>
 
             <!-- SUBPANEL IMPORTADORAS -->
@@ -4019,7 +4785,7 @@ Panel de administración
                 <div class="section-header">
                     <div>
                         <h2>Historial de actividad</h2>
-                        <p>Registro de acciones realizadas sobre importadoras y usuarios.</p>
+                        <p>Incluye pagos, cambios de cuenta y alertas de protección del directorio.</p>
                     </div>
                 </div>
 
@@ -4087,6 +4853,62 @@ Panel de administración
 
                 </div>
 
+            </div>
+
+            <div id="adminMembresiasTab" class="admin-tab-panel hidden">
+                <div class="section-header"><div><h2>Membresías y pagos manuales</h2><p>Configura precios y destinos de pago. Aprueba solo después de confirmar el abono en tu banco o billetera.</p></div></div>
+                <div class="panel-card" style="margin-bottom:22px">
+                    <h3>Planes y datos de pago · Perú (PEN)</h3>
+                    <div class="form-grid">
+                        <div class="field"><label for="membershipMonthlyPrice">Acceso mensual · S/</label><input id="membershipMonthlyPrice" type="number" min="1" step="0.01" placeholder="9.90"></div>
+                        <div class="field"><label for="membershipAnnualPrice">Acceso anual · S/</label><input id="membershipAnnualPrice" type="number" min="1" step="0.01" placeholder="99.00"></div>
+                        <div class="field"><label for="membershipLifetimePrice">Vitalicia · S/ (opcional)</label><input id="membershipLifetimePrice" type="number" min="1" step="0.01" placeholder="Déjala vacía al inicio"></div>
+                        <div class="field"><label for="membershipHolder">Titular</label><input id="membershipHolder" type="text" maxlength="100" placeholder="Nombre del titular"></div>
+                        <div class="field"><label for="membershipYape">Número Yape</label><input id="membershipYape" type="text" maxlength="100" placeholder="Configura tu número"></div>
+                        <div class="field"><label for="membershipPlin">Número Plin</label><input id="membershipPlin" type="text" maxlength="100" placeholder="Configura tu número"></div>
+                        <div class="field"><label for="membershipBcp">Cuenta/CCI BCP</label><input id="membershipBcp" type="text" maxlength="100" placeholder="Configura cuenta o CCI"></div>
+                        <div class="field"><label for="membershipBankAccount">Otros bancos / instrucciones</label><input id="membershipBankAccount" type="text" maxlength="200" placeholder="Banco y datos para transferencia"></div>
+                    </div>
+                    <div class="field"><label for="membershipInstructions">Instrucciones para el usuario</label><textarea id="membershipInstructions" rows="3" maxlength="500" placeholder="Indica cómo pagar y qué referencia enviar"></textarea></div>
+                    <label class="membership-enforcement"><input id="membershipEnforcement" type="checkbox"> Exigir membresía activa para explorar el directorio</label>
+                    <button type="button" id="btnSaveMembershipConfig" class="primary-btn" style="margin-top:14px">Guardar configuración</button>
+                    <div id="membershipConfigResult" class="alert" role="status"></div>
+                </div>
+                <div class="section-header"><div><h2>Solicitudes de pago</h2><p>Los cambios quedan registrados en la hoja de pagos.</p></div><button type="button" id="btnReloadMembershipPayments" class="details-btn" style="width:auto;padding:0 16px">↻ Actualizar</button></div>
+                <div class="admin-filter-row"><label class="field"><span>Estado</span><select id="membershipStatusFilter"><option value="todos">Todos</option><option value="pendiente">Pendientes</option><option value="aprobado">Aprobados</option><option value="rechazado">Rechazados</option></select></label><label class="field"><span>Buscar</span><input id="membershipPaymentSearch" type="search" placeholder="Correo, plan o referencia"></label><label class="field"><span>Desde</span><input id="membershipDateFrom" type="date"></label><label class="field"><span>Hasta</span><input id="membershipDateTo" type="date"></label></div>
+                <div id="adminMembershipPayments" class="membership-payments" aria-live="polite"></div>
+            </div>
+
+            <div id="adminPublicidadTab" class="admin-tab-panel hidden">
+                <div class="section-header"><div><h2>Publicidad destacada</h2><p>Configura los precios y revisa pagos manuales. Los perfiles se destacan para todos los clientes al aprobar el abono.</p></div></div>
+                <div class="panel-card" style="margin-bottom:22px">
+                    <h3>Espacios de visibilidad · Perú (PEN)</h3>
+                    <div class="form-grid">
+                        <div class="field"><label for="advertisingWeeklyPrice">Destacado por 7 días · S/</label><input id="advertisingWeeklyPrice" type="number" min="1" step="0.01" placeholder="Configura el precio"></div>
+                        <div class="field"><label for="advertisingMonthlyPrice">Destacado por 30 días · S/</label><input id="advertisingMonthlyPrice" type="number" min="1" step="0.01" placeholder="Configura el precio"></div>
+                        <div class="field"><label for="advertisingWeeklyTargetPrice">Segmentado · 7 días · S/</label><input id="advertisingWeeklyTargetPrice" type="number" min="1" step="0.01" placeholder="Rubro o ciudad"></div>
+                        <div class="field"><label for="advertisingMonthlyTargetPrice">Segmentado · 30 días · S/</label><input id="advertisingMonthlyTargetPrice" type="number" min="1" step="0.01" placeholder="Rubro o ciudad"></div>
+                    </div>
+                    <p class="imp-save-hint">Se usan los medios bancarios que ya configuraste para las membresías. La publicidad se activa solo después de validar el pago.</p>
+                    <button id="btnSaveAdvertisingConfig" type="button" class="primary-btn">Guardar precios</button>
+                    <div id="advertisingConfigResult" class="alert" role="status"></div>
+                </div>
+                <div class="section-header"><div><h2>Solicitudes de publicidad</h2><p>Las solicitudes pendientes aparecen primero. Revisa el abono antes de aprobarlas.</p></div><button type="button" id="btnReloadAdvertising" class="details-btn" style="width:auto;padding:0 16px">↻ Actualizar</button></div>
+                <div class="admin-filter-row"><label class="field"><span>Estado</span><select id="advertisingStatusFilter"><option value="todos">Todos</option><option value="pendiente">Pendientes</option><option value="aprobado">Aprobados</option><option value="rechazado">Rechazados</option></select></label><label class="field"><span>Buscar</span><input id="advertisingSearch" type="search" placeholder="Importadora, correo o referencia"></label><label class="field"><span>Desde</span><input id="advertisingDateFrom" type="date"></label><label class="field"><span>Hasta</span><input id="advertisingDateTo" type="date"></label></div>
+                <div id="adminAdvertisingRequests" class="membership-payments" aria-live="polite"></div>
+            </div>
+
+            <div id="adminVerificacionesTab" class="admin-tab-panel hidden">
+                <div class="section-header"><div><h2>Verificación de importadoras</h2><p>Configura la suscripción y confirma manualmente el abono y los datos comerciales antes de activar la insignia.</p></div><button id="btnReloadVerifications" type="button" class="details-btn">↻ Actualizar</button></div>
+                <div class="panel-card verification-admin-config"><h3>Planes de verificación pagada · Perú (PEN)</h3><p>La suscripción se paga manualmente por los medios ya configurados. La insignia tiene vigencia limitada y no se renueva automáticamente. Es una validación propia de Intelicelyg; no certifica productos ni garantiza transacciones.</p><div class="form-grid"><div class="field"><label for="verificationMonthlyPrice">Mensual · 30 días · S/</label><input id="verificationMonthlyPrice" type="number" min="1" step="0.01" placeholder="Define el precio"></div><div class="field"><label for="verificationAnnualPrice">Anual · 12 meses · S/</label><input id="verificationAnnualPrice" type="number" min="1" step="0.01" placeholder="Define el precio"></div></div><button id="btnSaveVerificationConfig" type="button" class="primary-btn">Guardar planes</button><div id="verificationConfigResult" class="alert" role="status"></div></div>
+                <div class="admin-filter-row"><label class="field"><span>Estado</span><select id="verificationStatusFilter"><option value="todos">Todos</option><option value="pendiente">Pendientes</option><option value="aprobado">Aprobados</option><option value="rechazado">Rechazados</option></select></label><label class="field"><span>Buscar</span><input id="verificationSearch" type="search" placeholder="Importadora, RUC o razón social"></label></div>
+                <div id="adminVerificationRequests" class="membership-payments" aria-live="polite"></div>
+            </div>
+
+            <div id="adminCatalogoTab" class="admin-tab-panel hidden">
+                <div class="section-header"><div><h2>Catálogo y novedades</h2><p>Modera productos, ofertas y actualizaciones antes de publicarlos en el directorio.</p></div><button id="btnReloadCatalog" type="button" class="details-btn">↻ Actualizar</button></div>
+                <div class="admin-filter-row"><label class="field"><span>Estado</span><select id="catalogStatusFilter"><option value="todos">Todos</option><option value="pendiente">Pendientes</option><option value="aprobado">Aprobados</option><option value="rechazado">Rechazados</option></select></label><label class="field"><span>Buscar</span><input id="catalogSearch" type="search" placeholder="Título, importadora o correo"></label></div>
+                <div id="adminCatalogPosts" class="membership-payments" aria-live="polite"></div>
             </div>
 
         </div>
@@ -4447,7 +5269,7 @@ id="closeTermsModal"
 ===================================================== */
 
 const API_URL =
-    'https://script.google.com/macros/s/AKfycbxdsqtCB6VhXrlqcWiU0NkDPdL7VP6dsCqedUQhhqEPeBZhvyRjN7tnTUgoUVKbrQmr/exec';
+    'https://script.google.com/macros/s/AKfycbzpAbipUnKA_f0LbtW6L1IikuAqYU8QOy0dq4NqT0FUS5V-gImXPFdwQLb3XNWMj8Pn/exec';
 
 const SESSION_STORAGE_KEY =
     'intelicelyg_session';
@@ -4473,15 +5295,37 @@ importadoras: [],
 
     favoritos: [],
 
+    favoritosOnly: false,
+
     usuarios: [],
 
     auditoria: [],
 
     mantenimiento: null,
 
+    advertisingRequests: [],
+
+    membershipPayments: [],
+
+    verificationRequests: [],
+
+    catalogPosts: [],
+
     compara: [],
 
     otpExpiresAt: null,
+
+    registrationOtpSent: false,
+
+    registrationPaymentConfig: null,
+
+    chatThreads: [],
+
+    activeChatId: '',
+
+    chatDraftImportadoraId: '',
+
+    chatPollTimer: null,
 
     otpTimerInterval: null
 
@@ -4495,6 +5339,11 @@ importadoras: [],
 const loadingScreen =
     document.getElementById(
         'loadingScreen'
+    );
+
+const landingSection =
+    document.getElementById(
+        'landingSection'
     );
 
 const authSection =
@@ -4617,6 +5466,8 @@ const btnClearFilters =
    MODAL EVENTS
 ===================================================== */
 
+let lastImportadoraTrigger = null;
+
 document
     .getElementById('closeImportadoraModal')
     .addEventListener(
@@ -4645,6 +5496,20 @@ document.addEventListener(
 
             if(modal && !modal.classList.contains('hidden')){
                 closeImportadoraModal();
+                return;
+            }
+
+            const genericModals = document.querySelectorAll('.modal-overlay');
+            if(genericModals.length){
+                const lastModal = genericModals[genericModals.length - 1];
+                const closeButton = lastModal.querySelector('.modal-close');
+                if(closeButton) closeButton.click();
+                return;
+            }
+
+            const termsModal = document.getElementById('termsModal');
+            if(termsModal && !termsModal.classList.contains('hidden')){
+                closeTermsModal();
             }
         }
     }
@@ -4678,6 +5543,10 @@ function setupPWA(){
 
 async function init(){
 
+    setupLandingEvents();
+    setupRegistrationEvents();
+    setupChatEvents();
+    setupClientContentProtection();
     setupAdminEvents();
     setupSoporteEvents();
     setupCuentaEvents();
@@ -4693,7 +5562,7 @@ async function init(){
 
         if(!saved){
 
-            showAuth();
+            showLanding();
 
             return;
         }
@@ -4714,7 +5583,7 @@ async function init(){
                 SESSION_STORAGE_KEY
             );
 
-            showAuth();
+            showLanding();
 
             return;
         }
@@ -4729,7 +5598,7 @@ async function init(){
                 SESSION_STORAGE_KEY
             );
 
-            showAuth();
+            showLanding();
 
             return;
         }
@@ -4759,7 +5628,7 @@ async function init(){
 
             clearSession();
 
-            showAuth();
+            showLanding();
 
             return;
         }
@@ -4781,7 +5650,7 @@ state.user =
 
         clearSession();
 
-        showAuth();
+        showLanding();
     }
 }
 
@@ -4791,6 +5660,8 @@ state.user =
 ===================================================== */
 
 function showAuth(){
+
+    landingSection.classList.add('hidden');
 
     loadingScreen.classList.add(
         'hidden'
@@ -4803,6 +5674,220 @@ function showAuth(){
     authSection.classList.remove(
         'hidden'
     );
+    authSection.classList.remove('register-mode');
+
+    emailStep.classList.remove('hidden');
+    otpStep.classList.add('hidden');
+    document.getElementById('registerStep').classList.add('hidden');
+    document.getElementById('registrationForm').classList.remove('hidden');
+    document.getElementById('registrationOtpWrap').classList.add('hidden');
+    document.getElementById('resendRegistrationOtpBtn').classList.add('hidden');
+    document.getElementById('backToLoginBtn').textContent='← Ya tengo una cuenta';
+    document.getElementById('openRegistrationBtn').classList.remove('hidden');
+    emailInput.value = '';
+    otpInput.value = '';
+    state.registrationOtpSent = false;
+    clearOtpTimer();
+    clearAlert();
+}
+
+
+function showLanding(){
+
+    landingSection.classList.remove('hidden');
+    authSection.classList.add('hidden');
+    appSection.classList.add('hidden');
+    loadingScreen.classList.add('hidden');
+    document.getElementById('landingYear').textContent = new Date().getFullYear();
+}
+
+
+function setupLandingEvents(){
+
+    document.querySelectorAll('.js-show-login').forEach(function(button){
+        button.addEventListener('click', function(){
+            showAuth();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(function(){ emailInput.focus(); }, 100);
+        });
+    });
+
+    const backButton = document.getElementById('authBackBtn');
+    if(backButton){
+        backButton.addEventListener('click', showLanding);
+    }
+
+    const brandLink = document.querySelector('.landing-brand');
+    if(brandLink){
+        brandLink.addEventListener('click', function(event){
+            event.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    const termsButton = document.getElementById('landingTermsBtn');
+    if(termsButton){
+        termsButton.addEventListener('click', openTermsModal);
+    }
+}
+
+function registrationNotice(message,type){
+    const el=document.getElementById('registrationAlert');
+    if(!el)return;
+    if(!message){el.textContent='';el.className='alert';return;}
+    el.textContent=message;
+    el.className='alert show ' + (type || 'info');
+}
+
+async function loadPublicRegistrationOptions(){
+    const planSelect=document.getElementById('registerPlan');
+    const methodSelect=document.getElementById('registerMethod');
+    const info=document.getElementById('registrationPaymentInfo');
+    try{
+        const result=await api('getPublicMembershipOptions');
+        if(!result.success)throw new Error(result.message || 'No se pudieron cargar los planes.');
+        const plans=Array.isArray(result.plans)?result.plans:[];
+        const methods=Array.isArray(result.methods)?result.methods:[];
+        planSelect.innerHTML=plans.length ? plans.map(p=>`<option value="${escapeHtml(p.id)}">${escapeHtml(p.label)} · S/ ${Number(p.price).toFixed(2)} (${escapeHtml(p.duration)})</option>`).join('') : '<option value="">Planes no disponibles</option>';
+        methodSelect.innerHTML=methods.length ? methods.map(m=>`<option value="${escapeHtml(m)}">${escapeHtml(m)}</option>`).join('') : '<option value="">Medios de pago no disponibles</option>';
+        const c=result.config || {};
+        state.registrationPaymentConfig=c;
+        renderRegistrationPaymentInfo();
+        const submit=document.getElementById('registrationSubmitBtn');
+        submit.disabled=!plans.length || !methods.length;
+        if(!plans.length || !methods.length)registrationNotice('Aún no están habilitados los planes o medios de pago para nuevos registros.','info');
+    }catch(error){
+        planSelect.innerHTML='<option value="">No se pudieron cargar los planes</option>';
+        methodSelect.innerHTML='<option value="">No disponibles</option>';
+        info.textContent=error.message || 'No se pudieron cargar los datos de pago.';
+        document.getElementById('registrationSubmitBtn').disabled=true;
+    }
+}
+
+function setupRegistrationEvents(){
+    const open=document.getElementById('openRegistrationBtn');
+    const back=document.getElementById('backToLoginBtn');
+    const form=document.getElementById('registrationForm');
+    const resend=document.getElementById('resendRegistrationOtpBtn');
+    const terms=document.getElementById('registerTermsBtn');
+    const registerMethod=document.getElementById('registerMethod');
+    if(open)open.addEventListener('click',function(){
+        authSection.classList.add('register-mode');
+        document.getElementById('emailStep').classList.add('hidden');
+        document.getElementById('otpStep').classList.add('hidden');
+        document.getElementById('registerStep').classList.remove('hidden');
+        document.getElementById('registerEmail').value=emailInput.value.trim().toLowerCase();
+        document.getElementById('registrationForm').classList.remove('hidden');
+        document.getElementById('registrationOtpWrap').classList.add('hidden');
+        document.getElementById('resendRegistrationOtpBtn').classList.add('hidden');
+        document.getElementById('registrationSubmitBtn').textContent='Enviar código de verificación';
+        document.getElementById('backToLoginBtn').textContent='← Ya tengo una cuenta';
+        state.registrationOtpSent=false;
+        registrationNotice('','info');
+        loadPublicRegistrationOptions();
+    });
+    if(back)back.addEventListener('click',function(){
+        authSection.classList.remove('register-mode');
+        state.registrationOtpSent=false;
+        document.getElementById('registerStep').classList.add('hidden');
+        document.getElementById('emailStep').classList.remove('hidden');
+        document.getElementById('registrationOtpWrap').classList.add('hidden');
+        document.getElementById('registerOtp').value='';
+        document.getElementById('registrationSubmitBtn').textContent='Enviar código de verificación';
+        document.getElementById('resendRegistrationOtpBtn').classList.add('hidden');
+    });
+    if(terms)terms.addEventListener('click',openTermsModal);
+    if(registerMethod)registerMethod.addEventListener('change',renderRegistrationPaymentInfo);
+    if(resend)resend.addEventListener('click',requestRegistrationCode);
+    if(form)form.addEventListener('submit',async function(event){
+        event.preventDefault();
+        if(!document.getElementById('registerTerms').checked){registrationNotice('Acepta los términos y la política de privacidad para continuar.','error');return;}
+        if(!state.registrationOtpSent){await requestRegistrationCode();return;}
+        const payload={
+            nombre:document.getElementById('registerName').value.trim(),
+            apellido:document.getElementById('registerLastName').value.trim(),
+            email:document.getElementById('registerEmail').value.trim().toLowerCase(),
+            otp:document.getElementById('registerOtp').value.replace(/\D/g,'').trim(),
+            plan:document.getElementById('registerPlan').value,
+            method:document.getElementById('registerMethod').value,
+            reference:document.getElementById('registerReference').value.trim(),
+            termsAccepted:true
+        };
+        if(!payload.nombre || !isValidEmail(payload.email) || !/^\d{6}$/.test(payload.otp) || payload.reference.length<4){registrationNotice('Revisa tus datos, el código de correo y la referencia de pago.','error');return;}
+        const button=document.getElementById('registrationSubmitBtn');
+        button.disabled=true;button.textContent='Enviando solicitud…';
+        try{
+            const result=await api('submitRegistration',payload);
+            if(!result.success)throw new Error(result.message || 'No pudimos registrar la solicitud.');
+            state.registrationOtpSent=false;
+            form.classList.add('hidden');
+            registrationNotice(result.message,'success');
+            document.getElementById('backToLoginBtn').textContent='Volver al inicio de sesión';
+        }catch(error){registrationNotice(error.message || 'No pudimos registrar la solicitud.','error');}
+        finally{button.disabled=false;button.textContent='Enviar solicitud de registro';}
+    });
+}
+
+function paymentDetailsHtml(config,method){
+    const c=config || {};
+    let lines=[];
+    if(c.holder)lines.push(`<p><strong>Titular:</strong> ${escapeHtml(c.holder)}</p>`);
+    if(method==='Yape' && c.yape)lines.push(`<p><strong>Yape:</strong> ${escapeHtml(c.yape)}</p>`);
+    else if(method==='Plin' && c.plin)lines.push(`<p><strong>Plin:</strong> ${escapeHtml(c.plin)}</p>`);
+    else if(method==='BCP' && c.bcp)lines.push(`<p><strong>BCP:</strong> ${escapeHtml(c.bcp)}</p>`);
+    else if(method==='Transferencia bancaria' || method==='Depósito bancario'){
+        if(c.bcp)lines.push(`<p><strong>Cuenta o CCI BCP:</strong> ${escapeHtml(c.bcp)}</p>`);
+        if(c.bankAccount)lines.push(`<p><strong>Datos bancarios:</strong> ${escapeHtml(c.bankAccount)}</p>`);
+    }
+    if(c.instructions)lines.push(`<p>${escapeHtml(c.instructions)}</p>`);
+    if(!lines.length)return '<p>Los datos para este medio aún no están configurados. Contacta a soporte.</p>';
+    return `<strong>Datos para pagar con ${escapeHtml(method || 'el medio seleccionado')}</strong>${lines.join('')}`;
+}
+
+function advertisingPlansHtml(config,segment){
+    const targeted=segment&&segment!=='general';
+    const weekly=Number(targeted?config.weeklyTargetPrice:config.weeklyPrice)||0;
+    const monthly=Number(targeted?config.monthlyTargetPrice:config.monthlyPrice)||0;
+    const plans=[['semanal','7 días',weekly],['mensual','30 días',monthly]].filter(function(plan){return plan[2]>0;});
+    if(!plans.length)return '<div class="empty-state"><strong>Este espacio aún no está disponible</strong><span>El administrador todavía no configuró un precio para esta segmentación.</span></div>';
+    return plans.map(function(plan,index){return `<label class="membership-plan"><input type="radio" name="advertisingPlan" value="${plan[0]}" ${index===0?'checked':''}><h3>${plan[1]}</h3><div class="membership-price">${membershipMoney(plan[2])}</div><span>${targeted?'Visibilidad segmentada':'Visibilidad en todo el directorio'}</span></label>`;}).join('');
+}
+
+function updateAdvertisingSegmentOptions(config){
+    const select=document.getElementById('advertisingSegment');
+    const options=document.getElementById('advertisingPlanOptions');
+    const hint=document.getElementById('advertisingSegmentHint');
+    if(!select||!options)return;
+    const segment=select.value||'general';
+    options.innerHTML=advertisingPlansHtml(config,segment);
+    if(hint){
+        const selected=select.options[select.selectedIndex];
+        hint.textContent=segment==='general'?'Tu perfil se destacará para todos los clientes.':`Tu perfil se mostrará a clientes que busquen ${selected?selected.textContent.toLowerCase():'este segmento'}.`;
+    }
+}
+
+function renderRegistrationPaymentInfo(){
+    const info=document.getElementById('registrationPaymentInfo');
+    const method=document.getElementById('registerMethod');
+    if(info)info.innerHTML=paymentDetailsHtml(state.registrationPaymentConfig,method ? method.value : '');
+}
+
+async function requestRegistrationCode(){
+    const email=document.getElementById('registerEmail').value.trim().toLowerCase();
+    if(!isValidEmail(email)){registrationNotice('Ingresa un correo válido.','error');return;}
+    const button=document.getElementById('registrationSubmitBtn');
+    button.disabled=true;button.textContent='Enviando código…';
+    try{
+        const result=await api('requestRegistrationOtp',{email:email});
+        if(!result.success)throw new Error(result.message || 'No pudimos enviar el código.');
+        state.registrationOtpSent=true;
+        document.getElementById('registrationOtpWrap').classList.remove('hidden');
+        document.getElementById('resendRegistrationOtpBtn').classList.remove('hidden');
+        button.textContent='Enviar solicitud de registro';
+        document.getElementById('registerOtp').focus();
+        registrationNotice(result.message,'success');
+    }catch(error){registrationNotice(error.message || 'No pudimos enviar el código.','error');button.textContent=state.registrationOtpSent ? 'Enviar solicitud de registro' : 'Enviar código de verificación';}
+    finally{button.disabled=false;}
 }
 
 
@@ -5264,6 +6349,7 @@ async function showDashboard(){
         }
     }
 
+    landingSection.classList.add('hidden');
     authSection.classList.add(
         'hidden'
     );
@@ -5280,6 +6366,7 @@ async function showDashboard(){
     updateUserInterface();
 
     setupDashboardNav();
+    if(['cliente','importadora'].includes(getRole()))refreshChatThreads(false).catch(function(error){console.warn('No se pudo actualizar el contador de mensajes:',error);});
 
 
     try{
@@ -5301,7 +6388,12 @@ async function showDashboard(){
 
         }else{
 
-            await loadImportadoras();
+            const loaded = await loadImportadoras();
+
+            if(!loaded){
+                showDashboardPanel('membership');
+                return;
+            }
 
             await loadFavoritos();
         }
@@ -5338,6 +6430,7 @@ function showMaintenanceScreen(){
         msgEl.textContent = msg;
     }
 
+    landingSection.classList.add('hidden');
     authSection.classList.add('hidden');
     appSection.classList.add('hidden');
     loadingScreen.classList.add('hidden');
@@ -5375,20 +6468,32 @@ function setupDashboardNav(){
     const rol =
         getRole();
 
+    nav.classList.toggle('is-admin-nav',rol==='admin');
+
     const items = [];
 
     if(rol === 'cliente'){
         items.push(['explorar', '🔍', 'Explorar']);
+        items.push(['membership', '✨', 'Membresía']);
+        items.push(['mensajes', '💬', 'Mensajes']);
     }
 
     if(rol === 'importadora'){
         items.push(['miimportadora', '🏠', 'Mi importadora']);
+        items.push(['mensajes', '💬', 'Mensajes']);
     }
 
-if(rol === 'admin'){
+    if(rol === 'admin'){
+        items.push(['adminoverview', '📊', 'Resumen']);
         items.push(['adminimp', '🏢', 'Importadoras']);
         items.push(['adminusers', '👥', 'Usuarios']);
+        items.push(['adminhistory', '📜', 'Historial']);
         items.push(['adminmaint', '🛠️', 'Mantenimiento']);
+        items.push(['adminpayments', '💳', 'Pagos']);
+        items.push(['adminads', '✨', 'Publicidad']);
+        items.push(['adminverify', '✓', 'Verificaciones']);
+        items.push(['admincatalog', '📦', 'Catálogo']);
+        items.push(['mensajes', '💬', 'Chats']);
     }
 
     items.push(['soporte', '💬', 'Soporte']);
@@ -5403,6 +6508,7 @@ if(rol === 'admin'){
             button.type = 'button';
             button.dataset.nav = id;
             button.innerHTML = `${icon} ${escapeHtml(label)}`;
+            button.setAttribute('aria-current', 'false');
 
             button.addEventListener(
                 'click',
@@ -5415,7 +6521,7 @@ if(rol === 'admin'){
         }
     );
 
-    showDashboardPanel(rol === 'admin' ? 'adminimp' : (rol === 'importadora' ? 'miimportadora' : 'explorar'));
+    showDashboardPanel(rol === 'admin' ? 'adminoverview' : (rol === 'importadora' ? 'miimportadora' : 'explorar'));
 }
 
 
@@ -5426,10 +6532,18 @@ function showDashboardPanel(panelId){
 
 const views = {
         'explorar':       'clienteView',
+        'membership':     'membershipView',
+        'mensajes':       'mensajesView',
         'miimportadora':  'importadoraView',
         'adminimp':       'adminView',
+        'adminoverview':  'adminView',
         'adminusers':     'adminView',
+        'adminhistory':   'adminView',
         'adminmaint':     'adminView',
+        'adminpayments':  'adminView',
+        'adminads':       'adminView',
+        'adminverify':    'adminView',
+        'admincatalog':   'adminView',
         'soporte':        'soporteView',
         'cuenta':         'cuentaView'
     };
@@ -5437,7 +6551,7 @@ const views = {
     const viewId =
         views[panelId] || 'clienteView';
 
-    document.querySelectorAll('#clienteView, #importadoraView, #adminView, #soporteView, #cuentaView')
+    document.querySelectorAll('#clienteView, #membershipView, #mensajesView, #importadoraView, #adminView, #soporteView, #cuentaView')
         .forEach(
             function(view){
                 view.classList.add('hidden');
@@ -5451,9 +6565,18 @@ const views = {
         target.classList.remove('hidden');
     }
 
-if(panelId === 'adminimp'){ switchAdminTab('importadoras'); }
+if(panelId === 'adminoverview'){ switchAdminTab('resumen'); }
+    if(panelId === 'adminimp'){ switchAdminTab('importadoras'); }
     if(panelId === 'adminusers'){ switchAdminTab('usuarios'); }
+    if(panelId === 'adminhistory'){ switchAdminTab('historial'); }
     if(panelId === 'adminmaint'){ switchAdminTab('mantenimiento'); }
+    if(panelId === 'adminpayments'){ switchAdminTab('membresias'); }
+    if(panelId === 'adminads'){ switchAdminTab('publicidad'); }
+    if(panelId === 'adminverify'){ switchAdminTab('verificaciones'); }
+    if(panelId === 'admincatalog'){ switchAdminTab('catalogo'); }
+    if(panelId === 'membership'){ loadMembershipPanel(); }
+    if(panelId === 'mensajes'){ loadChatPanel(); }
+    else if(state.chatPollTimer){clearInterval(state.chatPollTimer);state.chatPollTimer=null;}
 
     document.querySelectorAll('#dashboardNav button').forEach(
         function(button){
@@ -5461,11 +6584,100 @@ if(panelId === 'adminimp'){ switchAdminTab('importadoras'); }
                 'active',
                 button.dataset.nav === panelId
             );
+            button.setAttribute('aria-current', button.dataset.nav === panelId ? 'page' : 'false');
         }
     );
 
     if(panelId === 'cuenta'){
         prefillCuentaForm();
+    }
+}
+
+function membershipMoney(value){
+    const amount = Number(value);
+    return amount > 0 ? 'S/ ' + amount.toFixed(2) : 'Por configurar';
+}
+
+function membershipPlanLabel(plan){
+    const labels = {mensual:'Plan mensual', anual:'Plan anual', vitalicia:'Plan vitalicio'};
+    return labels[String(plan || '').trim().toLowerCase()] || String(plan || 'Membresía');
+}
+
+function membershipDateLabel(value){
+    if(!value)return '';
+    const date = new Date(value);
+    return Number.isNaN(date.getTime()) ? '' : date.toLocaleDateString('es-PE',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
+}
+
+async function loadMembershipPanel(){
+    const panel = document.getElementById('membershipPanel');
+    if(!panel || !state.sessionToken)return;
+    panel.innerHTML = '<div class="admin-skeleton"><div class="skeleton-line long skeleton-pulse"></div><div class="skeleton-line medium skeleton-pulse"></div></div>';
+    try{
+        const result = await api('getMembershipInfo', {sessionToken:state.sessionToken});
+        if(!result.success) throw new Error(result.message || 'No se pudo cargar la membresía.');
+        const cfg = result.config || {};
+        const membership = result.membership || {};
+        const plans = [
+            ['mensual','Acceso mensual',cfg.monthlyPrice,'Acceso por 30 días'],
+            ['anual','Acceso anual',cfg.annualPrice,'Acceso por 12 meses'],
+            ['vitalicia','Vitalicia',cfg.lifetimePrice,'Un pago · acceso de por vida']
+        ];
+        const configured = plans.filter(p => Number(p[2]) > 0);
+        const methods = Array.isArray(result.methods) ? result.methods : [];
+        const status = membership.active
+            ? `<div class="membership-status"><strong>✅ Tu membresía está activa</strong><div>${escapeHtml(membershipPlanLabel(membership.plan))}</div>${membership.expiresAt ? `<div>Vigente hasta el <strong>${escapeHtml(membershipDateLabel(membership.expiresAt))}</strong></div>` : '<div>Acceso de por vida</div>'}</div>`
+            : '<div class="membership-status"><strong>Tu cuenta todavía no tiene una membresía activa.</strong><div>Envía tu pago y el equipo lo validará manualmente.</div></div>';
+        const paymentForm = membership.active
+            ? ''
+            : result.pending
+            ? '<div class="membership-status">⏳ Tienes una solicitud pendiente de revisión. Te avisaremos al actualizar el estado.</div>'
+            : configured.length && methods.length ? `
+                <div class="membership-plan-grid">${configured.map(p => `<label class="membership-plan"><input type="radio" name="membershipPlan" value="${p[0]}" ${p[0] === 'anual' ? 'checked' : ''}><h3>${p[1]}</h3><div class="membership-price">${membershipMoney(p[2])}</div><span>${p[3]}</span></label>`).join('')}</div>
+                <div id="membershipPaymentInfo" class="membership-payment-card">${paymentDetailsHtml(cfg,methods[0] || '')}</div>
+                <div class="field"><label for="membershipMethod">Medio de pago</label><select id="membershipMethod">${methods.map(m => `<option value="${escapeHtml(m)}">${escapeHtml(m)}</option>`).join('')}</select></div>
+                <div class="field"><label for="membershipReference">Número de operación o referencia</label><input id="membershipReference" type="text" maxlength="100" autocomplete="off" placeholder="Escribe la referencia que aparece en tu operación"></div>
+                <button type="button" id="btnSubmitManualPayment" class="primary-btn">Enviar solicitud de pago</button>
+                <div id="manualPaymentResult" class="alert" role="status"></div>
+                <p style="font-size:13px;color:#667085;margin-top:12px">El acceso se activa solo después de que confirmemos el abono. No ingreses claves, códigos OTP ni datos de tarjeta.</p>`
+            : configured.length ? '<div class="membership-status">Los planes están disponibles, pero todavía no hay medios de pago configurados. Escríbenos desde Soporte.</div>'
+            : '<div class="membership-status">Los planes aún no están habilitados. Escríbenos desde Soporte para consultar disponibilidad.</div>';
+        panel.innerHTML = membership.active
+            ? `${status}<h2>Tu plan actual</h2><p style="font-size:13px;color:var(--muted);margin-top:-4px">Puedes seguir usando las funciones incluidas en tu membresía.</p>`
+            : `${status}<h2>Planes disponibles</h2>${paymentForm}`;
+        const paymentMethod = document.getElementById('membershipMethod');
+        if(paymentMethod) paymentMethod.addEventListener('change',function(){
+            const info=document.getElementById('membershipPaymentInfo');
+            if(info)info.innerHTML=paymentDetailsHtml(cfg,paymentMethod.value);
+        });
+        const submit = document.getElementById('btnSubmitManualPayment');
+        if(submit) submit.addEventListener('click', submitManualPayment);
+    }catch(error){
+        panel.innerHTML = `<div class="alert show error">${escapeHtml(error.message || 'Error cargando la membresía.')}</div>`;
+    }
+}
+
+async function submitManualPayment(){
+    const button = document.getElementById('btnSubmitManualPayment');
+    const resultEl = document.getElementById('manualPaymentResult');
+    const plan = document.querySelector('input[name="membershipPlan"]:checked');
+    const method = document.getElementById('membershipMethod');
+    const reference = document.getElementById('membershipReference');
+    if(!plan || !method || !reference || reference.value.trim().length < 4){
+        if(resultEl){resultEl.textContent='Ingresa una referencia válida de al menos 4 caracteres.';resultEl.className='alert show error';}
+        return;
+    }
+    button.disabled = true;
+    button.textContent = 'Enviando solicitud…';
+    try{
+        const response = await api('submitManualPayment',{sessionToken:state.sessionToken,plan:plan.value,method:method.value,reference:reference.value.trim()});
+        if(!response.success)throw new Error(response.message || 'No se pudo enviar la solicitud.');
+        if(resultEl){resultEl.textContent=response.message;resultEl.className='alert show success';}
+        await loadMembershipPanel();
+    }catch(error){
+        if(resultEl){resultEl.textContent=error.message;resultEl.className='alert show error';}
+        button.disabled = false;
+        button.textContent = 'Enviar solicitud de pago';
     }
 }
 
@@ -5480,6 +6692,8 @@ function updateUserInterface(){
 
         return;
     }
+
+    configureClientContentProtection();
 
 
     const fullName =
@@ -5539,6 +6753,94 @@ function updateUserInterface(){
         'userAvatar'
     ).textContent =
         initials;
+}
+
+let clientSecurityEventTimes = {};
+
+function isClientProtectedSurface(target){
+    if(!state.user || getRole()!=='cliente')return false;
+    let element=target && target.nodeType===3 ? target.parentElement : target;
+    if(element && element.closest && element.closest('#appSection'))return true;
+    const selection=window.getSelection ? window.getSelection() : null;
+    element=selection && selection.anchorNode ? (selection.anchorNode.nodeType===3 ? selection.anchorNode.parentElement : selection.anchorNode) : null;
+    return !!(element && element.closest && element.closest('#appSection'));
+}
+
+function isEditableClientTarget(target){
+    const element=target && target.nodeType===3 ? target.parentElement : target;
+    return !!(element && element.closest && element.closest('input,textarea,select,[contenteditable="true"]'));
+}
+
+function recordClientSecurityEvent(eventType){
+    if(!state.sessionToken)return;
+    const now=Date.now();
+    if(now-(clientSecurityEventTimes[eventType] || 0)<5000)return;
+    clientSecurityEventTimes[eventType]=now;
+    api('logClientSecurityEvent',{sessionToken:state.sessionToken,eventType:eventType,surface:'directorio'}).catch(function(){});
+}
+
+function configureClientContentProtection(){
+    const enabled=!!state.user && getRole()==='cliente';
+    document.body.classList.toggle('client-content-protected',enabled);
+    const directory=document.getElementById('clienteView');
+    if(!directory)return;
+    let watermark=document.getElementById('clientSecurityWatermark');
+    if(enabled){
+        if(!watermark){
+            watermark=document.createElement('div');
+            watermark.id='clientSecurityWatermark';
+            watermark.className='client-security-watermark';
+            watermark.setAttribute('aria-hidden','true');
+            directory.appendChild(watermark);
+        }
+        watermark.textContent='Uso personal · ' + String(state.user.correo || 'cuenta Intelicelyg');
+    }else if(watermark){
+        watermark.remove();
+    }
+}
+
+function setupClientContentProtection(){
+    document.addEventListener('copy',function(event){
+        if(isClientProtectedSurface(event.target)){
+            event.preventDefault();recordClientSecurityEvent('COPY_BLOCKED');
+        }
+    },true);
+    document.addEventListener('cut',function(event){
+        if(isClientProtectedSurface(event.target)){
+            event.preventDefault();recordClientSecurityEvent('CUT_BLOCKED');
+        }
+    },true);
+    document.addEventListener('paste',function(event){
+        if(isClientProtectedSurface(event.target)){
+            event.preventDefault();recordClientSecurityEvent('PASTE_BLOCKED');
+        }
+    },true);
+    document.addEventListener('contextmenu',function(event){
+        if(isClientProtectedSurface(event.target)){
+            event.preventDefault();recordClientSecurityEvent('CONTEXT_MENU');
+        }
+    },true);
+    document.addEventListener('selectstart',function(event){
+        if(isClientProtectedSurface(event.target) && !isEditableClientTarget(event.target))event.preventDefault();
+    },true);
+    document.addEventListener('keydown',function(event){
+        const key=String(event.key || '').toLowerCase();
+        const modifier=event.ctrlKey || event.metaKey;
+        const isCustomer=!!state.user && getRole()==='cliente';
+        if(isCustomer && (key==='printscreen' || (event.shiftKey && modifier && ['s','4','5'].indexOf(key)!==-1))){
+            event.preventDefault();
+            recordClientSecurityEvent('SCREENSHOT_SHORTCUT');
+            return;
+        }
+        if(!isClientProtectedSurface(event.target))return;
+        if(modifier && ['c','x','v'].indexOf(key)!==-1){
+            event.preventDefault();
+            recordClientSecurityEvent(key==='c'?'KEYBOARD_COPY':(key==='x'?'CUT_BLOCKED':'PASTE_BLOCKED'));
+        }else if(modifier && key==='p'){
+            event.preventDefault();
+            recordClientSecurityEvent('PRINT_ATTEMPT');
+        }
+    },true);
 }
 
 
@@ -5626,6 +6928,10 @@ async function loadImportadoras(){
             );
 
         if(!result.success){
+
+            if(result.code === 'MEMBERSHIP_REQUIRED'){
+                return null;
+            }
 
             if(isSessionError(result)){
 
@@ -5766,7 +7072,11 @@ function renderImportadoras(){
         filterMetodo ? filterMetodo.value : '';
 
     let filtered =
-        state.importadoras || [];
+        (state.importadoras || []).slice();
+
+    if(state.favoritosOnly){
+        filtered = filtered.filter(function(item){ return isFavorite(item.id); });
+    }
 
     if(search){
         filtered = filtered.filter(
@@ -5794,6 +7104,24 @@ function renderImportadoras(){
         );
     }
 
+    filtered.sort(function(a,b){
+        return Number(isFeaturedForCurrentDirectory(b))-Number(isFeaturedForCurrentDirectory(a)) || String(a.nombre||'').localeCompare(String(b.nombre||''),'es',{sensitivity:'base'});
+    });
+
+    const favoritesButton = document.getElementById('btnToggleFavorites');
+    const favoritesCount = document.getElementById('favoritesFilterCount');
+    const resultsMeta = document.getElementById('clientResultsMeta');
+    if(favoritesButton){
+        favoritesButton.classList.toggle('active', state.favoritosOnly);
+        favoritesButton.setAttribute('aria-pressed', String(state.favoritosOnly));
+    }
+    if(favoritesCount){
+        favoritesCount.textContent = String((state.favoritos || []).length);
+    }
+    if(resultsMeta){
+        resultsMeta.textContent = `${filtered.length} ${filtered.length === 1 ? 'resultado' : 'resultados'}`;
+    }
+
     importadorasGrid.innerHTML = '';
 
     if(filtered.length === 0){
@@ -5808,7 +7136,17 @@ function renderImportadoras(){
         const emptyHint =
             emptyImportadoras.querySelector('span');
 
-        if(state.importadoras.length === 0){
+        if(state.favoritosOnly && state.favoritos.length === 0){
+
+            emptyTitle.textContent = 'Todavía no tienes favoritos';
+            emptyHint.textContent = 'Guarda una importadora con la estrella y aparecerá aquí.';
+
+        }else if(state.favoritosOnly){
+
+            emptyTitle.textContent = 'No encontramos favoritos con estos filtros';
+            emptyHint.textContent = 'Quita algún filtro o explora todas las importadoras.';
+
+        }else if(state.importadoras.length === 0){
 
             emptyTitle.textContent =
                 'Aún no hay importadoras registradas';
@@ -5937,7 +7275,8 @@ function highlightHtml(text, search){
 function createImportadoraCard(item, search = ''){
 
     const card = document.createElement('div');
-    card.className = 'importadora-card';
+    const highlighted=isFeaturedForCurrentDirectory(item);
+    card.className = 'importadora-card' + (highlighted ? ' is-featured' : '');
 
     const favorite = isFavorite(item.id);
 
@@ -5977,10 +7316,14 @@ function createImportadoraCard(item, search = ''){
                 ${logoHtml}
             </div>
 
+            ${highlighted ? '<span class="featured-badge card-featured-badge">✦ Destacada</span>' : ''}
+
 <button
                 class="favorite-btn ${favorite ? 'active' : ''}"
                 type="button"
                 title="${favorite ? 'Quitar de favoritos' : 'Agregar a favoritos'}"
+                aria-label="${favorite ? 'Quitar ' + escapeAttribute(item.nombre || 'importadora') + ' de favoritos' : 'Agregar ' + escapeAttribute(item.nombre || 'importadora') + ' a favoritos'}"
+                aria-pressed="${favorite}"
             >
 ${favorite ? '★' : '☆'}
             </button>
@@ -5994,6 +7337,8 @@ ${favorite ? '★' : '☆'}
         <div class="importadora-name">
             ${highlightHtml(item.nombre || 'Importadora', search)}
         </div>
+
+        ${item.verificada ? '<span class="verified-badge">✓ Importadora verificada</span>' : ''}
 
         <div class="importadora-description">
             ${highlightHtml(
@@ -6060,6 +7405,17 @@ const detailsButton =
     }
 
     return card;
+}
+
+function isFeaturedForCurrentDirectory(item){
+    if(item&&item.destacadoGeneral)return true;
+    const segments=item&&Array.isArray(item.destacadosSegmentos)?item.destacadosSegmentos:[];
+    const selectedRubro=filterRubro?String(filterRubro.value||'').trim().toLowerCase():'';
+    const selectedCity=filterCiudad?String(filterCiudad.value||'').trim().toLowerCase():'';
+    return segments.some(function(segment){
+        const value=String(segment.value||'').trim().toLowerCase();
+        return (segment.type==='rubro'&&selectedRubro&&value===selectedRubro)||(segment.type==='ciudad'&&selectedCity&&value===selectedCity);
+    });
 }
 
 
@@ -6274,6 +7630,8 @@ function renderImportadoraCards(items, search){
 
 function openImportadoraModal(item){
 
+    lastImportadoraTrigger = document.activeElement;
+
     const modal =
         document.getElementById('importadoraModal');
 
@@ -6302,6 +7660,7 @@ function openImportadoraModal(item){
     const info = [];
 
     addModalInfo(info, 'Rubro', item.rubro);
+    if(item.verificada){addModalInfo(info, 'Estado de verificación', 'Importadora verificada por Intelicelyg');addModalInfo(info,'Insignia vigente hasta',membershipDateLabel(item.verificadaHasta));}
     addModalInfo(info, 'Dirección', item.direccion);
     addModalInfo(info, 'Distrito', item.distrito);
     addModalInfo(info, 'Ciudad', item.ciudad);
@@ -6311,6 +7670,8 @@ function openImportadoraModal(item){
     addModalInfo(info, 'WhatsApp', item.whatsapp);
     addModalInfo(info, 'Teléfono', item.telefono);
     addModalInfo(info, 'Correo', item.correo);
+    addModalInfo(info, 'Perfil registrado', formatDisplayDate(item.fechaRegistro));
+    addModalInfo(info, 'Última actualización', formatDisplayDate(item.fechaActualizacion || item.updatedAt || item.lastUpdated));
 
     const actions = [];
 
@@ -6323,6 +7684,10 @@ function openImportadoraModal(item){
     addAction(actions, 'Página web', normalizeWebUrl(item.paginaWeb), item.paginaWeb);
 
     let html = '';
+
+    if(item.verificada){
+        html+='<div class="modal-verified-banner"><span class="verified-badge">✓ Importadora verificada</span><span>Datos comerciales revisados por Intelicelyg.</span></div>';
+    }
 
     if(item.descripcion){
         html += `
@@ -6353,6 +7718,11 @@ function openImportadoraModal(item){
                 </div>
             </section>
         `;
+    }
+
+    if(getRole()==='cliente'&&item.id){
+        html+=`<section class="modal-section"><div class="modal-section-title">Contacto directo</div><p class="modal-description">Escribe a la importadora de forma privada sin salir de la plataforma.</p><button type="button" class="primary-btn chat-start-btn" data-chat-importadora="${escapeAttribute(item.id)}" data-chat-name="${escapeAttribute(item.nombre||'Importadora')}">💬 Enviar mensaje</button></section>`;
+        html+=`<section class="modal-section"><div class="modal-section-title">Catálogo y novedades</div><div id="publicCatalogFeed" class="public-catalog-feed"><span class="muted-text">Cargando publicaciones…</span></div></section>`;
     }
 
 if(item.observaciones){
@@ -6400,6 +7770,11 @@ if(item.observaciones){
     body.innerHTML = html;
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
+    const chatButton=body.querySelector('[data-chat-importadora]');
+    if(chatButton)chatButton.addEventListener('click',function(){startChatFromProfile(chatButton.dataset.chatImportadora,chatButton.dataset.chatName);});
+    if(getRole()==='cliente'&&item.id)loadPublicCatalog(item.id);
+    const closeButton = document.getElementById('closeImportadoraModal');
+    if(closeButton) closeButton.focus();
 }
 
 
@@ -6410,6 +7785,25 @@ function closeImportadoraModal(){
 
     modal.classList.add('hidden');
     document.body.style.overflow = '';
+    if(lastImportadoraTrigger && lastImportadoraTrigger.isConnected){
+        lastImportadoraTrigger.focus();
+    }
+    lastImportadoraTrigger = null;
+}
+
+async function loadPublicCatalog(importadoraId){
+    const feed=document.getElementById('publicCatalogFeed');
+    if(!feed)return;
+    try{
+        const result=await api('getPublicCatalog',{sessionToken:state.sessionToken,importadoraId:importadoraId});
+        if(!result.success)throw new Error(result.message||'No se pudieron cargar las publicaciones.');
+        const posts=Array.isArray(result.posts)?result.posts:[];
+        if(!posts.length){feed.innerHTML='<div class="modal-description">Esta importadora aún no tiene productos o novedades publicados.</div>';return;}
+        feed.innerHTML=posts.map(function(post){
+            const url=post.Enlace?normalizeWebUrl(post.Enlace):'';
+            return `<article class="public-catalog-item"><h4>${escapeHtml(post.Título||'Producto')}</h4><p>${escapeHtml(post.Descripción||'')}</p>${Number(post['Precio PEN'])>0?`<span class="catalog-price">${membershipMoney(post['Precio PEN'])}</span>`:''}${url?`<a href="${escapeAttribute(url)}" target="_blank" rel="noopener noreferrer">Ver producto o catálogo ↗</a>`:''}</article>`;
+        }).join('');
+    }catch(error){if(feed)feed.innerHTML=`<div class="modal-description">${escapeHtml(error.message||'No se pudieron cargar las publicaciones.')}</div>`;}
 }
 
 
@@ -6679,14 +8073,24 @@ if(btnClearFilters){
     btnClearFilters.addEventListener(
         'click',
         function(){
+            searchInput.value = '';
             [filterRubro, filterCiudad, filterMetodo].forEach(
                 function(el){
                     if(el)el.value = '';
                 }
             );
+            state.favoritosOnly = false;
             renderImportadoras();
         }
     );
+}
+
+const btnToggleFavorites = document.getElementById('btnToggleFavorites');
+if(btnToggleFavorites){
+    btnToggleFavorites.addEventListener('click', function(){
+        state.favoritosOnly = !state.favoritosOnly;
+        renderImportadoras();
+    });
 }
 
 const btnCompararAbrir =
@@ -6753,9 +8157,7 @@ logoutBtn.addEventListener(
             );
 
 
-            authSection.classList.remove(
-                'hidden'
-            );
+            showLanding();
 
 
             emailStep.classList.remove(
@@ -6928,6 +8330,8 @@ function clearSession(){
     state.favoritos =
         [];
 
+    state.favoritosOnly = false;
+
     state.usuarios =
         [];
 }
@@ -6959,6 +8363,7 @@ function handleExpiredSession(){
     clearSession();
 
 
+    landingSection.classList.add('hidden');
     appSection.classList.add(
         'hidden'
     );
@@ -7253,6 +8658,231 @@ function getInitial(
    PANEL IMPORTADORA (rol: importadora)
 ===================================================== */
 
+function chatThreadIdFor(importadoraId){
+    return 'CHAT-'+String(state.user&&state.user.id||'').trim().toLowerCase()+'-'+String(importadoraId||'').trim().toLowerCase();
+}
+
+function chatDateLabel(value){
+    if(!value)return '';
+    const date=new Date(value);
+    return Number.isNaN(date.getTime())?'':date.toLocaleString('es-PE',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+}
+
+function updateChatBadge(){
+    const unread=(state.chatThreads||[]).reduce(function(total,thread){return total+(Number(thread.unread)||0);},0);
+    const button=document.querySelector('#dashboardNav [data-nav="mensajes"]');
+    if(button){button.innerHTML=`💬 Mensajes${unread?` <span class="chat-nav-count">${unread>99?'99+':unread}</span>`:''}`;button.setAttribute('aria-label',unread?`Mensajes, ${unread} sin leer`:'Mensajes');}
+}
+
+function renderChatThreadList(){
+    const list=document.getElementById('chatThreadList');
+    if(!list)return;
+    const threads=(state.chatThreads||[]).slice();
+    const draftId=state.chatDraftImportadoraId?chatThreadIdFor(state.chatDraftImportadoraId):'';
+    if(draftId&&!threads.some(function(thread){return thread.threadId===draftId;}))threads.unshift({threadId:draftId,importadoraId:state.chatDraftImportadoraId,counterpartName:state.chatDraftName||'Importadora',lastMessage:'Inicia una conversación',unread:0,isDraft:true});
+    if(!threads.length){list.innerHTML='<div class="chat-empty-inbox"><strong>Aún no hay conversaciones</strong><p>Abre el perfil de una importadora y elige “Enviar mensaje” para iniciar una.</p></div>';return;}
+    list.innerHTML=threads.map(function(thread){
+        const active=thread.threadId===state.activeChatId;
+        const preview=thread.lastMessage||'Inicia una conversación';
+        const suspended=String(thread.chatStatus||'activo')==='suspendido';
+        return `<button type="button" class="chat-thread ${active?'active':''} ${suspended?'is-suspended':''}" data-chat-thread="${escapeAttribute(thread.threadId)}" data-chat-importadora-id="${escapeAttribute(thread.importadoraId||'')}" data-chat-counterpart="${escapeAttribute(thread.counterpartName||'Conversación')}" data-chat-email="${escapeAttribute(thread.counterpartEmail||'')}"><span class="chat-thread-top"><span class="chat-thread-name">${escapeHtml(thread.counterpartName||'Conversación')}${suspended?'<i class="chat-suspended-mark" aria-label="Chat suspendido">🔒</i>':''}${Number(thread.unread)>0?'<i class="chat-thread-unread" aria-label="Mensajes sin leer"></i>':''}</span><span class="chat-thread-date">${escapeHtml(chatDateLabel(thread.updatedAt))}</span></span><span class="chat-thread-preview">${suspended?'Suspendido · ':''}${escapeHtml(preview)}</span></button>`;
+    }).join('');
+    list.querySelectorAll('[data-chat-thread]').forEach(function(button){button.addEventListener('click',function(){openChatThread(button.dataset.chatThread,button.dataset.chatImportadoraId,button.dataset.chatCounterpart,button.dataset.chatEmail);});});
+}
+
+function renderChatMessages(messages){
+    const list=document.getElementById('chatMessageList');
+    if(!list)return;
+    if(!messages||!messages.length){list.innerHTML='<div class="chat-empty-state"><span>👋</span><strong>Inicia la conversación</strong><p>Escribe tu consulta. Mantén los acuerdos y pagos fuera del chat hasta validar la información de la importadora.</p></div>';return;}
+    list.innerHTML=messages.map(function(message){return `<article class="chat-message ${message.mine?'mine':''}"><span class="chat-message-body">${escapeHtml(message.body||'')}</span><span class="chat-message-meta">${message.mine?'Tú':escapeHtml(message.senderName||'Usuario')} · ${escapeHtml(chatDateLabel(message.createdAt))}</span></article>`;}).join('');
+    list.scrollTop=list.scrollHeight;
+}
+
+function renderChatConversation(thread){
+    const shell=document.getElementById('chatPanel');
+    const header=document.getElementById('chatConversationHeader');
+    const input=document.getElementById('chatMessageInput');
+    const send=document.getElementById('btnSendChatMessage');
+    const notice=document.getElementById('chatModerationNotice');
+    if(!shell||!header)return;
+    shell.classList.toggle('has-thread',!!thread);
+    if(!thread){
+        header.innerHTML='<strong>Elige una conversación</strong>';
+        renderChatMessages(null);
+        if(input)input.disabled=true;
+        if(send)send.disabled=true;
+        if(notice){notice.classList.add('hidden');notice.textContent='';}
+        return;
+    }
+    const adminMode=getRole()==='admin',suspended=String(thread.chatStatus||'activo')==='suspendido';
+    header.innerHTML=`<button type="button" class="chat-back-btn" id="chatBackBtn" aria-label="Volver a conversaciones">←</button><div class="chat-header-identity"><strong>${escapeHtml(thread.counterpartName||'Conversación')}</strong>${thread.counterpartEmail?`<span class="chat-conversation-subtitle">${escapeHtml(thread.counterpartEmail)}</span>`:''}${adminMode&&suspended?`<span class="chat-conversation-subtitle">Suspendido · ${escapeHtml(thread.suspensionReason||'Sin motivo registrado')}</span>`:''}</div>${adminMode?`<button type="button" class="chat-moderation-btn ${suspended?'is-active':''}" data-chat-status-action="${suspended?'activar':'suspender'}">${suspended?'Reactivar chat':'Suspender chat'}</button>`:''}`;
+    const back=header.querySelector('#chatBackBtn');
+    if(back)back.addEventListener('click',function(){state.activeChatId='';state.chatDraftImportadoraId='';renderChatThreadList();renderChatConversation(null);});
+    const moderation=header.querySelector('[data-chat-status-action]');
+    if(moderation)moderation.addEventListener('click',function(){setChatStatus(thread.threadId,moderation.dataset.chatStatusAction);});
+    if(notice){notice.classList.toggle('hidden',!suspended);notice.innerHTML=suspended?`<strong>🔒 Conversación suspendida</strong><span>${escapeHtml(thread.suspensionReason||'El equipo restringió temporalmente los mensajes.')}</span>${adminMode?'<small>Como admin puedes responder y reactivar el chat.</small>':'<small>No puedes enviar mensajes mientras se revisa el caso. Contacta soporte si necesitas ayuda.</small>'}`:'';}
+    if(input)input.disabled=suspended&&!adminMode;
+    if(send)send.disabled=suspended&&!adminMode;
+}
+
+async function fetchChatMessages(threadId,importadoraId){
+    const result=await api('chatMessages',{sessionToken:state.sessionToken,threadId:threadId,importadoraId:importadoraId||'',auditAccess:getRole()==='admin'});
+    if(!result.success)throw new Error(result.message||'No se pudieron cargar los mensajes.');
+    renderChatMessages(Array.isArray(result.messages)?result.messages:[]);
+    await refreshChatThreads(false);
+}
+
+async function openChatThread(threadId,importadoraId,name,email){
+    state.activeChatId=threadId;
+    const isDraft=!!state.chatDraftImportadoraId&&threadId===chatThreadIdFor(state.chatDraftImportadoraId)&&!(state.chatThreads||[]).some(function(thread){return thread.threadId===threadId;});
+    if(!isDraft)state.chatDraftImportadoraId='';
+    const thread=(state.chatThreads||[]).find(function(item){return item.threadId===threadId;})||{threadId:threadId,importadoraId:importadoraId,counterpartName:name,counterpartEmail:email,isDraft:isDraft};
+    renderChatThreadList();
+    renderChatConversation(thread);
+    if(isDraft){renderChatMessages([]);return;}
+    const list=document.getElementById('chatMessageList');
+    if(list)list.innerHTML='<div class="admin-skeleton"><div class="skeleton-line long skeleton-pulse"></div><div class="skeleton-line medium skeleton-pulse"></div></div>';
+    try{await fetchChatMessages(threadId,importadoraId);}catch(error){if(list)list.innerHTML=`<div class="alert show error">${escapeHtml(error.message||'No se pudieron cargar los mensajes.')}</div>`;}
+}
+
+async function refreshChatThreads(updateMessages){
+    const result=await api('chatList',{sessionToken:state.sessionToken});
+    if(!result.success)throw new Error(result.message||'No se pudieron actualizar las conversaciones.');
+    state.chatThreads=Array.isArray(result.threads)?result.threads:[];
+    renderChatThreadList();
+    updateChatBadge();
+    if(updateMessages&&state.activeChatId&&!state.chatDraftImportadoraId){
+        const active=state.chatThreads.find(function(thread){return thread.threadId===state.activeChatId;});
+        if(active){
+            renderChatConversation(active);
+            const existingList=document.getElementById('chatMessageList');
+            const previousCount=existingList?existingList.querySelectorAll('.chat-message').length:0;
+            const messagesResult=await api('chatMessages',{sessionToken:state.sessionToken,threadId:active.threadId,importadoraId:active.importadoraId});
+            if(messagesResult.success){
+                const messages=Array.isArray(messagesResult.messages)?messagesResult.messages:[];
+                if(messages.length!==previousCount)renderChatMessages(messages);
+                const refreshed=await api('chatList',{sessionToken:state.sessionToken});
+                if(refreshed.success)state.chatThreads=Array.isArray(refreshed.threads)?refreshed.threads:state.chatThreads;
+                renderChatThreadList();updateChatBadge();
+            }
+        }
+    }
+}
+
+async function loadChatPanel(){
+    const list=document.getElementById('chatThreadList');
+    if(list)list.innerHTML='<div class="admin-skeleton"><div class="skeleton-line long skeleton-pulse"></div><div class="skeleton-line medium skeleton-pulse"></div></div>';
+    const header=document.getElementById('chatConversationHeader');
+    if(header)header.innerHTML='<strong>Selecciona una conversación</strong>';
+    const adminMode=getRole()==='admin';
+    const welcome=document.getElementById('chatWelcomeText');
+    const inboxTitle=document.querySelector('#mensajesView .chat-inbox-heading strong');
+    const composerHint=document.getElementById('chatComposerHint');
+    if(welcome)welcome.textContent=adminMode?'Revisa las conversaciones de clientes e importadoras y responde como equipo Intelicelyg.':'Conversa directamente con clientes o importadoras desde Intelicelyg.';
+    if(inboxTitle)inboxTitle.textContent=adminMode?'Todas las conversaciones':'Conversaciones';
+    if(composerHint)composerHint.textContent=adminMode?'Tu respuesta se enviará como Equipo Intelicelyg · Máximo 2,000 caracteres':'Máximo 2,000 caracteres';
+    try{
+        await refreshChatThreads(false);
+        const draftId=state.chatDraftImportadoraId?chatThreadIdFor(state.chatDraftImportadoraId):'';
+        if(draftId){
+            const existing=state.chatThreads.find(function(thread){return thread.threadId===draftId;});
+            state.activeChatId=draftId;
+            if(existing){state.chatDraftImportadoraId='';await openChatThread(existing.threadId,existing.importadoraId,existing.counterpartName,existing.counterpartEmail);}
+            else{renderChatThreadList();renderChatConversation({threadId:draftId,importadoraId:state.chatDraftImportadoraId,counterpartName:state.chatDraftName||'Importadora',isDraft:true});renderChatMessages([]);}
+        }else if(state.activeChatId){
+            const active=state.chatThreads.find(function(thread){return thread.threadId===state.activeChatId;});
+            if(active)await openChatThread(active.threadId,active.importadoraId,active.counterpartName,active.counterpartEmail);
+            else{state.activeChatId='';renderChatThreadList();renderChatConversation(null);}
+        }else{renderChatThreadList();renderChatConversation(null);}
+    }catch(error){if(list)list.innerHTML=`<div class="alert show error">${escapeHtml(error.message||'No se pudo cargar el chat.')}</div>`;}
+    if(state.chatPollTimer)clearInterval(state.chatPollTimer);
+    state.chatPollTimer=setInterval(function(){
+        if(document.getElementById('mensajesView')&&!document.getElementById('mensajesView').classList.contains('hidden'))refreshChatThreads(true).catch(function(error){console.warn('No se pudo actualizar el chat:',error);});
+    },20000);
+}
+
+function startChatFromProfile(importadoraId,name){
+    closeImportadoraModal();
+    state.chatDraftImportadoraId=importadoraId;
+    state.chatDraftName=name||'Importadora';
+    state.activeChatId=chatThreadIdFor(importadoraId);
+    showDashboardPanel('mensajes');
+}
+
+async function sendChatMessage(){
+    const input=document.getElementById('chatMessageInput');
+    const button=document.getElementById('btnSendChatMessage');
+    const resultEl=document.getElementById('chatSendResult');
+    const message=input?input.value.trim():'';
+    if(!message){if(resultEl){resultEl.textContent='Escribe un mensaje antes de enviarlo.';resultEl.className='alert show error';}return;}
+    if(message.length>2000){if(resultEl){resultEl.textContent='El mensaje supera el límite de 2,000 caracteres.';resultEl.className='alert show error';}return;}
+    button.disabled=true;button.textContent='Enviando…';
+    try{
+        const activeThread=(state.chatThreads||[]).find(function(thread){return thread.threadId===state.activeChatId;});
+        const importadoraId=state.chatDraftImportadoraId||(activeThread&&activeThread.importadoraId)||'';
+        const response=await api('chatSend',{sessionToken:state.sessionToken,threadId:state.activeChatId,importadoraId:importadoraId,message:message});
+        if(!response.success)throw new Error(response.message||'No se pudo enviar el mensaje.');
+        input.value='';state.chatDraftImportadoraId='';
+        if(resultEl){resultEl.textContent='';resultEl.className='alert';}
+        await refreshChatThreads(false);
+        const thread=state.chatThreads.find(function(item){return item.threadId===response.threadId;});
+        if(thread)await openChatThread(thread.threadId,thread.importadoraId,thread.counterpartName,thread.counterpartEmail);
+    }catch(error){if(resultEl){resultEl.textContent=error.message;resultEl.className='alert show error';}}
+    finally{button.disabled=false;button.textContent='Enviar';}
+}
+
+async function setChatStatus(threadId,action){
+    let reason='';
+    if(action==='suspender'){
+        reason=window.prompt('Motivo para suspender este chat (mínimo 5 caracteres):')||'';
+        if(reason.trim().length<5){showToast('Escribe un motivo de al menos 5 caracteres.','warn');return;}
+        if(!window.confirm('Se bloquearán los mensajes de cliente e importadora, sin borrar la conversación. ¿Continuar?'))return;
+    }else if(!window.confirm('¿Reactivar los mensajes de esta conversación?'))return;
+    try{
+        const result=await api('adminSetChatStatus',{sessionToken:state.sessionToken,threadId:threadId,action:action,reason:reason});
+        if(!result.success)throw new Error(result.message||'No se pudo cambiar el estado del chat.');
+        showToast(result.message,'success');
+        const refreshed=await api('chatList',{sessionToken:state.sessionToken});
+        if(!refreshed.success)throw new Error(refreshed.message||'No se pudo actualizar la bandeja.');
+        state.chatThreads=Array.isArray(refreshed.threads)?refreshed.threads:[];
+        renderChatThreadList();
+        const thread=state.chatThreads.find(function(item){return item.threadId===threadId;});
+        if(thread)renderChatConversation(thread);
+    }catch(error){showToast(error.message||'No se pudo cambiar el estado del chat.','error');}
+}
+
+function setupChatEvents(){
+    const send=document.getElementById('btnSendChatMessage');
+    if(send)send.addEventListener('click',sendChatMessage);
+    const input=document.getElementById('chatMessageInput');
+    if(input)input.addEventListener('keydown',function(event){if((event.ctrlKey||event.metaKey)&&event.key==='Enter'){event.preventDefault();sendChatMessage();}});
+}
+
+function getImportadoraProfileChecklist(item){
+
+    const fields = [
+        ['Nombre comercial', item.nombre],
+        ['Rubro', item.rubro],
+        ['Ubicación', item.ciudad || item.distrito || item.direccion],
+        ['Método de compra', item.metodoCompra],
+        ['Contacto principal', item.whatsapp || item.telefono || item.correo],
+        ['Web o redes sociales', item.paginaWeb || item.facebook || item.instagram || item.tiktok]
+    ];
+
+    const checklist = fields.map(function(field){
+        return { label: field[0], complete: Boolean(String(field[1] || '').trim()) };
+    });
+
+    const completed = checklist.filter(function(field){ return field.complete; }).length;
+
+    return {
+        checklist: checklist,
+        completed: completed,
+        total: checklist.length,
+        percent: Math.round(completed / checklist.length * 100)
+    };
+}
+
 async function renderImportadoraPanel(){
 
     const body =
@@ -7260,8 +8890,13 @@ async function renderImportadoraPanel(){
 
     if(!body)return;
 
-    body.innerHTML =
-        '<div class="empty-state"><div class="empty-icon">⏳</div><strong>Cargando...</strong></div>';
+    body.innerHTML = `
+        <div class="imp-loading-card" aria-live="polite">
+            <span class="imp-loading-mark" aria-hidden="true"></span>
+            <div class="imp-loading-lines"><span></span><span></span><span></span></div>
+            <strong>Cargando la información de tu perfil…</strong>
+        </div>
+    `;
 
     const result =
         await withSession(
@@ -7277,6 +8912,18 @@ async function renderImportadoraPanel(){
         );
 
     if(!result){
+        body.innerHTML = `
+            <div class="empty-state imp-unlinked-state">
+                <div class="empty-icon">↻</div>
+                <strong>No pudimos cargar tu perfil</strong>
+                <span>Revisa tu conexión e inténtalo nuevamente.</span>
+                <button id="btnRetryImpProfile" type="button" class="secondary-btn">Intentar de nuevo</button>
+            </div>
+        `;
+        const retryButton = document.getElementById('btnRetryImpProfile');
+        if(retryButton){
+            retryButton.addEventListener('click', renderImportadoraPanel);
+        }
         return;
     }
 
@@ -7286,59 +8933,276 @@ async function renderImportadoraPanel(){
     if(!item){
 
         body.innerHTML = `
-<div class="empty-state">
+            <div class="empty-state imp-unlinked-state">
                 <div class="empty-icon">🏭</div>
                 <strong>No tienes una importadora vinculada</strong>
                 <span>Contacta al administrador para enlazar tu cuenta.</span>
+                <button id="btnImpLinkSupport" type="button" class="secondary-btn">Contactar soporte</button>
             </div>
         `;
 
+        document.getElementById('btnImpLinkSupport').addEventListener('click', function(){
+            showDashboardPanel('soporte');
+        });
+
         return;
     }
+
+    let advertising = {config:{},methods:[],paymentInfo:{},requests:[]};
+    try{
+        const adResult = await api('getMyAdvertising',{sessionToken:state.sessionToken});
+        if(adResult && adResult.success)advertising=adResult;
+    }catch(error){console.warn('No se pudo cargar publicidad:',error);}
+    let verificationRequest=null,activeVerification=null,verificationConfig={},verificationMethods=[],verificationPaymentInfo={};
+    try{const verificationResult=await api('getMyVerification',{sessionToken:state.sessionToken});if(verificationResult&&verificationResult.success){verificationRequest=verificationResult.request||null;activeVerification=verificationResult.active||null;verificationConfig=verificationResult.config||{};verificationMethods=Array.isArray(verificationResult.methods)?verificationResult.methods:[];verificationPaymentInfo=verificationResult.paymentInfo||{};}}catch(error){console.warn('No se pudo cargar la verificación:',error);}
+    let catalogPosts=[];
+    try{const catalogResult=await api('getMyCatalog',{sessionToken:state.sessionToken});if(catalogResult&&catalogResult.success)catalogPosts=Array.isArray(catalogResult.posts)?catalogResult.posts:[];}catch(error){console.warn('No se pudo cargar el catálogo:',error);}
+    const adRequests=Array.isArray(advertising.requests)?advertising.requests:[];
+    const activeAd=adRequests.find(function(ad){return String(ad.Estado||'').toLowerCase()==='aprobado' && new Date(ad.Vence).getTime()>Date.now();});
+    const pendingAd=adRequests.find(function(ad){return String(ad.Estado||'').toLowerCase()==='pendiente';});
+    const adMethods=Array.isArray(advertising.methods)?advertising.methods:[];
+    const adPrices=advertising.config||{};
+    const profileIsActive=!item.estado || String(item.estado).toLowerCase()==='activo';
+    let adPanelHtml='';
+    if(!profileIsActive){
+        adPanelHtml=`<div class="panel-card imp-ad-card"><span class="featured-badge">Publicidad</span><h3 style="margin-top:12px">Perfil no disponible</h3><p>El perfil debe estar activo en el directorio para solicitar publicidad destacada. Contacta al equipo desde Soporte si necesitas ayuda.</p></div>`;
+    }else if(activeAd){
+        const activeSegment=String(activeAd.Segmento||'general')==='general'?'Todo el directorio':` ${escapeHtml(activeAd.Segmento==='rubro'?'Rubro':'Ciudad')}: ${escapeHtml(activeAd['Valor de segmento']||'')}`;
+        adPanelHtml=`<div class="panel-card imp-ad-card"><span class="featured-badge">✦ Perfil destacado</span><h3 style="margin-top:12px">Tu publicidad está activa</h3><p>Visibilidad en <strong>${activeSegment}</strong> hasta el <strong>${escapeHtml(membershipDateLabel(activeAd.Vence))}</strong>.</p></div>`;
+    }else if(pendingAd){
+        adPanelHtml=`<div class="panel-card imp-ad-card"><span class="featured-badge">⏳ En revisión</span><h3 style="margin-top:12px">Solicitud recibida</h3><p>Revisaremos el pago manual y te enviaremos la actualización al correo registrado.</p><p><strong>${pendingAd.Plan==='semanal'?'Destacado por 7 días':'Destacado por 30 días'}</strong> · ${membershipMoney(pendingAd['Monto PEN'])} · ${escapeHtml(pendingAd.Método||'')}</p></div>`;
+    }else if(adMethods.length && (Number(adPrices.weeklyPrice)>0 || Number(adPrices.monthlyPrice)>0 || Number(adPrices.weeklyTargetPrice)>0 || Number(adPrices.monthlyTargetPrice)>0)){
+        const segmentOptions=['<option value="general" data-label="Todo el directorio">Todo el directorio</option>'];
+        if((Number(adPrices.weeklyTargetPrice)>0||Number(adPrices.monthlyTargetPrice)>0)&&item.rubro)segmentOptions.push(`<option value="rubro" data-label="Rubro: ${escapeAttribute(item.rubro)}">Solo mi rubro · ${escapeHtml(item.rubro)}</option>`);
+        if((Number(adPrices.weeklyTargetPrice)>0||Number(adPrices.monthlyTargetPrice)>0)&&(item.ciudad||item.distrito))segmentOptions.push(`<option value="ciudad" data-label="Ciudad: ${escapeAttribute(item.ciudad||item.distrito)}">Solo mi ciudad · ${escapeHtml(item.ciudad||item.distrito)}</option>`);
+        adPanelHtml=`<section class="panel-card imp-ad-card"><span class="featured-badge">✦ Más visibilidad</span><h3 style="margin-top:12px">Destaca tu importadora</h3><p>Tu perfil puede aparecer primero para todo el directorio o en búsquedas de tu rubro o ciudad. Se activa al confirmar el pago.</p><div class="field"><label for="advertisingSegment">Dónde mostrar el anuncio</label><select id="advertisingSegment">${segmentOptions.join('')}</select><small id="advertisingSegmentHint" class="field-hint">Tu perfil se destacará para todos los clientes.</small></div><div id="advertisingPlanOptions" class="imp-ad-plan-grid">${advertisingPlansHtml(adPrices,'general')}</div><div id="advertisingPaymentInfo" class="membership-payment-card">${paymentDetailsHtml(advertising.paymentInfo,adMethods[0])}</div><div class="form-grid"><div class="field"><label for="advertisingMethod">Medio de pago</label><select id="advertisingMethod">${adMethods.map(function(method){return `<option value="${escapeHtml(method)}">${escapeHtml(method)}</option>`;}).join('')}</select></div><div class="field"><label for="advertisingReference">Número de operación o referencia</label><input id="advertisingReference" type="text" maxlength="100" autocomplete="off" placeholder="Referencia del pago"></div></div><button id="btnSubmitAdvertising" type="button" class="primary-btn">Solicitar publicidad destacada</button><div id="advertisingResult" class="alert" role="status"></div></section>`;
+    }else{
+        adPanelHtml=`<div class="panel-card imp-ad-card"><span class="featured-badge">✦ Publicidad</span><h3 style="margin-top:12px">Destaca tu importadora</h3><p>Próximamente podrás solicitar más visibilidad para tu perfil. Contacta al equipo desde Soporte para consultar disponibilidad.</p></div>`;
+    }
+
+    let verificationPanelHtml='';
+    const verificationBadgePreview='<div class="verification-badge-preview"><span class="verification-preview-label">Así se verá tu perfil al aprobarse</span><span class="verified-badge">✓ Importadora verificada</span><span class="verification-preview-note">La insignia aparecerá en el directorio y en la ficha pública.</span></div>';
+    const requestPending=verificationRequest&&String(verificationRequest.Estado||'').toLowerCase()==='pendiente';
+    const verificationPlanOptions=[['mensual','Mensual · 30 días',verificationConfig.monthlyPrice],['anual','Anual · 12 meses',verificationConfig.annualPrice]].filter(function(plan){return Number(plan[2])>0;}).map(function(plan,index){return `<label class="membership-plan"><input type="radio" name="verificationPlan" value="${plan[0]}" ${index===0?'checked':''}><h3>${plan[1]}</h3><div class="membership-price">${membershipMoney(plan[2])}</div><span>Insignia sujeta a validación</span></label>`;}).join('');
+    const verificationPaymentForm=verificationMethods.length&&verificationPlanOptions?`<div class="verification-payment-form"><div class="membership-plan-grid">${verificationPlanOptions}</div><div class="field"><label for="verificationMethod">Medio de pago</label><select id="verificationMethod">${verificationMethods.map(function(method){return `<option value="${escapeHtml(method)}">${escapeHtml(method)}</option>`;}).join('')}</select></div><div id="verificationPaymentInfo" class="membership-payment-card">${paymentDetailsHtml(verificationPaymentInfo,verificationMethods[0])}</div><div class="field"><label for="verificationReference">Número de operación o referencia</label><input id="verificationReference" type="text" maxlength="100" autocomplete="off" placeholder="Referencia del pago"></div><div class="form-grid"><div class="field"><label for="verificationRuc">RUC · 11 dígitos</label><input id="verificationRuc" type="text" inputmode="numeric" maxlength="11" placeholder="20123456789"></div><div class="field"><label for="verificationLegalName">Razón social</label><input id="verificationLegalName" type="text" maxlength="160" placeholder="Razón social registrada" autocomplete="organization"></div></div><button id="btnSubmitVerification" type="button" class="primary-btn">Enviar pago y solicitar verificación</button><div id="verificationResult" class="alert" role="status"></div></div>`:`<div class="verification-unavailable"><strong>Planes de verificación no disponibles todavía</strong><span>El admin debe configurar un precio y un medio de pago en el panel.</span></div>`;
+    const activeVerificationCard=activeVerification?`<div class="verification-active-card"><span class="verified-badge">✓ Importadora verificada</span><strong>Insignia activa hasta ${escapeHtml(membershipDateLabel(activeVerification.Vence||activeVerification.Revisado))}</strong><span>Validación comercial aprobada por Intelicelyg.</span></div>`:'';
+    const pendingVerificationCard=requestPending?`<div class="verification-pending-card"><span class="verification-pending">⏳ Solicitud en revisión</span><strong>${activeVerification?'Renovación pendiente de aprobación':'Pago y datos pendientes de validación'}</strong><span>Plan ${escapeHtml(verificationRequest.Plan||'')}${verificationRequest['Monto PEN']?' · '+membershipMoney(verificationRequest['Monto PEN']):''} · ${escapeHtml(verificationRequest.Método||'')}</span><span>RUC ${escapeHtml(verificationRequest.RUC||'')} · ${escapeHtml(verificationRequest['Razón social']||'')}</span><small>Te avisaremos al correo cuando el equipo confirme el pago y revise los datos.</small></div>`:'';
+    const rejectionNotice=verificationRequest&&String(verificationRequest.Estado||'').toLowerCase()==='rechazado'?`<p class="verification-rejected">Última revisión: ${escapeHtml(verificationRequest.Nota||'Revisa los datos y vuelve a solicitar la verificación.')}</p>`:'';
+    verificationPanelHtml=`<section class="panel-card verification-card"><span class="verified-badge">✓ Confianza comercial</span><h3>${activeVerification?'Renueva tu verificación':'Verifica tu importadora'}</h3><p>Elige un plan, paga por Yape, Plin o banco y envía la referencia. La insignia solo se activa después de verificar el pago y contrastar el RUC y la razón social. Es una validación de datos comerciales de Intelicelyg; no garantiza productos ni transacciones.</p>${activeVerificationCard}${pendingVerificationCard}${!requestPending?verificationBadgePreview+rejectionNotice+verificationPaymentForm:''}</section>`;
+    const catalogManagerHtml=`<section class="panel-card imp-catalog-card"><div class="section-header"><div><h3>Catálogo y novedades</h3><p>Comparte productos, ofertas o actualizaciones. Cada publicación se revisa antes de mostrarse a los clientes.</p></div></div><div class="form-grid"><div class="field"><label for="catalogTitle">Producto o novedad *</label><input id="catalogTitle" type="text" maxlength="100" placeholder="Ej. Nuevo lote de accesorios"></div><div class="field"><label for="catalogPrice">Precio referencial · S/ (opcional)</label><input id="catalogPrice" type="number" min="0" step="0.01" placeholder="0.00"></div></div><div class="field"><label for="catalogDescription">Descripción *</label><textarea id="catalogDescription" rows="3" maxlength="1200" placeholder="Describe disponibilidad, condiciones o detalles del producto..."></textarea></div><div class="field"><label for="catalogLink">Enlace a catálogo o producto (opcional)</label><input id="catalogLink" type="url" maxlength="500" placeholder="https://..."></div><button id="btnSubmitCatalogPost" type="button" class="primary-btn">Enviar a revisión</button><div id="catalogPostResult" class="alert" role="status"></div><h4 style="margin:22px 0 10px;color:var(--dark)">Tus publicaciones</h4><div id="impCatalogPosts" class="imp-catalog-post-list"></div></section>`;
 
     document.getElementById('impViewLed').textContent = '🏠';
 
     const estado =
         String(item.estado || 'Activo');
 
+    const profile = getImportadoraProfileChecklist(item);
+    const checklistHtml = profile.checklist.map(function(field){
+        return `
+            <li class="${field.complete ? 'is-complete' : 'is-missing'}">
+                <span class="imp-check-icon" aria-hidden="true">${field.complete ? '✓' : '+'}</span>
+                <span class="imp-check-label">${escapeHtml(field.label)}</span>
+                <span class="imp-check-state">${field.complete ? 'Listo' : 'Por completar'}</span>
+            </li>
+        `;
+    }).join('');
+
     body.innerHTML = `
 
-        <div class="${estado.toLowerCase() === 'inactivo' ? 'status-pill-a inactivo' : 'status-pill-a activo'}"
-             style="margin-bottom:14px;">
-            Estado: ${escapeHtml(estado)}
-        </div>
+        <section class="imp-profile-overview" aria-labelledby="impProfileOverviewTitle">
+            <div class="imp-overview-top">
+                <div>
+                    <span class="imp-overview-kicker">Tu presencia en el directorio</span>
+                    <h2 id="impProfileOverviewTitle">${profile.completed} de ${profile.total} datos completos</h2>
+                    <p>Completa la información para ayudar a tus clientes a conocerte y contactarte.</p>
+                </div>
+                <div class="imp-overview-actions">
+                    <span class="${estado.toLowerCase() === 'inactivo' ? 'status-pill-a inactivo' : 'status-pill-a activo'}">${escapeHtml(estado)}</span>
+                    <button id="btnPreviewImpProfile" type="button" class="secondary-btn imp-preview-btn">Vista previa del perfil <span aria-hidden="true">↗</span></button>
+                </div>
+            </div>
+            <div class="imp-progress-row">
+                <div class="imp-progress-track" role="progressbar" aria-label="Completitud de los datos del perfil" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${profile.percent}">
+                    <span style="width:${profile.percent}%"></span>
+                </div>
+                <strong>${profile.percent}%</strong>
+            </div>
+            <ul class="imp-completion-list">${checklistHtml}</ul>
+        </section>
 
-        <div class="panel-card">
+        ${verificationPanelHtml}
+        ${adPanelHtml}
+        ${catalogManagerHtml}
+
+        <div class="panel-card imp-edit-card">
 
             <div class="section-header">
                 <div>
-                    <h3>Información de tu importadora</h3>
-                    <p>Actualiza los datos y guarda los cambios.</p>
+                    <h3>Información del negocio</h3>
+                    <p>Estos datos forman parte del perfil que consultan los clientes.</p>
                 </div>
             </div>
 
-            ${buildImpFormHtml(item, false)}
+            <div class="imp-profile-form">${buildImpFormHtml(item, false)}</div>
 
             <button id="btnGuardarMiImportadora" type="button" class="primary-btn">
-💾 Guardar cambios
+                Guardar cambios <span aria-hidden="true">→</span>
             </button>
 
+            <p class="imp-save-hint">Tus cambios se guardan en el perfil del directorio.</p>
             <div id="impPanelResultado" class="alert"></div>
 
         </div>
     `;
 
-    document.getElementById('btnGuardarMiImportadora').addEventListener(
+    const previewButton = document.getElementById('btnPreviewImpProfile');
+    const saveHint = body.querySelector('.imp-save-hint');
+    const saveButton = document.getElementById('btnGuardarMiImportadora');
+    const profileForm = body.querySelector('.imp-profile-form');
+
+    const advertisingMethod=document.getElementById('advertisingMethod');
+    if(advertisingMethod)advertisingMethod.addEventListener('change',function(){
+        const info=document.getElementById('advertisingPaymentInfo');
+        if(info)info.innerHTML=paymentDetailsHtml(advertising.paymentInfo,advertisingMethod.value);
+    });
+    const advertisingSegment=document.getElementById('advertisingSegment');
+    if(advertisingSegment){
+        advertisingSegment.addEventListener('change',function(){updateAdvertisingSegmentOptions(adPrices);});
+        updateAdvertisingSegmentOptions(adPrices);
+    }
+    const advertisingButton=document.getElementById('btnSubmitAdvertising');
+    if(advertisingButton)advertisingButton.addEventListener('click',submitAdvertisingRequest);
+    const verificationButton=document.getElementById('btnSubmitVerification');
+    if(verificationButton)verificationButton.addEventListener('click',submitVerificationRequest);
+    const verificationMethodSelect=document.getElementById('verificationMethod');
+    if(verificationMethodSelect)verificationMethodSelect.addEventListener('change',function(){const info=document.getElementById('verificationPaymentInfo');if(info)info.innerHTML=paymentDetailsHtml(verificationPaymentInfo,verificationMethodSelect.value);});
+    renderImportadoraCatalogPosts(catalogPosts);
+    const catalogButton=document.getElementById('btnSubmitCatalogPost');
+    if(catalogButton)catalogButton.addEventListener('click',submitCatalogPost);
+
+    function setDirty(isDirty){
+        if(saveButton){
+            saveButton.classList.toggle('is-dirty', isDirty);
+            saveButton.setAttribute('aria-label', isDirty ? 'Guardar cambios pendientes' : 'Guardar cambios');
+        }
+        if(saveHint){
+            saveHint.textContent = isDirty
+                ? 'Tienes cambios sin guardar. Guárdalos para actualizar el perfil del directorio.'
+                : 'Tus cambios se guardan en el perfil del directorio.';
+            saveHint.classList.toggle('is-dirty', isDirty);
+        }
+    }
+
+    if(profileForm){
+        profileForm.addEventListener('input', function(){ setDirty(true); });
+        profileForm.addEventListener('change', function(){ setDirty(true); });
+    }
+
+    previewButton.addEventListener('click', function(){
+        openImportadoraModal({ ...item, ...collectImpFormData() });
+    });
+
+    saveButton.addEventListener(
         'click',
-        function(){
-            saveImportadoraFromForm(
-                item.id,
-                null,
-                null,
-                'impPanelResultado'
-            );
+        async function(event){
+            const button = event.currentTarget;
+            const originalText = button.innerHTML;
+            button.disabled = true;
+            button.innerHTML = 'Guardando…';
+            try{
+                await saveImportadoraFromForm(
+                    item.id,
+                    null,
+                    null,
+                    'impPanelResultado'
+                );
+                const resultEl = document.getElementById('impPanelResultado');
+                if(button.isConnected && resultEl && resultEl.classList.contains('success')){
+                    setDirty(false);
+                }
+            }finally{
+                if(button.isConnected){
+                    button.disabled = false;
+                    button.innerHTML = originalText;
+                }
+            }
         }
     );
+}
+
+
+async function submitAdvertisingRequest(){
+    const button=document.getElementById('btnSubmitAdvertising');
+    const result=document.getElementById('advertisingResult');
+    const plan=document.querySelector('input[name="advertisingPlan"]:checked');
+    const method=document.getElementById('advertisingMethod');
+    const reference=document.getElementById('advertisingReference');
+    const segment=document.getElementById('advertisingSegment');
+    if(!plan || !method || !reference || reference.value.trim().length<4){
+        if(result){result.textContent='Selecciona un plan e ingresa una referencia válida de pago.';result.className='alert show error';}
+        return;
+    }
+    button.disabled=true;button.textContent='Enviando solicitud…';
+    try{
+        const response=await api('submitAdvertisingPayment',{sessionToken:state.sessionToken,plan:plan.value,segment:segment?segment.value:'general',method:method.value,reference:reference.value.trim()});
+        if(!response.success)throw new Error(response.message || 'No se pudo enviar la solicitud.');
+        showToast(response.message || 'Solicitud enviada.','success');
+        await renderImportadoraPanel();
+    }catch(error){
+        if(result){result.textContent=error.message;result.className='alert show error';}
+        button.disabled=false;button.textContent='Solicitar publicidad destacada';
+    }
+}
+
+async function submitVerificationRequest(){
+    const button=document.getElementById('btnSubmitVerification');
+    const result=document.getElementById('verificationResult');
+    const ruc=document.getElementById('verificationRuc');
+    const legalName=document.getElementById('verificationLegalName');
+    const plan=document.querySelector('input[name="verificationPlan"]:checked');
+    const method=document.getElementById('verificationMethod');
+    const reference=document.getElementById('verificationReference');
+    if(!ruc||!legalName||!/^[0-9]{11}$/.test(ruc.value.trim())||legalName.value.trim().length<3||!plan||!method||!reference||reference.value.trim().length<4){
+        if(result){result.textContent='Completa el RUC, la razón social, el plan y la referencia del pago.';result.className='alert show error';}
+        return;
+    }
+    button.disabled=true;button.textContent='Enviando…';
+    try{
+        const response=await api('submitVerification',{sessionToken:state.sessionToken,ruc:ruc.value.trim(),legalName:legalName.value.trim(),plan:plan.value,method:method.value,reference:reference.value.trim()});
+        if(!response.success)throw new Error(response.message||'No se pudo enviar la solicitud.');
+        showToast(response.message||'Solicitud enviada.','success');
+        await renderImportadoraPanel();
+    }catch(error){if(result){result.textContent=error.message;result.className='alert show error';}}
+    finally{if(button.isConnected){button.disabled=false;button.textContent='Enviar para revisión';}}
+}
+
+function renderImportadoraCatalogPosts(posts){
+    const container=document.getElementById('impCatalogPosts');
+    if(!container)return;
+    if(!posts||!posts.length){container.innerHTML='<div class="empty-state"><div class="empty-icon">📦</div><strong>Aún no tienes publicaciones</strong><span>Envía un producto u oferta para que el admin la revise.</span></div>';return;}
+    container.innerHTML=posts.map(function(post){
+        const status=String(post.Estado||'');
+        const tone=status.toLowerCase()==='aprobado'?'activo':(status.toLowerCase()==='pendiente'?'inactivo':'eliminado');
+        return `<article class="imp-catalog-post"><div class="chat-thread-top"><h4>${escapeHtml(post.Título||'Publicación')}</h4><span class="status-pill-a ${tone}">${escapeHtml(status)}</span></div><p>${escapeHtml(post.Descripción||'')}</p><div class="imp-catalog-post-meta"><span>${Number(post['Precio PEN'])>0?membershipMoney(post['Precio PEN']):'Precio por consultar'}</span><span>${post.Vence?'Vence '+escapeHtml(adminFormatDate(post.Vence)):escapeHtml(adminFormatDate(post.Solicitado))}</span></div>${post.Nota?`<p><strong>Nota del admin:</strong> ${escapeHtml(post.Nota)}</p>`:''}</article>`;
+    }).join('');
+}
+
+async function submitCatalogPost(){
+    const button=document.getElementById('btnSubmitCatalogPost');
+    const result=document.getElementById('catalogPostResult');
+    const title=document.getElementById('catalogTitle');
+    const description=document.getElementById('catalogDescription');
+    const price=document.getElementById('catalogPrice');
+    const link=document.getElementById('catalogLink');
+    if(!title||!description||title.value.trim().length<3||description.value.trim().length<10){if(result){result.textContent='Escribe un título y una descripción de al menos 10 caracteres.';result.className='alert show error';}return;}
+    button.disabled=true;button.textContent='Enviando…';
+    try{
+        const response=await api('submitCatalogPost',{sessionToken:state.sessionToken,title:title.value.trim(),description:description.value.trim(),price:price.value.trim(),link:link.value.trim()});
+        if(!response.success)throw new Error(response.message||'No se pudo enviar la publicación.');
+        showToast(response.message||'Publicación enviada.','success');
+        await renderImportadoraPanel();
+    }catch(error){if(result){result.textContent=error.message;result.className='alert show error';}}
+    finally{if(button.isConnected){button.disabled=false;button.textContent='Enviar a revisión';}}
 }
 
 
@@ -7593,6 +9457,8 @@ function renderAdminImportadoras(){
                 <div class="admin-imp-name">${escapeHtml(item.nombre || 'Sin nombre')}</div>
                 <div class="admin-imp-rol">Propietario: ${escapeHtml(ownerName)}</div>
                 <div class="admin-imp-rol">ID: ${escapeHtml(item.id || '—')}</div>
+                ${item.verificada ? '<div style="margin-top:8px"><span class="verified-badge">✓ Verificada</span></div>' : ''}
+                ${item.destacado ? `<div style="margin-top:8px"><span class="featured-badge">✦ Destacada hasta ${escapeHtml(adminFormatDate(item.destacadoHasta))}</span></div>` : ''}
                 <div class="admin-imp-actions">
                     <button type="button" class="btn-edit-imp" data-accion="editar">✏️ Editar</button>
                     <button type="button" class="btn-del-imp" data-accion="eliminar">🗑️ Eliminar</button>
@@ -8377,6 +10243,9 @@ function openModalBox(config){
 
     document.body.appendChild(overlay);
 
+    const closeButton = box.querySelector('.modal-close');
+    if(closeButton) closeButton.focus();
+
     if(config.onMount){
         config.onMount(overlay);
     }
@@ -8395,6 +10264,200 @@ function closeModalBox(overlay){
    ADMIN TABS + BOTONES
 ===================================================== */
 
+function adminFormatDate(value){
+    if(!value)return '—';
+    const date=new Date(value);
+    return Number.isNaN(date.getTime())?'—':date.toLocaleDateString('es-PE',{day:'numeric',month:'short',year:'numeric'});
+}
+
+function adminDateKey(value){
+    if(!value)return '';
+    const date=new Date(value);
+    return Number.isNaN(date.getTime())?'':date.toISOString().slice(0,10);
+}
+
+async function loadAdminOverview(){
+    const statsEl=document.getElementById('adminOverviewStats');
+    const expiringEl=document.getElementById('adminExpiringList');
+    if(statsEl)statsEl.innerHTML='<div class="admin-skeleton"><div class="skeleton-line long skeleton-pulse"></div></div>';
+    try{
+        const result=await api('getAdminDashboard',{sessionToken:state.sessionToken});
+        if(!result.success)throw new Error(result.message || 'No se pudo cargar el resumen.');
+        const s=result.stats||{};
+        const metrics=[
+            ['Importadoras activas',s.activeImportadoras||0,`${s.totalImportadoras||0} registradas`],
+            ['Cuentas activas',s.activeUsers||0,`${s.totalUsers||0} registradas`],
+            ['Pagos por revisar',s.pendingPayments||0,'Membresías y registros'],
+            ['Ingresos aprobados este mes','S/ '+Number(s.monthlyRevenue||0).toFixed(2),'Membresías confirmadas'],
+            ['Ingresos por publicidad este mes','S/ '+Number(s.monthlyAdvertisingRevenue||0).toFixed(2),'Campañas destacadas'],
+            ['Membresías por vencer',s.expiringCount||0,'En los próximos 30 días'],
+            ['Publicidad activa',s.activeAds||0,'Perfiles destacados ahora'],
+            ['Publicidad por revisar',s.pendingAds||0,'Solicitudes pendientes'],
+            ['Verificaciones pendientes',s.pendingVerifications||0,'Perfiles por validar']
+        ];
+        if(statsEl)statsEl.innerHTML=metrics.map(function(m){return `<article class="admin-kpi"><span class="admin-kpi-label">${escapeHtml(m[0])}</span><strong class="admin-kpi-value">${escapeHtml(String(m[1]))}</strong><span class="admin-kpi-note">${escapeHtml(m[2])}</span></article>`;}).join('');
+        const expiring=Array.isArray(result.expiring)?result.expiring:[];
+        if(expiringEl)expiringEl.innerHTML=expiring.length?`<span class="admin-expiring-label">Vencen pronto:</span>${expiring.map(function(item){return `<span class="admin-expiring-chip">${escapeHtml(item.email)} · ${escapeHtml(adminFormatDate(item.expiresAt))}</span>`;}).join('')}`:'';
+    }catch(error){
+        if(statsEl)statsEl.innerHTML=`<div class="alert show error">${escapeHtml(error.message||'Error cargando indicadores.')}</div>`;
+    }
+}
+
+function renderAdminAdvertisingRequests(){
+    const container=document.getElementById('adminAdvertisingRequests');
+    if(!container)return;
+    const statusFilter=(document.getElementById('advertisingStatusFilter')||{}).value||'todos';
+    const search=((document.getElementById('advertisingSearch')||{}).value||'').trim().toLowerCase();
+    const dateFrom=(document.getElementById('advertisingDateFrom')||{}).value||'';
+    const dateTo=(document.getElementById('advertisingDateTo')||{}).value||'';
+    const requests=(state.advertisingRequests||[]).filter(function(item){
+        const status=String(item.Estado||'').toLowerCase();
+        const haystack=[item.Importadora,item.Correo,item.Referencia,item['ID Solicitud']].join(' ').toLowerCase();
+        const date=adminDateKey(item.Solicitado);
+        return (statusFilter==='todos'||status===statusFilter)&&(!search||haystack.includes(search))&&(!dateFrom||date>=dateFrom)&&(!dateTo||date<=dateTo);
+    });
+    requests.sort(function(a,b){
+        const ap=String(a.Estado||'').toLowerCase()==='pendiente',bp=String(b.Estado||'').toLowerCase()==='pendiente';
+        return Number(bp)-Number(ap)||new Date(b.Solicitado||0)-new Date(a.Solicitado||0);
+    });
+    if(!requests.length){container.innerHTML='<div class="empty-state"><div class="empty-icon">✨</div><strong>No hay solicitudes con estos filtros</strong><span>Las solicitudes nuevas aparecerán aquí.</span></div>';return;}
+    container.innerHTML=requests.map(function(item){
+        const pending=String(item.Estado||'').toLowerCase()==='pendiente';
+        const status=String(item.Estado||'').toLowerCase();
+        const isActive=status==='aprobado'&&new Date(item.Vence).getTime()>Date.now();
+        const statusClass=pending||status==='rechazado'||status==='revocado'?'inactivo':(status==='aprobado'&&!isActive?'eliminado':'activo');
+        const expires=item.Vence?`<p><strong>Vigencia:</strong> ${escapeHtml(adminFormatDate(item.Inicio))} – ${escapeHtml(adminFormatDate(item.Vence))}</p>`:'';
+        const actions=pending?`<button type="button" class="primary-btn small-btn" data-ad-action="aprobar" data-ad-id="${escapeHtml(item['ID Solicitud']||'')}">Aprobar y destacar</button><button type="button" class="details-btn" data-ad-action="rechazar" data-ad-id="${escapeHtml(item['ID Solicitud']||'')}">Rechazar</button>`:isActive?`<button type="button" class="details-btn revoke-ad-btn" data-ad-action="revocar" data-ad-id="${escapeHtml(item['ID Solicitud']||'')}">Revocar destacado</button>`:'';
+        const segment=String(item.Segmento||'general').toLowerCase();
+        const placement=segment==='general'?'Todo el directorio':`${segment==='rubro'?'Rubro':'Ciudad'}: ${item['Valor de segmento']||'—'}`;
+        return `<article class="membership-payment-card"><div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><strong>${escapeHtml(item.Importadora||'Importadora')} · ${escapeHtml(item.Correo||'')}</strong><span class="status-pill-a ${statusClass}">${escapeHtml(item.Estado||'')}</span></div><p><strong>Plan:</strong> ${item.Plan==='semanal'?'7 días':'30 días'} · ${membershipMoney(item['Monto PEN'])}</p><p><strong>Visibilidad:</strong> ${escapeHtml(placement)}</p><p><strong>Medio:</strong> ${escapeHtml(item.Método||'')} · <strong>Referencia:</strong> ${escapeHtml(item.Referencia||'')}</p><p><strong>Solicitado:</strong> ${escapeHtml(adminFormatDate(item.Solicitado))} · <strong>ID:</strong> ${escapeHtml(item['ID Solicitud']||'')}</p>${expires}${item['Nota de revisión']?`<p><strong>Nota:</strong> ${escapeHtml(item['Nota de revisión'])}</p>`:''}${actions?`<div class="membership-payment-actions">${actions}</div>`:''}</article>`;
+    }).join('');
+    container.querySelectorAll('[data-ad-action]').forEach(function(button){button.addEventListener('click',function(){reviewAdvertisingRequest(button.dataset.adId,button.dataset.adAction);});});
+}
+
+async function loadAdminAdvertising(){
+    const container=document.getElementById('adminAdvertisingRequests');
+    if(container)container.innerHTML='<div class="admin-skeleton"><div class="skeleton-line long skeleton-pulse"></div></div>';
+    try{
+        const result=await api('adminGetAdvertising',{sessionToken:state.sessionToken});
+        if(!result.success)throw new Error(result.message||'No se pudieron cargar las solicitudes.');
+        const config=result.config||{};
+        document.getElementById('advertisingWeeklyPrice').value=config.weeklyPrice||'';
+        document.getElementById('advertisingMonthlyPrice').value=config.monthlyPrice||'';
+        document.getElementById('advertisingWeeklyTargetPrice').value=config.weeklyTargetPrice||'';
+        document.getElementById('advertisingMonthlyTargetPrice').value=config.monthlyTargetPrice||'';
+        state.advertisingRequests=Array.isArray(result.requests)?result.requests:[];
+        renderAdminAdvertisingRequests();
+    }catch(error){if(container)container.innerHTML=`<div class="alert show error">${escapeHtml(error.message||'Error cargando publicidad.')}</div>`;}
+}
+
+async function saveAdminAdvertisingConfig(){
+    const config={weeklyPrice:document.getElementById('advertisingWeeklyPrice').value.trim(),monthlyPrice:document.getElementById('advertisingMonthlyPrice').value.trim(),weeklyTargetPrice:document.getElementById('advertisingWeeklyTargetPrice').value.trim(),monthlyTargetPrice:document.getElementById('advertisingMonthlyTargetPrice').value.trim()};
+    try{
+        const result=await api('adminSaveAdvertisingConfig',{sessionToken:state.sessionToken,config:config});
+        if(!result.success)throw new Error(result.message||'No se pudo guardar.');
+        setAlertText('advertisingConfigResult','Precios de publicidad guardados.','success');
+    }catch(error){setAlertText('advertisingConfigResult',error.message||'No se pudo guardar.','error');}
+}
+
+async function reviewAdvertisingRequest(requestId,decision){
+    let note='';
+    if(decision==='aprobar'&&!window.confirm('Confirma que verificaste el abono. ¿Activar el perfil destacado?'))return;
+    if(decision==='rechazar')note=window.prompt('Motivo del rechazo (opcional):')||'';
+    if(decision==='revocar'){
+        note=window.prompt('Motivo para revocar el destacado (mínimo 5 caracteres):')||'';
+        if(note.trim().length<5){showToast('Escribe un motivo de al menos 5 caracteres.','warn');return;}
+        if(!window.confirm('¿Revocar ahora la publicidad destacada? El perfil dejará de tener prioridad en el directorio.'))return;
+    }
+    try{
+        const action=decision==='revocar'?'adminRevokeAdvertising':'adminReviewAdvertising';
+        const result=await api(action,{sessionToken:state.sessionToken,requestId:requestId,decision:decision,note:note});
+        if(!result.success)throw new Error(result.message||'No se pudo revisar la solicitud.');
+        showToast(result.message,'success');
+        await loadAdminAdvertising();
+        await loadAdminOverview();
+        await loadAdminImportadoras();
+    }catch(error){showToast(error.message||'No se pudo revisar la publicidad.','error');}
+}
+
+async function loadAdminVerifications(){
+    const container=document.getElementById('adminVerificationRequests');
+    if(container)container.innerHTML='<div class="admin-skeleton"><div class="skeleton-line long skeleton-pulse"></div></div>';
+    try{
+        const result=await api('adminGetVerifications',{sessionToken:state.sessionToken});
+        if(!result.success)throw new Error(result.message||'No se pudieron cargar las verificaciones.');
+        state.verificationRequests=Array.isArray(result.requests)?result.requests:[];
+        const config=result.config||{};
+        const monthly=document.getElementById('verificationMonthlyPrice'),annual=document.getElementById('verificationAnnualPrice');
+        if(monthly)monthly.value=config.monthlyPrice||'';
+        if(annual)annual.value=config.annualPrice||'';
+        renderAdminVerifications();
+    }catch(error){if(container)container.innerHTML=`<div class="alert show error">${escapeHtml(error.message||'Error cargando verificaciones.')}</div>`;}
+}
+
+function renderAdminVerifications(){
+    const container=document.getElementById('adminVerificationRequests');
+    if(!container)return;
+    const statusFilter=(document.getElementById('verificationStatusFilter')||{}).value||'todos';
+    const search=((document.getElementById('verificationSearch')||{}).value||'').trim().toLowerCase();
+    const requests=(state.verificationRequests||[]).filter(function(item){
+        const status=String(item.Estado||'').toLowerCase();
+        const haystack=[item.Importadora,item.RUC,item['Razón social'],item.Correo].join(' ').toLowerCase();
+        return (statusFilter==='todos'||status===statusFilter)&&(!search||haystack.includes(search));
+    }).sort(function(a,b){const ap=String(a.Estado||'').toLowerCase()==='pendiente',bp=String(b.Estado||'').toLowerCase()==='pendiente';return Number(bp)-Number(ap)||new Date(b.Solicitado||0)-new Date(a.Solicitado||0);});
+    if(!requests.length){container.innerHTML='<div class="empty-state"><div class="empty-icon">✓</div><strong>No hay solicitudes con estos filtros</strong><span>Las solicitudes nuevas aparecerán aquí.</span></div>';return;}
+    container.innerHTML=requests.map(function(item){
+        const pending=String(item.Estado||'').toLowerCase()==='pendiente';
+        const bad=['rechazado','revocada'].includes(String(item.Estado||'').toLowerCase());
+        return `<article class="membership-payment-card"><div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><strong>${escapeHtml(item.Importadora||'Importadora')} · ${escapeHtml(item.Correo||'')}</strong><span class="status-pill-a ${pending||bad?'inactivo':'activo'}">${escapeHtml(item.Estado||'')}</span></div><p><strong>RUC:</strong> ${escapeHtml(item.RUC||'—')} · <strong>Razón social:</strong> ${escapeHtml(item['Razón social']||'—')}</p><p><strong>Plan:</strong> ${escapeHtml(item.Plan||'—')} · ${membershipMoney(item['Monto PEN'])}</p><p><strong>Pago:</strong> ${escapeHtml(item.Método||'—')} · <strong>Referencia:</strong> ${escapeHtml(item.Referencia||'—')}</p><p><strong>Solicitada:</strong> ${escapeHtml(adminFormatDate(item.Solicitado))} · <strong>ID:</strong> ${escapeHtml(item['ID Solicitud']||'')}</p><p><a class="verification-sunat-link" href="https://e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/FrameCriterioBusquedaWeb.jsp" target="_blank" rel="noopener noreferrer">Consultar RUC en SUNAT ↗</a></p>${item.Vence?`<p><strong>Vigencia:</strong> hasta ${escapeHtml(adminFormatDate(item.Vence))}</p>`:''}${item.Nota?`<p><strong>Nota:</strong> ${escapeHtml(item.Nota)}</p>`:''}${pending?`<div class="membership-payment-actions"><button type="button" class="primary-btn small-btn" data-verification-action="aprobar" data-verification-id="${escapeHtml(item['ID Solicitud']||'')}">Confirmar pago y verificar RUC</button><button type="button" class="details-btn" data-verification-action="rechazar" data-verification-id="${escapeHtml(item['ID Solicitud']||'')}">Rechazar</button></div>`:''}</article>`;
+    }).join('');
+    container.querySelectorAll('[data-verification-action]').forEach(function(button){button.addEventListener('click',function(){reviewVerification(button.dataset.verificationId,button.dataset.verificationAction);});});
+}
+
+async function reviewVerification(requestId,decision){
+    if(decision==='aprobar'&&!window.confirm('Confirma que verificaste el pago recibido y contrastaste el RUC y la razón social con una fuente oficial. ¿Activar la insignia pagada?'))return;
+    const note=window.prompt(decision==='rechazar'?'Motivo del rechazo (opcional):':'Nota de revisión (opcional):')||'';
+    try{
+        const result=await api('adminReviewVerification',{sessionToken:state.sessionToken,requestId:requestId,decision:decision,note:note});
+        if(!result.success)throw new Error(result.message||'No se pudo revisar la solicitud.');
+        showToast(result.message,'success');
+        await loadAdminVerifications();await loadAdminOverview();await loadAdminImportadoras();
+    }catch(error){showToast(error.message||'No se pudo revisar la verificación.','error');}
+}
+
+async function saveAdminVerificationConfig(){
+    const config={monthlyPrice:document.getElementById('verificationMonthlyPrice').value.trim(),annualPrice:document.getElementById('verificationAnnualPrice').value.trim()};
+    try{const result=await api('adminSaveVerificationConfig',{sessionToken:state.sessionToken,config:config});if(!result.success)throw new Error(result.message||'No se pudieron guardar los planes.');setAlertText('verificationConfigResult','Planes de verificación guardados.','success');}
+    catch(error){setAlertText('verificationConfigResult',error.message||'No se pudieron guardar los planes.','error');}
+}
+
+async function loadAdminCatalog(){
+    const container=document.getElementById('adminCatalogPosts');
+    if(container)container.innerHTML='<div class="admin-skeleton"><div class="skeleton-line long skeleton-pulse"></div></div>';
+    try{
+        const result=await api('adminGetCatalog',{sessionToken:state.sessionToken});
+        if(!result.success)throw new Error(result.message||'No se pudo cargar el catálogo.');
+        state.catalogPosts=Array.isArray(result.posts)?result.posts:[];
+        renderAdminCatalog();
+    }catch(error){if(container)container.innerHTML=`<div class="alert show error">${escapeHtml(error.message||'Error cargando catálogo.')}</div>`;}
+}
+
+function renderAdminCatalog(){
+    const container=document.getElementById('adminCatalogPosts');if(!container)return;
+    const statusFilter=(document.getElementById('catalogStatusFilter')||{}).value||'todos';
+    const search=((document.getElementById('catalogSearch')||{}).value||'').trim().toLowerCase();
+    const posts=(state.catalogPosts||[]).filter(function(post){const status=String(post.Estado||'').toLowerCase();const text=[post.Título,post.Importadora,post.Correo].join(' ').toLowerCase();return(statusFilter==='todos'||status===statusFilter)&&(!search||text.includes(search));}).sort(function(a,b){const ap=String(a.Estado||'').toLowerCase()==='pendiente',bp=String(b.Estado||'').toLowerCase()==='pendiente';return Number(bp)-Number(ap)||new Date(b.Solicitado||0)-new Date(a.Solicitado||0);});
+    if(!posts.length){container.innerHTML='<div class="empty-state"><div class="empty-icon">📦</div><strong>No hay publicaciones con estos filtros</strong><span>Ajusta el estado o la búsqueda.</span></div>';return;}
+    container.innerHTML=posts.map(function(post){const pending=String(post.Estado||'').toLowerCase()==='pendiente';const bad=String(post.Estado||'').toLowerCase()==='rechazado';const url=post.Enlace?normalizeWebUrl(post.Enlace):'';return `<article class="membership-payment-card"><div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><strong>${escapeHtml(post.Título||'Publicación')} · ${escapeHtml(post.Importadora||'')}</strong><span class="status-pill-a ${pending||bad?'inactivo':'activo'}">${escapeHtml(post.Estado||'')}</span></div><p>${escapeHtml(post.Descripción||'')}</p><p><strong>Precio:</strong> ${Number(post['Precio PEN'])>0?membershipMoney(post['Precio PEN']):'Por consultar'} · <strong>Correo:</strong> ${escapeHtml(post.Correo||'')}</p><p><strong>Solicitada:</strong> ${escapeHtml(adminFormatDate(post.Solicitado))} · <strong>ID:</strong> ${escapeHtml(post['ID Publicación']||'')}</p>${url?`<p><a href="${escapeAttribute(url)}" target="_blank" rel="noopener noreferrer">Abrir enlace del producto ↗</a></p>`:''}${post.Nota?`<p><strong>Nota:</strong> ${escapeHtml(post.Nota)}</p>`:''}${pending?`<div class="membership-payment-actions"><button type="button" class="primary-btn small-btn" data-catalog-action="aprobar" data-catalog-id="${escapeHtml(post['ID Publicación']||'')}">Aprobar y publicar</button><button type="button" class="details-btn" data-catalog-action="rechazar" data-catalog-id="${escapeHtml(post['ID Publicación']||'')}">Rechazar</button></div>`:''}</article>`;}).join('');
+    container.querySelectorAll('[data-catalog-action]').forEach(function(button){button.addEventListener('click',function(){reviewCatalogPost(button.dataset.catalogId,button.dataset.catalogAction);});});
+}
+
+async function reviewCatalogPost(postId,decision){
+    if(decision==='aprobar'&&!window.confirm('¿Aprobar esta publicación? Se mostrará en el perfil durante 30 días.'))return;
+    const note=window.prompt(decision==='rechazar'?'Motivo del rechazo (opcional):':'Nota de revisión (opcional):')||'';
+    try{const result=await api('adminReviewCatalog',{sessionToken:state.sessionToken,postId:postId,decision:decision,note:note});if(!result.success)throw new Error(result.message||'No se pudo revisar la publicación.');showToast(result.message,'success');await loadAdminCatalog();}catch(error){showToast(error.message||'No se pudo revisar el catálogo.','error');}
+}
+
 function switchAdminTab(tabName){
 
     const tabs =
@@ -8411,6 +10474,7 @@ function switchAdminTab(tabName){
 
     const goImps =
         document.getElementById('adminImportadorasTab');
+    const goOverview = document.getElementById('adminOverviewTab');
 
 const goUsrs =
         document.getElementById('adminUsuariosTab');
@@ -8420,10 +10484,16 @@ const goUsrs =
 
     const goMaint =
         document.getElementById('adminMantenimientoTab');
+    const goMembership =
+        document.getElementById('adminMembresiasTab');
+    const goAdvertising = document.getElementById('adminPublicidadTab');
+    const goVerifications = document.getElementById('adminVerificacionesTab');
+    const goCatalog = document.getElementById('adminCatalogoTab');
 
     if(goImps){
         goImps.classList.toggle('hidden', tabName !== 'importadoras');
     }
+    if(goOverview){goOverview.classList.toggle('hidden',tabName!=='resumen');}
 
     if(goUsrs){
         goUsrs.classList.toggle('hidden', tabName !== 'usuarios');
@@ -8437,13 +10507,128 @@ const goUsrs =
         goMaint.classList.toggle('hidden', tabName !== 'mantenimiento');
     }
 
+    if(goMembership){
+        goMembership.classList.toggle('hidden', tabName !== 'membresias');
+    }
+
+    if(goAdvertising){goAdvertising.classList.toggle('hidden',tabName!=='publicidad');}
+    if(goVerifications){goVerifications.classList.toggle('hidden',tabName!=='verificaciones');}
+    if(goCatalog){goCatalog.classList.toggle('hidden',tabName!=='catalogo');}
+
     if(tabName === 'historial'){
         loadAdminHistorial();
     }
 
+    if(tabName === 'resumen')loadAdminOverview();
+
     if(tabName === 'mantenimiento'){
         loadAdminMantenimiento();
     }
+
+    if(tabName === 'membresias'){
+        loadAdminMembership();
+    }
+
+    if(tabName === 'publicidad')loadAdminAdvertising();
+    if(tabName === 'verificaciones')loadAdminVerifications();
+    if(tabName === 'catalogo')loadAdminCatalog();
+}
+
+function setMembershipConfigForm(config){
+    const c = config || {};
+    const fields = {
+        membershipMonthlyPrice:c.monthlyPrice,
+        membershipAnnualPrice:c.annualPrice,
+        membershipLifetimePrice:c.lifetimePrice,
+        membershipHolder:c.holder,
+        membershipYape:c.yape,
+        membershipPlin:c.plin,
+        membershipBcp:c.bcp,
+        membershipBankAccount:c.bankAccount,
+        membershipInstructions:c.instructions
+    };
+    Object.keys(fields).forEach(id => { const el=document.getElementById(id); if(el)el.value=fields[id] || ''; });
+    const enabled = document.getElementById('membershipEnforcement');
+    if(enabled)enabled.checked=!!c.enforcement;
+}
+
+async function loadAdminMembership(){
+    const container = document.getElementById('adminMembershipPayments');
+    if(container)container.innerHTML='<div class="admin-skeleton"><div class="skeleton-line long skeleton-pulse"></div><div class="skeleton-line medium skeleton-pulse"></div></div>';
+    try{
+        const result = await api('adminGetMembership',{sessionToken:state.sessionToken});
+        if(!result.success)throw new Error(result.message || 'No se pudieron cargar los pagos.');
+        setMembershipConfigForm(result.config);
+        state.membershipPayments = Array.isArray(result.payments) ? result.payments.slice() : [];
+        renderAdminMembershipPayments();
+    }catch(error){
+        if(container)container.innerHTML=`<div class="alert show error">${escapeHtml(error.message || 'Error cargando pagos.')}</div>`;
+    }
+}
+
+function renderAdminMembershipPayments(){
+        const container=document.getElementById('adminMembershipPayments');
+        if(!container)return;
+        const filter=(document.getElementById('membershipStatusFilter')||{}).value||'todos';
+        const search=((document.getElementById('membershipPaymentSearch')||{}).value||'').trim().toLowerCase();
+        const dateFrom=(document.getElementById('membershipDateFrom')||{}).value||'';
+        const dateTo=(document.getElementById('membershipDateTo')||{}).value||'';
+        const payments=(state.membershipPayments||[]).filter(function(p){
+            const status=String(p['Estado']||'').toLowerCase();
+            const text=[p['Correo'],p['Plan'],p['Referencia'],p['ID Pago']].join(' ').toLowerCase();
+            const date=adminDateKey(p['Solicitado']);
+            return (filter==='todos'||status===filter)&&(!search||text.includes(search))&&(!dateFrom||date>=dateFrom)&&(!dateTo||date<=dateTo);
+        }).sort((a,b) => {
+            const aPending=String(a['Estado'] || '').trim().toLowerCase()==='pendiente';
+            const bPending=String(b['Estado'] || '').trim().toLowerCase()==='pendiente';
+            if(aPending!==bPending)return aPending ? -1 : 1;
+            return new Date(b['Solicitado'] || 0).getTime() - new Date(a['Solicitado'] || 0).getTime();
+        });
+        if(!payments.length){container.innerHTML='<div class="empty-state"><div class="empty-icon">💳</div><strong>No hay solicitudes con estos filtros</strong><span>Ajusta la búsqueda o el estado seleccionado.</span></div>';return;}
+        container.innerHTML = payments.map(p => {
+            const id=p['ID Pago'] || '';
+            const status=String(p['Estado'] || '');
+            const newRegistration=String(p['Tipo de solicitud'] || '').toLowerCase()==='registro nuevo';
+            const pending=status.toLowerCase()==='pendiente';
+            const rawDate=p['Solicitado'];
+            const date=rawDate ? new Date(rawDate).toLocaleString('es-PE') : '—';
+            return `<article class="membership-payment-card"><div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><strong>${escapeHtml(newRegistration ? `${p['Nombre'] || ''} ${p['Apellido'] || ''} · ${p['Correo'] || ''}` : (p['Correo'] || 'Usuario'))}</strong><strong>${escapeHtml(status)}</strong></div>${newRegistration ? '<p><strong>Registro nuevo · cuenta y membresía pendientes</strong></p>' : ''}<p>${escapeHtml(p['Plan'] || '')} · ${membershipMoney(p['Monto PEN'])}</p><p><strong>Medio:</strong> ${escapeHtml(p['Método'] || '')} · <strong>Referencia:</strong> ${escapeHtml(p['Referencia'] || '')}</p><p><strong>Solicitado:</strong> ${escapeHtml(date)} · <strong>ID:</strong> ${escapeHtml(id)}</p>${p['Nota de revisión'] ? `<p><strong>Nota:</strong> ${escapeHtml(p['Nota de revisión'])}</p>` : ''}${pending ? `<div class="membership-payment-actions"><button type="button" class="primary-btn small-btn" data-payment-action="aprobar" data-payment-id="${escapeHtml(id)}">${newRegistration ? 'Aprobar cuenta y activar' : 'Aprobar y activar'}</button><button type="button" class="details-btn" data-payment-action="rechazar" data-payment-id="${escapeHtml(id)}">Rechazar</button></div>` : ''}</article>`;
+        }).join('');
+        container.querySelectorAll('[data-payment-action]').forEach(button => button.addEventListener('click', () => reviewManualPayment(button.dataset.paymentId,button.dataset.paymentAction)));
+}
+
+async function saveAdminMembershipConfig(){
+    const resultEl=document.getElementById('membershipConfigResult');
+    const value=id => document.getElementById(id).value.trim();
+    const config={
+        monthlyPrice:value('membershipMonthlyPrice'),annualPrice:value('membershipAnnualPrice'),lifetimePrice:value('membershipLifetimePrice'),
+        holder:value('membershipHolder'),yape:value('membershipYape'),plin:value('membershipPlin'),bcp:value('membershipBcp'),
+        bankAccount:value('membershipBankAccount'),instructions:value('membershipInstructions'),enforcement:document.getElementById('membershipEnforcement').checked
+    };
+    if(config.enforcement && !config.monthlyPrice && !config.annualPrice && !config.lifetimePrice){
+        setAlertText('membershipConfigResult','Configura al menos un plan antes de exigir la membresía.','error');return;
+    }
+    if(config.enforcement && !config.yape && !config.plin && !config.bcp && !config.bankAccount){
+        setAlertText('membershipConfigResult','Configura al menos un medio o cuenta de pago antes de exigir la membresía.','error');return;
+    }
+    try{
+        const result=await api('adminSaveMembershipConfig',{sessionToken:state.sessionToken,config:config});
+        if(!result.success)throw new Error(result.message || 'No se pudo guardar.');
+        setMembershipConfigForm(result.config);
+        setAlertText('membershipConfigResult','Configuración guardada correctamente.','success');
+    }catch(error){setAlertText('membershipConfigResult',error.message,'error');}
+}
+
+async function reviewManualPayment(paymentId,decision){
+    if(decision==='aprobar' && !window.confirm('Confirma que verificaste el abono en tu cuenta. ¿Aprobar y activar esta membresía?'))return;
+    const note=decision==='rechazar' ? (window.prompt('Motivo del rechazo (opcional):') || '') : '';
+    try{
+        const result=await api('adminReviewPayment',{sessionToken:state.sessionToken,paymentId:paymentId,decision:decision,note:note});
+        if(!result.success)throw new Error(result.message || 'No se pudo revisar la solicitud.');
+        showToast(result.message,'success');
+        await loadAdminMembership();
+        await loadAdminOverview();
+    }catch(error){showToast(error.message || 'No se pudo revisar el pago.','error');}
 }
 
 
@@ -8464,6 +10649,39 @@ function setupAdminEvents(){
             }
         );
     }
+
+    const saveMembership = document.getElementById('btnSaveMembershipConfig');
+    if(saveMembership)saveMembership.addEventListener('click',saveAdminMembershipConfig);
+    const reloadPayments = document.getElementById('btnReloadMembershipPayments');
+    if(reloadPayments)reloadPayments.addEventListener('click',loadAdminMembership);
+    const reloadOverview=document.getElementById('btnReloadAdminOverview');
+    if(reloadOverview)reloadOverview.addEventListener('click',loadAdminOverview);
+    const saveAdvertising=document.getElementById('btnSaveAdvertisingConfig');
+    if(saveAdvertising)saveAdvertising.addEventListener('click',saveAdminAdvertisingConfig);
+    const reloadAdvertising=document.getElementById('btnReloadAdvertising');
+    if(reloadAdvertising)reloadAdvertising.addEventListener('click',loadAdminAdvertising);
+    const reloadVerifications=document.getElementById('btnReloadVerifications');
+    if(reloadVerifications)reloadVerifications.addEventListener('click',loadAdminVerifications);
+    const saveVerification=document.getElementById('btnSaveVerificationConfig');
+    if(saveVerification)saveVerification.addEventListener('click',saveAdminVerificationConfig);
+    const reloadCatalog=document.getElementById('btnReloadCatalog');
+    if(reloadCatalog)reloadCatalog.addEventListener('click',loadAdminCatalog);
+    ['advertisingStatusFilter','advertisingSearch','advertisingDateFrom','advertisingDateTo'].forEach(function(id){
+        const el=document.getElementById(id);
+        if(el)el.addEventListener(id==='advertisingStatusFilter'?'change':'input',renderAdminAdvertisingRequests);
+    });
+    ['membershipStatusFilter','membershipPaymentSearch','membershipDateFrom','membershipDateTo'].forEach(function(id){
+        const el=document.getElementById(id);
+        if(el)el.addEventListener(id==='membershipStatusFilter'?'change':'input',renderAdminMembershipPayments);
+    });
+    ['verificationStatusFilter','verificationSearch'].forEach(function(id){
+        const el=document.getElementById(id);
+        if(el)el.addEventListener(id==='verificationStatusFilter'?'change':'input',renderAdminVerifications);
+    });
+    ['catalogStatusFilter','catalogSearch'].forEach(function(id){
+        const el=document.getElementById(id);
+        if(el)el.addEventListener(id==='catalogStatusFilter'?'change':'input',renderAdminCatalog);
+    });
 
     const btnNuevaImp =
         document.getElementById('btnNuevaImportadora');
@@ -8850,7 +11068,7 @@ function setupCuentaEvents(){
 
                 appSection.classList.add('hidden');
 
-                authSection.classList.remove('hidden');
+                showLanding();
 
                 emailStep.classList.remove('hidden');
 
